@@ -28,3 +28,27 @@ $path: "/public/images/";
 }
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
+.verify-logo {
+  height:45px;
+  vertical-align:-2px;
+  margin-right:10px;
+  float:left;
+}
+
+strong {font-weight:700}
+
+.govuk-box-permission {
+  background-color:$govuk-blue;
+  padding:30px;
+  color:white;
+  .button {
+    background-color:white;
+    color:$govuk-blue;
+    font-weight:700;
+  }
+}
+
+.alert-default {
+  border-color: $light-blue;
+  background-color: mix(white, $light-blue, 90%);
+}

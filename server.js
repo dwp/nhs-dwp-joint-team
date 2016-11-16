@@ -205,4 +205,5 @@ utils.findAvailablePort(app, function (port) {
       })
     })
   }
+  console.log("\033]0;NHS DWP Link Prototype\007");
 })

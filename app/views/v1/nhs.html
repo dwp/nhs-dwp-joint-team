@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+      
+  <div class="govuk-box-permission">
+    <div class="grid-row">
+        <div class="column-one-third">
+          <img src="/public/images/nhs.png" width="160">
+        </div>
+        <div class="column-two-thirds">
+          <h1 class="hidden">Request for permission</h1>
+          <p class="font-medium">If you agree, the Department for Work and Pensions can access your sick note directly from the NHS.</p>
+          <p class="font-medium">You can choose what information you wish to share with the DWP before submitting it.</p>
+          <p><a href="note" class="button">Continue</a></p>
+        </div>
+    </div>
+  </div>
+            
+</main>
+
+{% endblock %}
