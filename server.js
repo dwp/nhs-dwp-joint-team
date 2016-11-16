@@ -3,7 +3,6 @@ var express = require('express')
 var session = require('express-session')
 var nunjucks = require('nunjucks')
 var routes = require('./app/routes.js')
-// var documentationRoutes = require('./docs/documentation_routes.js')
 var favicon = require('serve-favicon')
 var app = express()
 var documentationApp = express()
@@ -154,6 +153,7 @@ if (useDocumentation) {
   app.use('/docs', documentationApp)
 
   // Docs under the /docs namespace
+  var documentationRoutes = require('./docs/documentation_routes.js');
   documentationApp.use('/', documentationRoutes)
 }
 
