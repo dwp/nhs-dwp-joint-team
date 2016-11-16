@@ -13,7 +13,7 @@ module.exports = {
   useAuth: 'true',
 
   // Enable or disable built-in docs and examples.
-  useDocumentation: 'true',
+  useDocumentation: 'false',
 
   // Force HTTP to redirect to HTTPs on production
   useHttps: 'true',
