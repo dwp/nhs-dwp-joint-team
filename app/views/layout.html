@@ -1,5 +1,9 @@
 {% extends "govuk_template.html" %}
 
+{% block page_title %}
+  Send your sick note
+{% endblock %}
+
 {% block head %}
   {% include "includes/head.html" %}
 {% endblock %}
@@ -19,4 +23,12 @@
 {% block body_end %}
   {% include "includes/scripts.html" %}
   <!-- GOV.UK Prototype kit {{releaseVersion}} -->
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  {% block page %}
+  {% endblock %}
+</main>
 {% endblock %}
