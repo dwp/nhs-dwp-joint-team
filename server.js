@@ -153,8 +153,8 @@ if (useDocumentation) {
   app.use('/docs', documentationApp)
 
   // Docs under the /docs namespace
-  var documentationRoutes = require('./docs/documentation_routes.js');
-  documentationApp.use('/', documentationRoutes)
+  // var documentationRoutes = require('./docs/documentation_routes.js');
+  // documentationApp.use('/', documentationRoutes)
 }
 
 // Strip .html and .htm if provided
