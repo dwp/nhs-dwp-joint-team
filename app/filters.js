@@ -23,6 +23,11 @@ module.exports = function (env) {
   {
     return moment().add(15,'days').format("Do MMMM YYYY");
   }
+  
+  filters.beforeNow = function(number,type)
+  {
+    return moment().subtract(number,type).format("Do MMMM YYYY");
+  }
 
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:

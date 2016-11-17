@@ -85,3 +85,9 @@ strong {font-weight:700}
   .form-group-year
    {margin-right:10px;}
 }
+
+.nhs {
+  #global_header .header-wrapper {
+    background-color:$govuk-blue;
+  }
+}

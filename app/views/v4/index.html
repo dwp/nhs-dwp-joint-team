@@ -1,0 +1,39 @@
+{% extends "nhs-layout.html" %}
+
+{% block page %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        <h2 class="heading-large">Your doctor’s notes</h2>
+        
+        <div class="sicknote">
+          <h3 class="heading heading-medium">{{ 5 | beforeNow('days') }}</h3>
+          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
+          <a href="note" class="button">View details</a>
+        </div>
+        
+        <div class="sicknote">
+          <h3 class="heading heading-medium">{{ 35 | beforeNow('days') }}</h3>
+          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
+          <a href="note" class="button">View details</a>
+        </div>
+        
+        <div class="sicknote">
+          <h3 class="heading heading-medium">{{ 45 | beforeNow('days') }}</h3>
+          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
+          <a href="note" class="button">View details</a>
+        </div>
+        
+        <div class="sicknote">
+          <h3 class="heading heading-medium">{{ 60 | beforeNow('days') }}</h3>
+          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
+          <a href="note" class="button">View details</a>
+        </div>
+    </div><!-- column -->
+  </div><!-- row -->
+
+  
+  
+  
+
+{% endblock %}

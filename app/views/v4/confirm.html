@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "nhs-layout.html" %}
 
 {% block page %}
 
@@ -8,9 +8,12 @@
               
       <div class="govuk-box-highlight">
         <h1 class="bold-large">
-          <span class="font-medium"> Your doctor’s note has been received<br> </span>
+          <span class="font-medium">
+            Your doctor’s note has been received<br>
+          </span>
           It’s valid until {{ '' | fortnight }}
         </h1>
+        <p></p>
       </div>
 
       <h2 class="heading-medium">
@@ -20,9 +23,10 @@
       <p>
         You’ll need to provide another doctor’s note by {{ '' | fortnightplus }} if you’re not able to work.
       </p>
+        
+    </div><!-- row -->
 
-    </div><!-- col -->
+  </div>
 
-  </div><!-- row -->
 
 {% endblock %}
