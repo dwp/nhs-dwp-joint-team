@@ -6,44 +6,79 @@
     <div class="column-two-thirds">
       <h1 class="heading-large">Do you know your NHS number?</h1>
 
-      {# DO YOU KNOW YOUR NHS NUMBER #}
-      <div class="form-group inline" style="margin-bottom:10px">
-        <div class="form-group form-group-compound" aria-labelledby="represent">
-          <label class="block-label" data-target="nhs-number" for="know-nhs-num-yes">
-            <input id="know-nhs-num-yes" type="radio" name="know-nhs-num" value="Yes">
-            Yes
-          </label>
-          <label class="block-label" for="know-nhs-num-no">
-            <input id="know-nhs-num-no" type="radio" name="know-nhs-num" value="No">
-            No
-          </label>
+      <form>
+        {# DO YOU KNOW YOUR NHS NUMBER #}
+        <div class="form-group inline" style="margin-bottom:10px">
+          <div class="form-group form-group-compound" aria-labelledby="represent">
+            <label class="block-label selection-button-radio" data-target="nhs-number" for="know-nhs-num-yes">
+              <input id="know-nhs-num-yes" type="radio" name="know-nhs-num" value="Yes">
+              Yes
+            </label>
+            <label class="block-label selection-button-radio" for="know-nhs-num-no">
+              <input id="know-nhs-num-no" type="radio" name="know-nhs-num" value="No">
+              No
+            </label>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group js-hidden panel panel-border-narrow" id="nhs-number">
-        <label class="form-label" for="full-name">Your NHS Number</label>
-        <input class="form-control spaced-number" name="nhs-number" type="text">
-      </div>
+        <div class="form-group js-hidden panel panel-border-narrow" id="nhs-number">
+          <label class="form-label" for="full-name">Your NHS Number</label>
+          <div class="form-date form-group">
+            <div class="form-group form-group-day">
+              <input type="text" class="form-control" id="nhs-no-1" name="nhs-no-1" maxlength="3">
+            </div>
+            <div class="form-group form-group-month">
+              <input type="text" class="form-control" id="nhs-no-2" name="nhs-no-2" maxlength="3">
+            </div>
+            <div class="form-group form-group-year">
+              <input type="text" class="form-control" id="nhs-no-3" name="nhs-no-3" maxlength="4">
+            </div>
+          </div>
+        </div>
 
-      <div class="form-group" style="margin-top:30px;">
-        <a class="button" href="nino">Continue</a>
-      </div>
+        <div class="form-group" style="margin-top:30px;">
+          <a class="button" href="ni_number">Continue</a>
+        </div>
+      
+      </form>
 
     </div>
   </div>
 
 {% endblock %}
 
-{% block page_script %}
+{% block page_script_not_used %}
 <script type="text/javascript">
   $(document).on('ready',function()
   {
-    $("#nhs-number input").on('keyup',function()
+    $("#nhs-no-1").on("keyup",function(e)
     {
-      var s = $(this).val();
-      var n = s.length;
-      if (n == 3) $(this).val(s+'-');
+      console.log(e.keyCode);
+      var len = $(this).val().length;
+      if (len == 3)
+      {
+        $("#nhs-no-2").focus();
+      }
     });
+    
+    $("#nhs-no-2").on("keyup",function(e)
+    {
+      var len = $(this).val().length;
+      if (len == 3)
+      {
+        $("#nhs-no-3").focus();
+      }
+    });
+
+    $("#nhs-number input").on('keydown',function(e)
+    {
+      var len = $(this).val().length;
+      if (e.keyCode == 9 && len < 3)
+      {
+        e.preventDefault();
+      }
+    });
+    
   });
 </script>
 {% endblock %}

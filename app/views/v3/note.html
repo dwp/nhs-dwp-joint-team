@@ -1,64 +1,70 @@
 {% extends "layout.html" %}
 
 {% block page %}
+    
+<div class="grid-row">
+  <div class="column-two-thirds">    
+        
+    <h1 class="heading-large">Is this the sick note you want to send?</h1>
 
-  <div class="column-two-thirds">
-            
-    <h1 class="heading-xlarge">Your fit note</h1>
-
-    <p class="bold-medium">
-      <span class="font-small">
-        Patient's name<br>
-      </span>
-      Joe bloggs
-    </p>
-
-    <p class="bold-medium">
-      <span class="font-small">
-        Because of the following condition(s)<br>
-      </span>
-      Back pain
-    </p>
-
-    <div class="panel panel-border-wide alert-default">
+    <div class="form-group">
       <p class="bold-medium">
-        You are not able to work
+        <span class="font-small">
+          Patient's name<br>
+        </span>
+        Joe bloggs
+      </p>
+
+      <p class="bold-medium">
+        <span class="font-small">
+          Because of the following condition(s)<br>
+        </span>
+        Back pain
+      </p>
+
+      <div class="panel panel-border-wide alert-default">
+        <p class="bold-medium">
+          You are not able to work
+        </p>
+      </div>
+
+      <p class="bold-medium">
+        <span class="font-small">
+          This will be the case for<br>
+        </span>
+        2 weeks
+      </p>
+
+      <p class="bold-medium">
+        <span class="font-small">
+          From<br>
+        </span>
+        {{ '' | today }}
+      </p>
+
+      <p class="bold-medium">
+        <span class="font-small">
+          To<br>
+        </span>
+        {{ '' | fortnight }}
+      </p>
+
+      <p class="bold-medium">
+        <span class="font-small">
+          Doctor's address<br>
+        </span>
+        The Grove Surgery<br>
+        Thornhill Street<br>
+        Wakefield<br>
+        WF1 1PG
       </p>
     </div>
 
-    <p class="bold-medium">
-      <span class="font-small">
-        This will be the case for<br>
-      </span>
-      2 weeks
-    </p>
-
-    <p class="bold-medium">
-      <span class="font-small">
-        From<br>
-      </span>
-      4 July 2016
-    </p>
-
-    <p class="bold-medium">
-      <span class="font-small">
-        To<br>
-      </span>
-      18 July 2016
-    </p>
-
-    <p class="bold-medium">
-      <span class="font-small">
-        Doctor's address<br>
-      </span>
-      The Grove Surgery<br>
-      Thornhill Street<br>
-      Wakefield<br>
-      WF1 1PG
-    </p>
-
-    <a href="confirm" class="button">This is correct - send</a>
-
-  </div>
+    <div class="form-group">
+      <a href="confirm" class="button">This is correct - send it</a>
+    </div>
+    
+  </div><!-- column -->
+</div><!-- row -->
 
 {% endblock %}

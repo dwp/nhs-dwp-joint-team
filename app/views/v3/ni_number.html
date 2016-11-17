@@ -4,38 +4,37 @@
 
   <div class="grid-row">
     <div class="column-two-thirds">
-      <h1 class="heading-large">Do you know your Nation Insurance number?</h1>
+      
+      <h1 class="heading-large">Do you know your National Insurance number?</h1>
 
-      {# DO YOU KNOW YOUR NHS NUMBER #}
-      <div class="form-group inline" style="margin-bottom:10px">
-        <div class="form-group form-group-compound" aria-labelledby="represent">
-          <label class="block-label" data-target="nhs-number" for="know-nino-yes">
-            <input id="know-nino-yes" type="radio" name="know-nino" value="Yes">
-            Yes
-          </label>
-          <label class="block-label" for="know-nino-no">
-            <input id="know-nino-no" type="radio" name="know-nino" value="No">
-            No
-          </label>
+      <form>
+
+        {# DO YOU KNOW YOUR NHS NUMBER #}
+        <div class="form-group inline" style="margin-bottom:10px">
+          <div class="form-group form-group-compound" aria-labelledby="represent">
+            <label class="block-label selection-button-radio" data-target="nhs-number" for="know-nino-yes">
+              <input id="know-nino-yes" type="radio" name="know-nino" value="Yes">
+              Yes
+            </label>
+            <label class="block-label selection-button-radio" for="know-nino-no">
+              <input id="know-nino-no" type="radio" name="know-nino" value="No">
+              No
+            </label>
+          </div>
         </div>
-      </div>
 
-      <div class="form-group js-hidden panel panel-border-narrow" id="nhs-number">
-        <label class="form-label" for="full-name">Your NHS Number</label>
-        <input class="form-control" name="nhs-number" type="number">
-      </div>
+        <div class="form-group js-hidden panel panel-border-narrow" id="nhs-number">
+          <label class="form-label" for="full-name">Your National Insurance number</label>
+          <input class="form-control" name="nhs-number" type="number">
+        </div>
 
-      <div class="form-group" style="margin-top:30px;">
-        <a class="button" href="nino">Continue</a>
-      </div>
+        <div class="form-group" style="margin-top:30px;">
+          <a class="button" href="nhs">Continue</a>
+        </div>
+      
+      </form>
 
     </div>
   </div>
 
-{% endblock %}
-
-{% block page_script %}
-<script type="text/javascript">
-  alert('fish');
-</script>
 {% endblock %}
