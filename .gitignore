@@ -4,6 +4,7 @@
 .port.tmp
 public
 docs
+test
 lib/govuk_template.html
 govuk_modules
 node_modules/*

@@ -8,12 +8,14 @@ $path: "/public/images/";
 
 $nhs-blue: #0072c6;
 
-body { background-color:white; }
+body {
+  background-color:white;
+}
 
 #global-header {
   background-color:$nhs-blue;
-  .header-wrapper { 
-    background-color: $nhs-blue; 
+  .header-wrapper {
+    background-color: $nhs-blue;
     .header-global .header-logo { margin-top:8px; margin-left:15px; }
   }
 }
@@ -29,6 +31,7 @@ body { background-color:white; }
   border-color: $light-blue;
   background-color: mix(white, $light-blue, 90%);
 }
+
 .govuk-box-highlight {
-  background-color:$nhs-blue;  
+  background-color:$nhs-blue;
 }
