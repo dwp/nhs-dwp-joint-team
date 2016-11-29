@@ -3,7 +3,7 @@ var express = require('express')
 var session = require('express-session')
 var nunjucks = require('nunjucks')
 var routes = require('./app/routes.js')
-var documentationRoutes = require('./docs/documentation_routes.js')
+// var documentationRoutes = require('./docs/documentation_routes.js')
 var favicon = require('serve-favicon')
 var app = express()
 var documentationApp = express()
@@ -66,21 +66,21 @@ app.use('/public/images/icons', express.static(path.join(__dirname, '/govuk_modu
 app.use(favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images', 'favicon.ico')))
 
 // Set up documentation app
-if (useDocumentation) {
-  var documentationViews = [path.join(__dirname, '/docs/views/'), path.join(__dirname, '/lib/')]
-
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, {
-    autoescape: true,
-    express: documentationApp,
-    noCache: true,
-    watch: true
-  })
-  // Nunjucks filters
-  utils.addNunjucksFilters(nunjucksDocumentationEnv)
-
-  // Set views engine
-  documentationApp.set('view engine', 'html')
-}
+// if (useDocumentation) {
+//   var documentationViews = [path.join(__dirname, '/docs/views/'), path.join(__dirname, '/lib/')]
+//
+//   var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, {
+//     autoescape: true,
+//     express: documentationApp,
+//     noCache: true,
+//     watch: true
+//   })
+//   // Nunjucks filters
+//   utils.addNunjucksFilters(nunjucksDocumentationEnv)
+//
+//   // Set views engine
+//   documentationApp.set('view engine', 'html')
+// }
 
 // Support for parsing data in POSTs
 app.use(bodyParser.json())
