@@ -23,6 +23,7 @@
 {% block body_end %}
   {% include "includes/scripts.html" %}
   {% block page_script %}{% endblock %}
+  {{ data | log }}
 {% endblock %}
 
 {% block content %}

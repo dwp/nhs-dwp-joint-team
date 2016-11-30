@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block page %}
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large" style="margin-bottom:0.8em;">Sign in</h1>
+
+      <form class="" action="consent" method="post">
+
+        {# YOUR NAME! #}
+        <div class="form-group">
+  				<label class="form-label-bold" for="email">Your email address</label>
+  				<input class="form-control" id="email" name="your_email" type="text">
+  			</div>
+
+        {# YOUR PASSWORD! #}
+        <div class="form-group">
+  				<label class="form-label-bold" for="password">Your password</label>
+  				<input class="form-control" id="password" name="your_password" type="text">
+          <label class="block-label selection-button-checkbox small-checkbox">
+            <input class="" type="checkbox" checked="checked" id="shidepass"><span>Show password</span>
+          </label>
+  			</div>
+
+        {# CONTINUE BUTTON! #}
+        <div class="form-group">
+          <button class="button" href="consent">Continue</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function(e)
+  {
+    var x=0;
+    $('#shidepass').on('click',function(e)
+    {
+      console.log(x); x++;
+      var t = $('#password').attr('type');
+      console.log(t)
+      if (t == 'text') $('#password').attr('type','password');
+      else $('#password').attr('type','text');
+    });
+  });
+</script>
+{% endblock %}

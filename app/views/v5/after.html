@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block page %}
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      
+      <div class="govuk-box-highlight" style="padding:30px 30px">
+        <h1 class="bold-large">
+          {% if  data.ongoing_consent == "Yes" %}
+            Will will fetch your next doctor’s note automatically.
+          {% else %}
+            Will won't fetch your next doctor’s note automatically.
+          {% endif %}
+        </h1>
+      </div>
+
+      <h2 class="heading-medium">What happens next</h2>
+
+      <p>
+      {% if  data.ongoing_consent == "Yes" %}
+        You’ll need to request another doctor’s note from your GP before {{ '' | fortnightplus }} if you’re not able to work.
+      {% else %}
+        You’ll need to get a new doctor’s note by {{ '' | fortnightplus }} if you’re not able to work. You can use this service again to send it to us.
+      {% endif %}
+      </p>
+      
+      {% if  data.ongoing_consent == "Yes" %}
+      <div class="panel panel-border-wide alert-default">If you want to stop us doing this at some point in the future you can come back here and and turn this all off by clicking things.</div>
+      {% endif %}
+
+    </div><!-- row -->
+
+  </div>
+
+
+{% endblock %}

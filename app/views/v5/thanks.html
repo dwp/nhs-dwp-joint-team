@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page %}
+
+  <div class="grid-row">
+        
+    <div class="column-two-thirds">
+              
+      <div class="govuk-box-highlight" style="padding:20px 30px 10px">
+        <h1 class="bold-large">
+          <p class="font-medium">
+            Your doctor’s note has been received<br>
+          </p>
+          It’s valid until<br />{{ '' | fortnight }}
+        </h1>
+        <p></p>
+      </div>
+
+      <h2 class="heading-medium">Would you like us to fetch your future doctor&rsquo;s notes automatically when they're available?</h2>
+      
+      <form class="form" action="after" method="post">
+      
+        <div class="form-group inline" style="margin-bottom:1em">
+          <div class="form-group form-group-compound">
+            <label class="block-label selection-button-radio" for="ongoing_consent_yes">
+              <input id="ongoing_consent_yes" type="radio" name="ongoing_consent" value="Yes">
+              Yes
+            </label>
+            <label class="block-label selection-button-radio" for="ongoing_consent_no">
+              <input id="ongoing_consent_no" type="radio" name="ongoing_consent" value="No">
+              No
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-group" style="margin-top:20px">
+          <input type="submit" class="button" value="Continue">
+        </div>
+      
+      </form>
+
+    </div><!-- row -->
+
+  </div>
+
+
+{% endblock %}

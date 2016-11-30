@@ -8,22 +8,22 @@ module.exports = function (env) {
    * @type {Object}
    */
   var filters = {}
-  
+
   filters.today = function()
   {
     return moment().format("Do MMMM YYYY");
   }
-  
+
   filters.fortnight = function()
   {
     return moment().add(2,'weeks').format("Do MMMM YYYY");
   }
-  
+
   filters.fortnightplus = function()
   {
     return moment().add(15,'days').format("Do MMMM YYYY");
   }
-  
+
   filters.beforeNow = function(number,type)
   {
     return moment().subtract(number,type).format("Do MMMM YYYY");
