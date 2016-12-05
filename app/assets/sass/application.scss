@@ -8,6 +8,9 @@ $path: "/public/images/";
 
 // Take a look at in app/assets/sass/patterns/ to see which files are imported.
 @import 'patterns/check-your-answers';
+@import 'inc/alerts';
+@import 'inc/clearfix';
+@import 'inc/small-checkbox';
 
 // Related items
 // (These styles will be moved to GOV.UK elements, duplicating here for now.)
@@ -48,11 +51,6 @@ strong {font-weight:700}
   }
 }
 
-.alert-default {
-  border-color: $light-blue;
-  background-color: mix(white, $light-blue, 90%);
-}
-
 .govuk-box-highlight {
   padding-bottom:60px;
 }
@@ -61,20 +59,6 @@ strong {font-weight:700}
     margin-bottom:10px;
   }
 }
-
-.clearfix:after {
-     visibility: hidden;
-     display: block;
-     font-size: 0;
-     content: " ";
-     clear: both;
-     height: 0;
-     }
-.clearfix { display: inline-block; }
-/* start commented backslash hack \*/
-* html .clearfix { height: 1%; }
-.clearfix { display: block; }
-/* close commented backslash hack */
 
 .spaced-number {
   letter-spacing:5px;
@@ -92,47 +76,18 @@ strong {font-weight:700}
   }
 }
 
-.js-enabled .block-label.small-checkbox {
-
-  &.selection-button-checkbox::before {
-    content: "";
-    border: 2px solid;
-    background: transparent;
-    width: 17px;
-    height: 17px;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  padding-left:30px;
-  padding-top:2px;
+.keyline {
+  border-bottom:1px solid $grey-2;
+}
+table.index {
+  p {font-size:0.8em;}
+  td {vertical-align: top}
+  h2 {margin-top:0;}
+  td:last-child { vertical-align:bottom;}
+}
+.text-sm {
   font-size:16px;
-  float:none;
-  margin-top:10px;
-  
-  &.selection-button-checkbox::after {
-      content: "";
-      border: solid;
-      border-width: 0 0 4px 4px;
-      background: transparent;
-      width: 8px;
-      height: 4px;
-      position: absolute;
-      top: 5px;
-      left: 4px;
-      -moz-transform: rotate(-45deg); // Firefox 15 compatibility
-      -o-transform: rotate(-45deg); // Opera 12.0 compatibility
-      -webkit-transform: rotate(-45deg); // Safari 8 compatibility
-      -ms-transform: rotate(-45deg); // IE9 compatibility
-      transform: rotate(-45deg);
-      @include opacity(0);
-    }
-  
-  &.selection-button-checkbox {
-      &.selected::after {
-        @include opacity(1);
-      }
-    }  
-    
+}
+.nobr {
+  white-space: nowrap;
 }

@@ -1,39 +1,37 @@
 {% extends "nhs-layout.html" %}
 
 {% block page %}
-
   <div class="grid-row">
     <div class="column-two-thirds">
-        <h2 class="heading-large">Your doctor’s notes</h2>
-        
-        <div class="sicknote">
-          <h3 class="heading heading-medium">{{ 5 | beforeNow('days') }}</h3>
-          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
-          <a href="note" class="button">View details</a>
+      
+      <h1 class="heading-large" style="margin-bottom:0.8em;">Your doctor’s notes</h1>
+
+      <h2 class="heading-medium" style="margin-bottom:0.8em;">Sign in</h2>
+
+      <form action="yournotes" method="post">
+
+        {# YOUR NAME! #}
+        <div class="form-group">
+          <label class="form-label-bold" for="email">Your email address</label>
+          <input class="form-control" id="email" name="your_email" type="text">
         </div>
-        
-        <div class="sicknote">
-          <h3 class="heading heading-medium">{{ 35 | beforeNow('days') }}</h3>
-          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
-          <a href="note" class="button">View details</a>
+
+        {# YOUR PASSWORD! #}
+        <div class="form-group">
+          <label class="form-label-bold" for="password">Your password</label>
+          <input class="form-control" id="password" name="your_password" type="text">
+          <label class="block-label selection-button-checkbox small-checkbox">
+            <input class="" type="checkbox" checked="checked" id="shidepass"><span>Show password</span>
+          </label>
         </div>
-        
-        <div class="sicknote">
-          <h3 class="heading heading-medium">{{ 45 | beforeNow('days') }}</h3>
-          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
-          <a href="note" class="button">View details</a>
+
+        {# CONTINUE BUTTON! #}
+        <div class="form-group" style="margin-top:1em">
+          <button class="button" href="consent">Continue</button>
         </div>
+
+      </form>
         
-        <div class="sicknote">
-          <h3 class="heading heading-medium">{{ 60 | beforeNow('days') }}</h3>
-          <p>Park Road Surgery, 3 Squirrel Green, Greenfield, BD8 9QT</p>
-          <a href="note" class="button">View details</a>
-        </div>
     </div><!-- column -->
   </div><!-- row -->
-
-  
-  
-  
-
 {% endblock %}

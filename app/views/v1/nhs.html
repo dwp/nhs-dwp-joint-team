@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block page %}
-      
+
   <div class="govuk-box-permission">
     <div class="grid-row">
         <div class="column-one-third">
@@ -42,13 +42,13 @@
       {
         $("form").attr('action','confirm');
         $("form").submit();
-      } 
+      }
       if ($('#ongoing_consent_no').prop('checked'))
       {
-        $("form").attr('action','confirm_not');
+        $("form").attr('action','no_consent');
         $("form").submit();
-      } 
-      
+      }
+
     });
   });
 </script>

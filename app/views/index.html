@@ -3,19 +3,54 @@
 {% block content %}
 
 <main id="content" role="main">
+
   <div class="grid-row">
     <div class="column-two-thirds">
 
       <h1 class="heading-xlarge"> {{ serviceName }} </h1>
       {{ releaseVersion | log }}
-      
-      <ul class="bullets index_list">
-      {% for item in range(1,6) %}
-        <li><a href="v{{item}}/">Version {{item}}</a></li>
-      {% endfor %}
-      
-    </div>
-  </div>
+
+      <table class="index">
+        <tr>
+          <td>
+            <h2 class="heading-small">Version 5</h2>
+            <p>Simple flow offering an "ongoing consent" question at the end allowing us to test users reactions to and understanding of this.</p>
+          </td>
+          <td><p><a href="/v5/" class="">prototype</a></p></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="heading-small">Version 4</h2>
+            <p>First attempt at a NHS-centric experience. Allowing users to see all their sick notes and allowing them to share them with DWP individually.</p>
+          </td>
+          <td><p><a href="/v4/" class="">prototype</a></p></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="heading-small">Version 3</h2>
+            <p>Opposite to V1. Asking for a lot of extra information to test what people's reaction is to having to give this as part of the process. The Yes/No questions around NHS number and NI number in particular are focussed on gathering users reactions rather than representing a realistic experience.</p>
+          </td>
+          <td><p><a href="/v3/" class="">prototype</a></p></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="heading-small">Version 2</h2>
+            <p>Introduces Verify as an identity step and shows the user their sick note for them to confirm it's correct before "sending".</p>
+          </td>
+          <td><p><a href="/v2/" class="">prototype</a></p></td>
+        </tr>
+        <tr>
+          <td>
+            <h2 class="heading-small">Version 1</h2>
+            <p>A deliberately unrealistically simple version to test our assumption that users expect us to share data with almost no interaction or oversight from them.</p>
+          </td>
+          <td><p><a href="/v1/" class="">prototype</a></p></td>
+        </tr>
+      </table>
+
+    </div><!-- column -->
+  </div><!-- row -->
+
 </main>
 
 {% endblock %}
