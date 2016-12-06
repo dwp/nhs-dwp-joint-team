@@ -15,6 +15,12 @@ router.get('/reset', function(req, res, next)
   next();
 });
 
+router.get(/(v\d$)/,function(req,res)
+{
+  var path = (req.params[0]);
+  res.redirect(path+'/');
+});
+
 /*
   Redirect all posts to gets.
 */
