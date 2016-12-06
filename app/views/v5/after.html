@@ -6,27 +6,25 @@
 
     <div class="column-two-thirds">
       
+      {% if  data.ongoing_consent != "No" %}
       <div class="govuk-box-highlight" style="padding:30px 30px">
-        <h1 class="bold-large">
-          {% if  data.ongoing_consent == "Yes" %}
-            Will will fetch your next doctor’s note automatically.
-          {% else %}
-            Will won't fetch your next doctor’s note automatically.
-          {% endif %}
-        </h1>
+        <h1 class="bold-large"> DWP will get your next doctor’s note automatically </h1>
       </div>
+      {% else %}
+        <h1 class="heading-large">We can't fetch your doctor’s note without your consent.</h1>
+      {% endif %}
 
       <h2 class="heading-medium">What happens next</h2>
 
       <p>
-      {% if  data.ongoing_consent == "Yes" %}
-        You’ll need to request another doctor’s note from your GP before {{ '' | fortnightplus }} if you’re not able to work.
+      {% if  data.ongoing_consent != "No" %}
+        You’ll need to get another doctor’s note from your GP before {{ '' | fortnightplus }} if you’re still not well.
       {% else %}
         You’ll need to get a new doctor’s note by {{ '' | fortnightplus }} if you’re not able to work. You can use this service again to send it to us.
       {% endif %}
       </p>
       
-      {% if  data.ongoing_consent == "Yes" %}
+      {% if  data.ongoing_consent != "No" %}
       <div class="panel panel-border-wide alert-default">If you want to stop us doing this at some point in the future you can come back here and and turn this all off by clicking things.</div>
       {% endif %}
 

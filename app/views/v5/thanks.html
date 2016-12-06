@@ -16,19 +16,24 @@
         <p></p>
       </div>
 
-      <h2 class="heading-medium">Would you like us to fetch your future doctor&rsquo;s notes automatically when they're available?</h2>
+      <h2 class="heading-medium">If you’re still unwell, DWP can get your doctor’s notes from the NHS without you having to do anything.</h2>
+      <p>You can consent to DWP getting just the next doctor’s note, or any doctor’s notes needed throughout your Employment and Support Allowance (ESA) claim.</p>
       
       <form class="form" action="after" method="post">
       
-        <div class="form-group inline" style="margin-bottom:1em">
+        <div class="form-group" style="margin-bottom:1em">
           <div class="form-group form-group-compound">
-            <label class="block-label selection-button-radio" for="ongoing_consent_yes">
-              <input id="ongoing_consent_yes" type="radio" name="ongoing_consent" value="Yes">
-              Yes
+            <label class="block-label selection-button-radio" for="ongoing_consent_yes_one">
+              <input id="ongoing_consent_yes_one" type="radio" name="ongoing_consent" value="YesOne">
+              Yes - Get my next doctor’s note
+            </label>
+            <label class="block-label selection-button-radio" for="ongoing_consent_yes_all">
+              <input id="ongoing_consent_yes_all" type="radio" name="ongoing_consent" value="YesAll">
+              Yes - Get all my doctor’s note whitel I’m claiming ESA
             </label>
             <label class="block-label selection-button-radio" for="ongoing_consent_no">
               <input id="ongoing_consent_no" type="radio" name="ongoing_consent" value="No">
-              No
+              No - I want to send them myself
             </label>
           </div>
         </div>
