@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  ESA consent
+{% endblock %}
+
+{% block page %}
+
+  <div class="secondary-bar">
+   <ul class="external-links">
+     <li class="main-nav-link"><a href="/consent-v1/consent-log-out">Log Out</a></li>
+ 
+   </ul>
+  </div>
+
+  <div class="grid-row">
+
+  <h1 class="heading-large">Consent details</h1>
+    <div class="column-one-quarter">
+      <form action="thanks" method="POST">
+
+      <h2 class="heading-medium">Who</h2>        
+
+      <h3 class="heading-small">ESA - DWP
+
+      </form>
+
+    </div><!-- .column -->
+
+      <div class="column-one-quarter">
+      <h2 class="heading-medium">What</h2>  
+      <h3 class="heading-small">appointee</h2>
+      </div><!-- .column- -->
+
+      <div class="column-one-quarter">
+      <h2 class="heading-medium">Last update</h2>  
+      <h3 class="heading-small">01.01.2017</h2>
+      </div><!-- .column- -->
+
+      <div class="column-one-quarter">
+        <h2 class="heading-medium">Status</h2>
+        <form>
+          <div class="form-group">
+            <fieldset class="inline">
+
+              <legend class="visually-hidden">Remove or apply the consent</legend>
+
+              <label class="block-label selection-button-radio" for="radio-inline-1">
+                <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                Consent
+              </label>
+              <label class="block-label selection-button-radio" for="radio-inline-2">
+                <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                Revoke
+              </label>
+
+            </fieldset>
+          </div>
+        </form>
+    
+      </div><!-- .column- -->
+
+<div class="form-group" style="margin-top:1em">
+          <input type="submit" class="button" name="bob" value="Save and continue">
+      </div>
+  </div>
+
+{% endblock %}

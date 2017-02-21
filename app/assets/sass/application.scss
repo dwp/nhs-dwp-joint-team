@@ -91,3 +91,10 @@ table.index {
 .nobr {
   white-space: nowrap;
 }
+
+.secondary-bar {
+ float: right;
+ li {
+ display:inline-block;
+ }
+}
