@@ -1,26 +1,39 @@
 {% extends "layout.html" %}
 {% block page_title %}
-  ESA consent
+  Consent log in
 {% endblock %}
 
 {% block page %}
 
   <div class="grid-row">
     <div class="column-two-thirds">
+      <h1 class="heading-large">Sign in</h1>
 
-      <h1 class="heading-large">Log in</h1>
-
-      <form action="thanks" method="POST">
-
-        <p>You can log back in using your GOV UK verify account</p>
+      <form class="" action="consent" method="post">
 
         
+        <div class="form-group">
+          <label class="form-label-bold" for="email">Your email address</label>
+          <input class="form-control" id="email" name="your_email" type="text">
+        </div>
 
-        
+       
+        <div class="form-group">
+          <label class="form-label-bold" for="password">Your password</label>
+          <input class="form-control" id="password" name="your_password" type="text">
+          <label class="block-label selection-button-checkbox small-checkbox">
+            <input class="" type="checkbox" checked="checked" id="shidepass"><span>Show password</span>
+          </label>
+        </div>
+
+     
+        <div class="form-group">
+          <button class="button" href="/consent-v1/consent-summary">Continue</button>
+        </div>
 
       </form>
 
-    </div><!-- .column- -->
+    </div>
   </div>
 
 {% endblock %}
