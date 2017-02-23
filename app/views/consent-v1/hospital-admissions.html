@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Hospital admission history
+{% endblock %}
+
+{% block page %}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="heading-large">Your consent history</h1>
+
+      <h2 class="heading-medium">Hospital services - admissions</h2>
+
+      <div class="form-group">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Consent reason</th>
+              <th scope="col">Date covered</th>
+              <th scope="col">Date shared</th>
+              <th scope="col">Shared by</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            <tr>
+             <td>ESA application</td>
+              <td>17.11.2016 - 30.11.2016</td>
+              <td>17.11.2016</td>
+              <td>NHS - DWP</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="button" href="/consent-v1/consent-summary" value="Back to Summary">
+        </div>
+        
+
+      </form>
+
+    </div><!-- .column- -->
+  </div>
+
+{% endblock %}
