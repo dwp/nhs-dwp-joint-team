@@ -25,16 +25,16 @@ router.get(/(v\d$)/,function(req,res)
   Redirect all posts to gets.
 */
 router.post(/^\/([^.]+)$/, function (req, res) {
-  
+
   var path = (req.params[0]);
   req.session.data = req.session.data || {};
   req.session.data = merge(req.session.data,req.body);
-  
+
   var data;
-  
+
   if (Object.keys(req.query).length !== 0) { data = req.query; }
   else if (Object.keys(req.body).length !== 0) { data = req.body; }
-  
+
   if (data !== undefined) {
     for (var key in data) {
       var match = data[key].match(/^redirect\(([^\)]*)\)/);
@@ -44,7 +44,7 @@ router.post(/^\/([^.]+)$/, function (req, res) {
       }
     }
   }
-  
+
   res.redirect('/'+path);
 });
 
