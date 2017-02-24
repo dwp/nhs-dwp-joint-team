@@ -14,54 +14,87 @@
 
   <div class="grid-row">
 
-  <h1 class="heading-large">Consent details</h1>
-    <div class="column-one-quarter">
-      <form action="thanks" method="POST">
+    <div class="column-full">
 
-      <h2 class="heading-medium">Who</h2>        
+      <h1 class="heading-large">Sicknote consent details</h1>
+    
+      
 
-      <h3 class="heading-small">ESA - DWP
 
-      </form>
-
-    </div><!-- .column -->
-
-      <div class="column-one-quarter">
-      <h2 class="heading-medium">What</h2>  
-      <h3 class="heading-small">sicknote</h2>
-      </div><!-- .column- -->
-
-      <div class="column-one-quarter">
-      <h2 class="heading-medium">Date</h2>  
-      <h3 class="heading-small">01.01.2017</h2>
-      </div><!-- .column- -->
-
-      <div class="column-one-quarter">
-        <h2 class="heading-medium">Status</h2>
-        <form>
+      <div class="form-group">
+            <fieldset>
+              <legend class="form-label-bold">First day of sicknote</legend>
+              
+              <div class="form-date">
+                
+                <div class="form-group form-group-day">
+                  <label for="dob-day">Day</label>
+                  <input type="text" class="form-control" id="dob-day" maxlength="2" name="dob-day">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="dob-month">Month</label>
+                  <input type="text" class="form-control" id="dob-month" maxlength="2" name="dob-month">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="dob-year">Year</label>
+                  <input type="text" class="form-control" id="dob-year" maxlength="4" name="dob-year">
+                </div>
+              </div>
+            </fieldset>
+          </div>
           <div class="form-group">
-            <fieldset class="inline">
+            <fieldset>
+              <legend class="form-label-bold">Last day of sicknote</legend>
+              
+              <div class="form-date">
+                
+                <div class="form-group form-group-day">
+                  <label for="dob-day">Day</label>
+                  <input type="text" class="form-control" id="dob-day" maxlength="2" name="dob-day">
+                </div>
+                <div class="form-group form-group-month">
+                  <label for="dob-month">Month</label>
+                  <input type="text" class="form-control" id="dob-month" maxlength="2" name="dob-month">
+                </div>
+                <div class="form-group form-group-year">
+                  <label for="dob-year">Year</label>
+                  <input type="text" class="form-control" id="dob-year" maxlength="4" name="dob-year">
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
-              <legend class="visually-hidden">Do you want to change</legend>
-
-              <label class="block-label selection-button-radio" for="radio-inline-1">
-                <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
-                Consent
+          <div class="form-group">
+              <label class="form-label-bold" for="reasons" id="">
+                Details of condition
               </label>
-              <label class="block-label selection-button-radio" for="radio-inline-2">
-                <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
-                Revoke
+             
+              <textarea class="form-control" id="reasons" name="reasons"></textarea>
+          </div>
+
+          <form>
+            <fieldset>
+
+              <label class="block-label selection-button-checkbox" for="sicknote-consent-1">
+                <input id="sicknote-consent-1" name="consent" type="checkbox" value="agree-consent">
+                Agree consent for NHS to share my sicknote with DWP
+              </label>
+              <label class="block-label selection-button-checkbox" for="sicknote-consent-2">
+                <input id="sicknote-consent-2" name="consent" type="checkbox" value="remove-consent">
+                Remove consent for NHS to share my sicknote with DWP
               </label>
 
             </fieldset>
-          </div>
-        </form>
+          </form>
+
+        <div class="form-group">
+          <a class="button " href="/consent-v1/consent-summary" role="button">Save and continue</a>
+        </div>
+    
+        
     
       </div><!-- .column- -->
 
-<div class="form-group">
-          <input type="submit" class="button" href="/consent-v1/consent-summary" value="Save and continue">
-      </div>
-  </div>
+
 
 {% endblock %}
