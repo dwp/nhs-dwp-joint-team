@@ -50,7 +50,7 @@
 .tt-highlight {
   font: inherit !important;
   // border-bottom: 1px solid $secondary-text-colour;
-  background-color: $highlight-colour;
+  // background-color: $highlight-colour;
 }
 
 .tt-suggestion {
@@ -72,7 +72,7 @@
 
 .tt-selectable:hover .tt-highlight {
   // border-bottom: 1px solid $white !important;
-  background-color: $link-hover-colour;
+  // background-color: $link-hover-colour;
 }
 
 .tt-suggestion.tt-cursor {
