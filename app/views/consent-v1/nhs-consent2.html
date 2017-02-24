@@ -50,19 +50,21 @@
               </div>
 
               <form>
-            <fieldset>
+                <div class="form-group">
+                  <fieldset class="inline">
 
-              <label class="block-label selection-button-checkbox" for="sicknote-consent-1">
-                <input id="sicknote-consent-1" name="consent" type="checkbox" value="agree-consent">
-                Agree consent for NHS to share my admission details with DWP
-              </label>
-              <label class="block-label selection-button-checkbox" for="sicknote-consent-2">
-                <input id="sicknote-consent-2" name="consent" type="checkbox" value="remove-consent">
-                Remove consent for NHS to share my admission detials with DWP
-              </label>
+                    <label class="block-label selection-button-radio" for="radio-inline-1">
+                      <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Agree">
+                      Agree consent for NHS to share my admission details with DWP
+                    </label>
+                    <label class="block-label selection-button-radio" for="radio-inline-2">
+                      <input id="radio-inline-2" type="radio" name="radio-inline-group" value="Remove">
+                      Remove consent for NHS to share my admission details with DWP
+                    </label>
 
-            </fieldset>
-          </form>
+                  </fieldset>
+                </div>
+              </form>
 
             <div class="form-group">
               <a class="button " href="/consent-v1/consent-summary" role="button">Save and continue</a>
