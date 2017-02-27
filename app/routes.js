@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var merge = require('merge')
+var tog = require('../lib/tog.js')
 
 // Route index page
 router.get('/', function (req, res) {
@@ -24,7 +25,7 @@ router.get(/(v\d$)/,function(req,res)
 /*
   Redirect all posts to gets.
 */
-router.post(/^\/([^.]+)$/, function (req, res) {
+router.post(/^\/([^.]+)$/, function (req, res, next) {
 
   var path = (req.params[0]);
   req.session.data = req.session.data || {};
@@ -35,17 +36,25 @@ router.post(/^\/([^.]+)$/, function (req, res) {
   if (Object.keys(req.query).length !== 0) { data = req.query; }
   else if (Object.keys(req.body).length !== 0) { data = req.body; }
 
-  if (data !== undefined) {
+  var redirect_path = "/"+path;
+
+  if (data !== undefined)
+  {
     for (var key in data) {
-      var match = data[key].match(/^redirect\(([^\)]*)\)/);
-      if (match !== null ) {
-        console.log("redirecting to: "+match[1]);
-        res.redirect(match[1]);
+      console.log(data[key]);
+      if (typeof data[key] == 'string')
+      {
+        var match = data[key].match(/^redirect\(([^\)]*)\)/);
+        if (match !== null )
+        {
+          console.log("redirecting to: "+match[1]);
+          redirect_path = match[1];
+        }
       }
     }
   }
 
-  res.redirect('/'+path);
+  res.redirect(redirect_path);
 });
 
 // add your routes here
