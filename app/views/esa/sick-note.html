@@ -44,15 +44,16 @@
           </div><!-- panel -->
 
           <div class="panel js-hidden" id="no-fitnote">
-            <p>You must get a sick note from your GP or medical professional.</p>
-            <p>If you agree, once you have a sick note, the Department for Work and Pensions can get it directly from the your doctor.</p>
+            <p>To claim Employment and Support Allowance you’ll need to get a sick note from your doctor. </p>
+            <p>When you get it you can either post it in, or DWP can be access it directly from your NHS records. </p>
+            <p>No other information will be accessed other than what’s on the sick note.</p>
             <fieldset class=" form-group">
-              <p class="form-label-bold">Do you agree? </p>
+              <p class="form-label-bold">Do you want to do that? </p>
               <label class="block-label" for="future-consent-yes">
-                <input id="future-consent-yes" type="radio" name="future-consent" value="redirect(sick-note-futureget)"> Yes - of course, go for it!
+                <input id="future-consent-yes" type="radio" name="future-consent" value="redirect(sick-note-futureget)"> Yes, get it direct from the NHS
               </label>
               <label class="block-label" for="future-consent-no" data-target="then_post_it">
-                <input id="future-consent-no" type="radio" name="future-consent" value="no"> No - how dare you even suggest such a thing.
+                <input id="future-consent-no" type="radio" name="future-consent" value="no"> No, you want to post it in yourself 
               </label>
             </fieldset>
             <div class="panel js-hidden" id="then_post_it">
