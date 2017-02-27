@@ -1,0 +1,64 @@
+{% extends "esa/layout.html" %}
+
+{% block page_title %} Fit note {% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "../includes/phase_banner_beta.html" %}
+
+  <form action="claim-date" method="post" class="form">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="health-conditions">Back</a>
+
+        <header>
+
+          <div class="panel panel-border-wide alert-success" id="done" style=" margin-top:20px;">
+            <p>Your sick note will be fetched when it's ready.</p>
+          </div>
+
+        </header>
+
+        <div class="form-group" id="ongoing-question">
+
+          <h2 class="heading-medium" style="margin-top:20px">DWP can get future sick notes from the NHS without you having to do anything.</h2>
+          <p>You can consent to DWP getting just the next sick note, or any sick notes needed throughout your Employment and Support Allowance (ESA) claim.</p>
+
+          <div class="form-group" style="margin-bottom:1em">
+            <div class="form-group form-group-compound">
+              <label class="block-label selection-button-radio" for="ongoing_consent_yes_one">
+                <input id="ongoing_consent_yes_one" type="radio" name="ongoing_consent" value="redirect(after_yes)">
+                Yes - Get my next sick note
+              </label>
+              <label class="block-label selection-button-radio" for="ongoing_consent_yes_all">
+                <input id="ongoing_consent_yes_all" type="radio" name="ongoing_consent" value="redirect(after_yes)">
+                Yes - Get all my sick note while I’m claiming ESA
+              </label>
+              <label class="block-label selection-button-radio" for="ongoing_consent_no">
+                <input id="ongoing_consent_no" type="radio" name="ongoing_consent" value="redirect(after_no)">
+                No - Don’t get my sick note without me telling you to
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:20px">
+            <input type="submit" class="button" value="Continue">
+          </div>
+
+        </div><!-- #ongoing-question -->
+
+      </div>
+      <div class="column-one-third">
+        {% include "esa/help.html" %}
+      </div>
+    </div>
+  </form>
+</main>
+{% endblock %}
+
+{% block page_script %}
+
+{% endblock %}
