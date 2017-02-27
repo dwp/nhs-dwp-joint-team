@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  GOV UK Verify
+{% endblock %}
+
+{% block page %}
+
+  <main id="content" role="main">
+  
+
+  
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-xlarge">View your consent</h1>
+      <div class="panel panel-indent">
+        <h2 class="verify-heading">
+          <img src="/public/images/govuk-verify.png" class="verify-logo"><strong>GOV.UK</strong><br>Verify
+        </h2>
+      </div>
+      <p>This service uses GOV.UK Verify to check your identity.</p>
+      <a class="button" href="/consent-v1/consent-log-in">Continue</a>
+    </div>
+  </div>
+  
+
+</main>
+
+{% endblock %}
