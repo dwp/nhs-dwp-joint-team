@@ -1,0 +1,84 @@
+{% extends "esa/layout.html" %}
+
+{% block page_title %} Sick note {% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "../includes/phase_banner_beta.html" %}
+  <form action="claim-date" method="post" class="form">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="health-conditions">Back</a>
+
+        <header>
+          <h1 class="form-title heading-large">Sick note</h1>
+        </header>
+
+        <div class="form-group">
+
+          <fieldset class="inline form-group">
+            <p class="form-label-bold" for="partner">Do you have a sick note? </p>
+            <label class="block-label" data-target="fitnote" for="radio-inline-1">
+              <input id="radio-inline-1" type="radio" name="partner" value="Yes"> Yes
+            </label>
+            <label class="block-label" data-target="no-fitnote" for="radio-inline-2">
+              <input id="radio-inline-2" type="radio" name="partner" value="No"> No
+            </label>
+          </fieldset>
+
+          <div class="panel js-hidden" id="fitnote">
+            <div class="text" style="margin-bottom:1em;">
+              If you agree, the Department for Work and Pensions will get your doctor&rsquo;s note directly from the NHS.
+            </div>
+            <fieldset class="form-group">
+              <p class="form-label-bold" for="partner">Do you agree? </p>
+              <label class="block-label" for="give-consent-yes">
+                <input id="give-consent-yes" type="radio" name="consent" value="redirect(sick-note-autoget)"> Yes - of course, go for it!
+              </label>
+              <label class="block-label" for="give-consent-no">
+                <input id="give-consent-no" type="radio" name="consent" value="redirect(sick-note-manual)"> No - how dare you even suggest such a thing.
+              </label>
+            </fieldset>
+          </div><!-- panel -->
+
+          <div class="panel js-hidden" id="no-fitnote">
+            <p>You must get a sick note from your GP or medical professional.</p>
+            <p>If you agree, once you have a sick note, the Department for Work and Pensions can get it directly from the your doctor.</p>
+            <fieldset class=" form-group">
+              <p class="form-label-bold">Do you agree? </p>
+              <label class="block-label" for="future-consent-yes">
+                <input id="future-consent-yes" type="radio" name="future-consent" value="redirect(sick-note-futureget)"> Yes - of course, go for it!
+              </label>
+              <label class="block-label" for="future-consent-no" data-target="then_post_it">
+                <input id="future-consent-no" type="radio" name="future-consent" value="no"> No - how dare you even suggest such a thing.
+              </label>
+            </fieldset>
+            <div class="panel js-hidden" id="then_post_it">
+              <p>Once you have your sick note post it to DWP at the following address.</p>
+              <p>
+                1 DWP House<br />
+                DWP Road<br />
+                DWPland<br />
+                DP3 4FU
+              </p>
+            </div>
+          </div>
+
+        </div><!-- form-group -->
+        <!-- Primary buttons, secondary links -->
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+        {# <div class="form-group">
+          <p><a href="exit">Save and come back later</a></p>
+        </div> #}
+      </div>
+      <div class="column-one-third">
+        {% include "esa/help.html" %}
+      </div>
+    </div>
+  </form>
+</main>
+{% endblock %}
