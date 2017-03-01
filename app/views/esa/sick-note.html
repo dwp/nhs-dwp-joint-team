@@ -18,7 +18,7 @@
         <div class="form-group">
 
           <fieldset class="inline form-group">
-    
+
             <label class="block-label" data-target="fitnote" for="radio-inline-1">
               <input id="radio-inline-1" type="radio" name="partner" value="Yes"> Yes
             </label>
@@ -37,10 +37,18 @@
               <label class="block-label" for="give-consent-yes">
                 <input id="give-consent-yes" type="radio" name="consent" value="redirect(sick-note-autoget)"> Yes, get it directly from the NHS
               </label>
-              <label class="block-label" for="give-consent-no">
-                <input id="give-consent-no" type="radio" name="consent" value="redirect(sick-note-manual)"> No, I want to post it in myself 
+              <label class="block-label" for="give-consent-no" data-target="then_post_it_2">
+                <input id="give-consent-no" type="radio" name="consent" value="redirect(sick-note-manual)"> No, I want to post it in myself
               </label>
             </fieldset>
+            <div class="panel js-hidden" id="then_post_it_2">
+              <p>Post your sick note to:</p>
+              <p>
+                Mail Handling Site A<br />
+                Wolverhampton<br />
+                WV98 2AJ
+              </p>
+            </div>
           </div><!-- panel -->
 
           <div class="panel js-hidden" id="no-fitnote">
@@ -53,7 +61,7 @@
                 <input id="future-consent-yes" type="radio" name="future-consent" value="redirect(sick-note-futureget)"> Yes, get it directly from the NHS
               </label>
               <label class="block-label" for="future-consent-no" data-target="then_post_it">
-                <input id="future-consent-no" type="radio" name="future-consent" value="no"> No, I want to post it in myself 
+                <input id="future-consent-no" type="radio" name="future-consent" value="redirect(claim-date)"> No, I want to post it in myself
               </label>
             </fieldset>
             <div class="panel js-hidden" id="then_post_it">
