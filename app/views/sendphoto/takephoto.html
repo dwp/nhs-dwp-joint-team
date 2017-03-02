@@ -1,0 +1,49 @@
+{% extends "sendphoto/layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block body %}
+<div class="blue-border-bottom"></div>
+
+<div class="photo-guide form-group">
+
+    <h1 class="bold-large"> Take a photo </h1>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <ol class="list list-number">
+          <li>Put your fit note on a flat surface like a table.</li>
+          <li>Make sure you're in a well lit place.</li>
+          <li>Hold your phone above the paper, and make sure it's sideways or 'landscape'.</li>
+         
+        </ol>
+      </div>
+      <div class="column-half">
+        <img src="/public/images/guideline-photo-angle-white@2x.png" alt="" width="100%">
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <ol class="list list-number" start="4">
+          <li>Make sure the whole thing is in the photo.</li>
+        </ol>
+      </div>
+      <div class="column-half">
+        <img src="/public/images/guideline-photo-crop-a5-white@2x.png" alt="" width="100%">
+      </div>
+    </div>
+
+    <p> <a href="#" class="button fake-button" id="fake-input">Open camera</a> </p>
+
+    <form action="nino" method="get" style="margin-bottom:30px">
+        <input type="submit" class="button" value="Send" id="startButton">
+    </form>
+
+  </div>
+
+
+
+{% endblock %}

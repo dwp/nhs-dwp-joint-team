@@ -1,0 +1,92 @@
+{% extends "esa/layout.html" %}
+
+{% block page_title %} Fit note {% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "../includes/phase_banner_beta.html" %}
+
+  <form action="claim-date" method="post" class="form">
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="health-conditions">Back</a>
+
+        <header>
+          <h1 class="form-title heading-large" id="page_head">Fetching your sick note&hellip;</h1>
+
+          <div class="panel panel-border-wide alert-success" id="done" style="display:none; margin-top:20px;">
+            <p>Your sick note has been fetched from the NHS</p>
+          </div>
+
+          {# <div class="govuk-box-highlight js-hidden" id="done999">
+            <h1 class="bold-large">Automatic fetchification complete</h1>
+            <br />
+            <p>
+              Sick note found<br>
+              <strong class="heading-medium">12th July 2016 - Park Lane Medical Centre</strong>
+            </p>
+          </div> #}
+
+        </header>
+
+        <div class="form-group">
+
+          <img id="loading" src="/public/images/loading.svg" width="160" height="160" />
+
+          <div id="ongoing-question" style="display:none">
+
+            <p>If you’re still unwell when your sick note runs out, DWP can access your future sick notes automatically, so that you don’t have to keep sending them in. </p>
+            <p class="form-label-bold" for="partner">Do you want DWP to continue to get your sick notes direct from the NHS?</p>
+
+            <div class="form-group" style="margin-bottom:1em">
+              <div class="form-group form-group-compound">
+                <label class="block-label selection-button-radio" for="ongoing_consent_yes_one">
+                  <input id="ongoing_consent_yes_one" type="radio" name="ongoing_consent" value="yes_one">
+                  Yes, if I'm still unwell get my next sick note directly from the NHS
+                </label>
+                <label class="block-label selection-button-radio" for="ongoing_consent_yes_all">
+                  <input id="ongoing_consent_yes_all" type="radio" name="ongoing_consent" value="yes_all">
+                  Yes, get all my sick notes directly from the NHS while I'm claiming ESA
+                </label>
+                <label class="block-label selection-button-radio" for="ongoing_consent_no">
+                  <input id="ongoing_consent_no" type="radio" name="ongoing_consent" value="no">
+                  No, don't get my future sick notes directly from the NHS
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top:20px">
+              <input type="submit" class="button" value="Continue">
+            </div>
+
+          </div><!-- #ongoing-question -->
+
+        </div><!-- form-group -->
+
+      </div>
+      <div class="column-one-third">
+        {% include "esa/help.html" %}
+      </div>
+    </div>
+  </form>
+</main>
+{% endblock %}
+
+{% block page_script %}
+<script type="text/javascript">
+  $(document).on('ready',function()
+  {
+    $('#done').hide();
+    setTimeout(function()
+    {
+      $('#page_head').hide()
+      $('#loading').hide();
+      $('#done').show();
+      $('#ongoing-question').show();
+    },1*1000);
+  });
+</script>
+{% endblock %}

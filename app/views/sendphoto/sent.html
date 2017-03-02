@@ -1,0 +1,32 @@
+{% extends "sendphoto/layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block body %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+<div class="grid-row">
+  <div class="column-two-thirds">
+        <div class="govuk-box-highlight">
+            <h1 class="bold-xlarge"><img class="icon" src="/public/images/icon-tick@2x.png" alt="An image of a tick"/>Sent</h1>
+        </div>
+
+        <h2 class="bold-medium heading-medium">What happens next</h2>
+        <p>Your fit note should be processed within 24 hours.</p>
+        <p>If you've given a mobile number you'll get a text message to confirm that your fit note's been processed.</p>
+        {# <ul class="list list-bullet">
+            <li></li>
+            <li>remind you to send another if you're still not well</li>
+        </ul> #}
+        <p>You don't need to call to check it'd processed - if there's a problem you'll be contacted.</p>
+
+        <p><a href="index">Send another fit note</a></p>
+    </div>
+
+
+</main>
+
+{% endblock %}
