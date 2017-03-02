@@ -41,7 +41,6 @@ router.post(/^\/([^.]+)$/, function (req, res, next) {
   if (data !== undefined)
   {
     for (var key in data) {
-      console.log(data[key]);
       if (typeof data[key] == 'string')
       {
         var match = data[key].match(/^redirect\(([^\)]*)\)/);

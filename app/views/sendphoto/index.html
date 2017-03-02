@@ -1,0 +1,34 @@
+{% extends "sendphoto/layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block body %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <h1 class="heading-medium">Use this service to send in a copy of your fit note for your Employment and Support Allowance claim</h1>
+    </div>
+</div>
+
+<div class="grid-row">
+    <div class="column-full">
+        <p>You will need:</p>
+        <ul class="list list-bullet">
+            <li>your fit note</li>
+            <li>your National Insurance number</li>
+        </ul>
+
+        <form action="takephoto" method="get">
+            <input type="submit" class="button primary-button" value="I have these" id="startButton">
+        </form>
+
+    </div>
+</div>
+</main>
+
+{% endblock %}

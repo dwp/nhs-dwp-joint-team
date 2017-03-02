@@ -1,0 +1,13 @@
+@import "inc/photo-guide";
+
+.icon {
+  height:1em;
+  position:relative;
+  top:0.1em;
+  display:inline-block;
+  margin-right:0.3em;
+}
+
+.phase-banner-beta .phase-tag {
+  background-color:$govuk-blue;
+}
