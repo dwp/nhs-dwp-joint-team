@@ -7,68 +7,80 @@
 
 <main id="content" role="main">
 
-<div class="secondary-bar">
-   <ul class="external-links">
-     <li class="main-nav-link"><a href="/consent-v1/consent-log-out">Log Out</a></li>
- 
-   </ul>
- </div>
-
 <div class="grid-row">
     <div class="column-full">
 
-      <h1 class="heading-large">Consent summary</h1>
+      <h1 class="heading-large">My consents</h1>
 
       <div class="form-group">
         <table>
           <thead>
             <tr>
-              <th scope="col">Your consent to</th>
-              <th scope="col">Consent history</th>
-              <th scope="col">Current state</th>
-              <th scope="col">Update</th>
+              <th scope="col">Consent to</th>
+              <th scope="col">Details</th>
+              <th scope="col">Status</th>
+              <th scope="col">Change</th>
+              <th scope="col">History</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Sicknote</td>
+              <td>sick note</td>
+            
               <td class="change-answer">
-                <a href="/consent-v1/sicknote-history">
+                <a href="/consent-v1/sicknote-detail">
                   View <span class="visuallyhidden">Exporter name</span>
                 </a>
               </td>
               <td>consent given</td>
               <td>
-                <a href="/consent-v1/esa-consent1">
-                  Change <span class="visuallyhidden">Exporter name</span>
+                <a href="/consent-v1/sicknote-update">
+                  Update <span class="visuallyhidden">Exporter name</span>
+                </a>
+              </td>
+              <td>
+                <a href="/consent-v1/sicknote-history">
+                  View <span class="visuallyhidden">Exporter name</span>
                 </a>
               </td>
             </tr>
             <tr>
-              <td>Hospital services - discharges</td>
+              <td>Hospital services</td>
+              
               <td class="change-answer">
-                <a href="/consent-v1/hospital-discharges">
+                <a href="/consent-v1/hospital-services-detail">
+                  View <span class="visuallyhidden">NHS - services</span>
+                </a>
+              </td>
+              <td>consent expired</td>
+              <td class="change-answer">
+                <a href="/consent-v1/hospital-services-update">
+                  Update <span class="visuallyhidden">NHS - services</span>
+                </a>
+              </td>
+              <td>
+                <a href="/consent-v1/hospital-services-history">
+                  View <span class="visuallyhidden">Exporter name</span>
+                </a>
+              </td>
+            </tr>
+            <tr>
+             <td>Prescriptions</td>
+             
+              <td class="change-answer">
+                <a href="/consent-v1/prescription-details">
                   View <span class="visuallyhidden">NHS - services</span>
                 </a>
               </td>
               <td>consent given</td>
               <td class="change-answer">
-                <a href="/consent-v1/nhs-consent1">
-                  Change <span class="visuallyhidden">NHS - services</span>
+                <a href="/consent-v1/prescription-update">
+                  Update <span class="visuallyhidden">NHS - services</span>
                 </a>
               </td>
-            </tr>
-            <tr>
-             <td>Hospital services - admissions</td>
-              <td class="change-answer">
-                <a href="/consent-v1/hospital-admissions">
-                  View <span class="visuallyhidden">NHS - services</span>
-                </a>
-              </td>
-              <td>consent removed</td>
-              <td class="change-answer">
-                <a href="/consent-v1/nhs-consent2">
-                  Change <span class="visuallyhidden">NHS - services</span>
+              <td>
+                <a href="/consent-v1/prescription-history">
+                  View <span class="visuallyhidden">Exporter name</span>
                 </a>
               </td>
             </tr>
@@ -77,6 +89,8 @@
         </div>
        
       </form>
+
+      <a class="button" href="/consent-v1/consent-log-out">Log Out</a>
 
     </div><!-- .column- -->
   </div>

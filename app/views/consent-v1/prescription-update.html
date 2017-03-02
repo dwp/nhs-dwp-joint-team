@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block page_title %}
+  Prescription update
+{% endblock %}
+
+{% block page %}
+
+  <div class="secondary-bar">
+   <ul class="external-links">
+     <li class="main-nav-link"><a href="/consent-v1/consent-log-out">Log Out</a></li>
+ 
+   </ul>
+  </div>
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+
+    <a href="consent-summary" class="link-back">Back</a>
+
+      <h1 class="heading-large">Do you want to remove your Prescriptions consent?</h1>
+    </div>
+
+    <div class="column-full">  
+
+      <div class="form-group">    
+        <table>
+        <thead>
+          <tr>
+            <th scope="col">Consent item</th>
+            <th scope="col">Consent information</th>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Date of consent</th>
+            <th scope="col">Consent expires</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Prescriptions</td>
+            <td>Benefit name and start date,<br>your benefit status</td>
+            <td>DWP</td>
+            <td>NHS</td>
+            <td>01.03.2017</td>
+            <td>-</td>
+          </tr>
+        </tbody>
+      </table>
+     </div>
+
+        <div class="form-group>">        
+          <a class="button" href="/consent-v1/thankyou">Remove consent for Prescriptions</a>
+        </div>
+    </div> <!-- column-full -->
+        
+     </div><!-- grid-row -->
+  
+  </div>    
+
+
+
+{% endblock %}
