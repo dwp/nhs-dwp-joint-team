@@ -103,3 +103,30 @@ table.index {
   background-color: mix(white, $light-blue, 90%);
 }
 }
+
+
+@mixin phase-tag($state: '') {
+
+  @if $state != '' {
+    @warn 'Passing a phase to the phase-tag mixin is deprecated';
+  }
+
+  @include inline-block;
+  margin: 0 8px 0 0;
+  padding: 2px 5px 0;
+
+  @include bold-16($line-height: 20 / 16);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  color: $white;
+  background-color: $govuk-blue;
+}
+
+.phase-tag {
+  position:relative;
+  top:-2px;
+  left:4px;
+  @include phase-tag;
+}
