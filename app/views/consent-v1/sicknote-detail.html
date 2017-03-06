@@ -1,6 +1,6 @@
-{% extends "layout.html" %}
+{% extends "consent-layout.html" %}
 {% block page_title %}
-  Sicknote details
+  Sick note detail
 {% endblock %}
 
 {% block page %}
@@ -11,34 +11,6 @@
       <h1 class="heading-large">Details of your sick note consent</h1>
 
       <div class="form-group">
-        
-       <!-- <h2 class="heading-medium">Consent item:</h2>
-
-        <p>Sicknote</p>
-
-        <h2 class="heading-medium">Details of the consent information:</h2>
-
-        <ul class="bullet list-bullet">
-          <li>start and end date of sicknote</li>
-          <li>your condition</li>
-          <li>GP surgery supplying the sicknote</li>
-       </ul>   
-
-        
-
-        <h2 class="heading-medium">From:</h2> 
-        <p>NHS</p>
-
-        <h2 class="heading-medium">To:</h2>
-        <p>DWP</p>
-
-        <h2 class="heading-medium">Date of consent</h2>
-        <p>01.07.2016</p>
-
-        <h2 class="heading-medium">Consent expires</h2>
-        <p>30.06.2017</p> -->
-
-
 
         <table>
           <thead>
@@ -54,7 +26,11 @@
           <tbody>
             <tr>
               <td>sick note</td>
-              <td>start and end date of your sick note, <br>your condition, GP surgery supplying the sick note</td>
+              <td class="list list-bullet">
+                <li>start and end date of your sick note</li>
+                <li>your condition</li>
+                <li>GP surgery supplying the sick note</li>
+              </td>
               <td>NHS</td>
               <td>DWP</td>
               <td>01.07.2016</td>

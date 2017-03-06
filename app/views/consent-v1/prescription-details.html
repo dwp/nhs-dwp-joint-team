@@ -1,6 +1,6 @@
-{% extends "layout.html" %}
+{% extends "consent-layout.html" %}
 {% block page_title %}
-  Sicknote details
+  Prescription details
 {% endblock %}
 
 {% block page %}
@@ -26,7 +26,10 @@
           <tbody>
             <tr>
               <td>Prescription</td>
-              <td>Benefit name and start date,<br>your benefit status</td>
+              <td class="list list-bullet">
+                <li>benefit type and start date</li>
+                <li>your benefit status</li>
+              </td>
               <td>DWP</td>
               <td>NHS</td>
               <td>01.10.2016</td>

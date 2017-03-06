@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "consent-layout.html" %}
 {% block page_title %}
   Sick note update
 {% endblock %}
@@ -40,7 +40,11 @@
         <tbody>
           <tr>
             <td>sick note</td>
-            <td>Start and end date of your sick note, <br>your condition, GP surgery supplying the sick note</td>
+            <td class="list list-bullet">
+              <li>start and end date of your sick note</li>
+              <li>your condition</li>
+              <li>GP surgery supplying the sick note</li>
+             </td>
             <td>NHS</td>
             <td>DWP</td>
             <td>01.07.2016</td>
@@ -54,7 +58,7 @@
 
      <div class="column-two-thirds">
        <div class="panel panel-border-wide alert-default">
-          If you remove your consent for sick note you will have to send it manually.
+          If you remove your consent for sick note you will have to send it through the post or deliver it by hand to a Jobcentre Plus (JCP).
        </div>
 
         <div class="form-group>">        

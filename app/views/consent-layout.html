@@ -1,0 +1,35 @@
+{% extends "govuk_template.html" %}
+
+{% block page_title %}
+  Consent manager
+{% endblock %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block cookie_message %}
+  <p>{{cookieText | safe }}</p>
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}  
+{% endblock %} 
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  {% block page_script %}{% endblock %}
+  {{ data | log }}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_alpha.html" %}
+  {% block page %}
+  {% endblock %}
+</main>
+{% endblock %}

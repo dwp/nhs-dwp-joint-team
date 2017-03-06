@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "consent-layout.html" %}
 {% block page_title %}
   Prescription update
 {% endblock %}
@@ -38,7 +38,10 @@
         <tbody>
           <tr>
             <td>Prescriptions</td>
-            <td>Benefit name and start date,<br>your benefit status</td>
+            <td class="list list-bullet">
+              <li>benefit type and start date</li>
+              <li>your benefit status</li>
+            </td>
             <td>DWP</td>
             <td>NHS</td>
             <td>01.03.2017</td>
