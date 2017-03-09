@@ -1,0 +1,84 @@
+{% extends "consent-layout.html" %}
+{% block page_title %}
+  Sick note details used
+{% endblock %}
+
+{% block page %}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="heading-large">Using your consent</h1>
+
+      <h2 class="heading-medium">sick note</h2>
+
+      <div class="form-group">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Reason</th>
+              <th scope="col">Consent given</th>
+              <th scope="col">Date used</th>
+              <th scope="col">Details used</th>
+              <th scope="col">Requested by</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ESA claim</td>
+              <td>01.02.2017</td>
+              <td>01.02.2017</td>
+              <td class="list list-bullet">
+                <li>start and end date of your sick note</li>
+                <li>your condition</li>
+                <li>GP surgery supplying the sick note</li>
+              </td>
+              <td>DWP</td>
+            </tr>
+            <tr>
+              <td>ESA claim</td>
+              <td>01.01.2016</td>
+              <td>07.06.2016</td>
+              <td class="list list-bullet">
+                <li>start and end date of your sick note</li>
+                <li>your condition</li>
+                <li>GP surgery supplying the sick note</li>
+              </td>
+              <td>DWP</td>
+            </tr>
+            <tr>
+              <td>ESA claim</td>
+              <td>01.01.2016</td>
+              <td>01.05.2016</td>
+              <td class="list list-bullet">
+                <li>start and end date of your sick note</li>
+                <li>your condition</li>
+                <li>GP surgery supplying the sick note</li>
+              </td>
+              <td>DWP</td>
+            </tr>
+            <tr>
+              <td>ESA claim</td>
+              <td>01.01.2016</td>
+              <td>01.03.2016</td>
+              <td class="list list-bullet">
+                <li>start and end date of your sick note</li>
+                <li>your condition</li>
+                <li>GP surgery supplying the sick note</li>
+              </td>
+              <td>DWP</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="form-group">
+          <a class="button" href="/consent-v1/consent-summary" role="button">Back to summary</a>
+        </div>
+        
+
+      </form>
+
+    </div><!-- .column- -->
+  </div>
+
+{% endblock %}

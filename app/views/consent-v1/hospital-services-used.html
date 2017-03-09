@@ -1,0 +1,55 @@
+{% extends "consent-layout.html" %}
+{% block page_title %}
+  Hospital services details used
+{% endblock %}
+
+{% block page %}
+
+  <div class="grid-row">
+    <div class="column-full">
+
+      <h1 class="heading-large">Using your consent</h1>
+
+      <h2 class="heading-medium">Hospital services</h2>
+
+      <div class="form-group">
+      
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Reason</th>
+              <th scope="col">Consent given</th>
+              <th scope="col">Date used</th>
+              <th scope="col">Details used</th>
+              <th scope="col">Requested by</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>ESA application</td>
+              <td>01.03.2016</td>
+              <td>01.03.2016</td>
+              <td>dates you have been admitted and <br>discharged from Hospital</td>
+              <td>DWP</td>
+            </tr>
+            <tr>
+              <td>ESA claim</td>s
+              <td>01.06.2015</td>
+              <td>30.11.2015</td>
+              <td>dates you have been admitted and <br>discharged from Hospital</td>
+              <td>DWP</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="form-group">
+          <a class="button" href="/consent-v1/consent-summary" role="button">Back to summary</a>
+        </div>
+        
+
+      </form>
+
+    </div><!-- .column- -->
+  </div>
+
+{% endblock %}
