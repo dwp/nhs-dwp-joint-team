@@ -1,0 +1,33 @@
+{% extends "sendphoto/layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block body %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+{# {% include "../includes/error-summary.html" %} #}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="error-summary" style="margin-bottom:30px" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+          We’re having problems with your photo.
+        </h1>
+
+        <ul class="error-summary-list">
+          <li><a href="#instruction_screen">Try again</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+</div>
+
+</main>
+
+{% endblock %}

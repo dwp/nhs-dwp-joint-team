@@ -1,0 +1,35 @@
+{% extends "sendphoto/layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block body %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+{# {% include "../includes/error-summary.html" %} #}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div class="error-summary" style="margin-bottom:30px" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+        <h1 class="heading-medium error-summary-heading" style="margin-bottom:0" id="error-summary-heading-example-1">
+          This hasn’t worked because of the quality of the photo.
+        </h1>
+
+      </div>
+
+      <p>You can either:</p>
+      <ul class="list list-bullet">
+        <li>try again using a different phone or tablet</li>
+        <li>post your fit note to Freepost DWP ESA 38</li>
+      </ul>
+
+    </div>
+</div>
+
+</main>
+
+{% endblock %}
