@@ -1,0 +1,118 @@
+{% extends "esa/v2/layout.html" %}
+
+{% block page_title %} Sick note {% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  <form action="claim-date" method="post" class="form">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="health-conditions">Back</a>
+
+        <header>
+          <h1 class="form-title heading-large">Have you been to see a doctor?</h1>
+        </header>
+
+        <div class="form-group">
+          <fieldset class="inline form-group">
+            <label class="block-label" data-target="seendoc" for="seenddoc-yes">
+              <input id="seenddoc-yes" type="radio" name="seendoc" value="Yes"> Yes
+            </label>
+            <label class="block-label" data-target="not-seendoc" for="seenddoc-no">
+              <input id="seenddoc-no" type="radio" name="seendoc" value="No"> No
+            </label>
+          </fieldset>
+
+          <!-- - - - - - - - - THEY'VE SEEN THE DOCTOR - - - - - - - - -->
+          <div class="panel js-hidden mt30" id="seendoc">
+
+            <div class="form-group">
+
+              <h1 class="form-title heading-medium">Did they say that you shouldn’t work?</h1>
+              <fieldset class="inline">
+                <label class="block-label" data-target="shouldntwork" for="shouldntwork-yes">
+                  <input id="shouldntwork-yes" type="radio" name="shouldntwork" value="Yes"> Yes
+                </label>
+                <label class="block-label" data-target="not-shouldntwork" for="shouldntwork-no">
+                  <input id="shouldntwork-no" type="radio" name="shouldntwork" value="No"> No
+                </label>
+              </fieldset>
+
+              <!-- - - - - - - - -  THEY SHOULD'T WORK - - - - - - - - -->
+              <div class="panel js-hidden mt30" id="shouldntwork">
+
+                  <div class="form-group">
+
+                    <h1 class="form-title heading-medium">Is it ok to confirm this with your doctor?</h1>
+                    <fieldset class="inline">
+                      <label class="block-label" data-target="confirmdoc" for="confirmdoc-yes">
+                        <input id="confirmdoc-yes" type="radio" name="confirmdoc" value="Yes"> Yes
+                      </label>
+                      <label class="block-label" data-target="not-confirmdoc" for="confirmdoc-no">
+                        <input id="confirmdoc-no" type="radio" name="confirmdoc" value="No"> No
+                      </label>
+                    </fieldset>
+
+                    <!-- - - - - - - - -  YES WE CAN CONFIRM WITH DOCTOR - - - - - - - - -->
+                    <div class="panel js-hidden mt30" id="confirmdoc">
+
+                      <h1 class="form-title heading-medium">Is it ok to continue to check that you’re signed off?</h1>
+                      <fieldset class="inline">
+                        <label class="block-label" data-target="continuecheck" for="continuecheck-yes">
+                          <input id="continuecheck-yes" type="radio" name="continuecheck" value="Yes"> Yes
+                        </label>
+                        <label class="block-label" data-target="not-continuecheck" for="continuecheck-no">
+                          <input id="continuecheck-no" type="radio" name="continuecheck" value="No"> No
+                        </label>
+                      </fieldset>
+
+                      <!-- - - - - - - - -  NO WE CAN'T CONFIRM WITH DOCTOR - - - - - - - - -->
+                      <div class="panel js-hidden mt30" id="not-continuecheck">
+                        We need to confirm this one way or another so you'll gonna have to send us a sick note
+                      </div>
+
+                    </div>
+
+                    <!-- - - - - - - - -  NO WE CAN'T CONFIRM WITH DOCTOR - - - - - - - - -->
+                    <div class="panel js-hidden mt30" id="not-confirmdoc">
+
+                    </div>
+
+                  </div><!-- form-group -->
+
+              </div><!-- panel -->
+
+              <!-- - - - - - - - -  THEY SHOULD WORK - - - - - - - - -->
+              <div class="panel js-hidden mt30" id="not-shouldntwork">
+                Maybe you should go back to the Doctor.
+              </div>
+
+            </div><!-- form-group -->
+
+          </div><!-- panel -->
+
+          <!-- - - - - - - - -  THEY HAVEN'T SEEN THE DOCTOR - - - - - - - - -->
+          <div class="panel js-hidden" id="not-seendoc">
+            To make an application, you’ll need to see a doctor.
+          </div>
+
+        </div><!-- form-group -->
+
+        <!-- Primary buttons, secondary links -->
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+        {# <div class="form-group">
+          <p><a href="exit">Save and come back later</a></p>
+        </div> #}
+      </div>
+      <div class="column-one-third">
+        {% include "esa/v1/help.html" %}
+      </div>
+    </div>
+  </form>
+</main>
+{% endblock %}
