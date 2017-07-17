@@ -1,4 +1,4 @@
-{% extends "esa/v1/layout.html" %} {% block page_title %} Consent {% endblock %} {% block content %}
+{% extends data.path + "/inc/layout.html" %} {% block page_title %} Consent {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
   <form action="review" method="post" class="form">
@@ -37,7 +37,7 @@
         </div> #}
       </div>
       <div class="column-one-third">
-        {% include "esa/v1/help.html" %}
+        {% include data.path + "/inc/help.html" %}
       </div>
     </div>
   </form>

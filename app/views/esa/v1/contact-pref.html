@@ -1,4 +1,4 @@
-  {% extends "esa/v1/layout.html" %} 
+  {% extends data.path + "/inc/layout.html" %} 
 
 {% block page_title %} 
   Contact details
@@ -37,7 +37,7 @@
         </div> #}
       </div>
       <div class="column-one-third">
-        {% include "esa/v1/help.html" %}
+        {% include data.path + "/inc/help.html" %}
       </div>
     </div>
   </form>

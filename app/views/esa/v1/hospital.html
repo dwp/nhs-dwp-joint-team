@@ -1,4 +1,4 @@
-{% extends "esa/v1/layout.html" %} {% block page_title %} Hospital {% endblock %} {% block content %}
+{% extends data.path + "/inc/layout.html" %} {% block page_title %} Hospital {% endblock %} {% block content %}
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
   <div class="grid-row">
@@ -54,7 +54,7 @@
       </form>
     </div>
     <div class="column-third">
-      {% include "esa/v1/help.html" %}
+      {% include data.path + "/inc/help.html" %}
     </div>
   </div>
 </main>

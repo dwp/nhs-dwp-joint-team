@@ -2,10 +2,17 @@ var express = require('express')
 var router = express.Router()
 var merge = require('merge')
 var tog = require('../lib/tog.js')
+var path = require('path')
 
 // Route index page
 router.get('/', function (req, res) {
   res.render('index');
+})
+
+router.get('*', function (req, res, next) {
+  req.data = req.data || { };
+  req.data.path = path.dirname(req.params[0]).substr(1);
+  next();
 })
 
 router.get('/reset', function(req, res, next)
