@@ -1,0 +1,63 @@
+{% extends data.path + "/inc/layout.html" %}
+
+{% block page_title %} Sick note {% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+  {% include "includes/phase_banner_beta.html" %}
+
+  <form action="claim-date" method="post" class="form">
+
+    <div class="grid-row">
+
+      <div class="column-two-thirds">
+
+        <a class="link-back" href="javascript:history.go(-1);">Back</a>
+
+        <header>
+          <h1 class="form-title heading-large">Is it ok to carry on checking with your doctor that you can’t work, for as long as you’re unwell?</h1>
+        </header>
+
+        <div class="form-group">
+          <fieldset class="inline form-group">
+            <label class="block-label" data-target="concheck" for="concheck-yes">
+              <input id="concheck-yes" type="radio" name="concheck" value="Yes"> Yes
+            </label>
+            <label class="block-label" data-target="not-concheck" for="concheck-no">
+              <input id="concheck-no" type="radio" name="concheck" value="No"> No
+            </label>
+          </fieldset>
+          <!-- - - - - - - - -  NO DON'T CONTINUE CHECKING - - - - - - - - -->
+          <div class="panel js-hidden mt30" id="concheck">
+            <p>Your doctor will recommend how long you shouldn’t work for. This is sometimes called being “signed off”. If you’re still unwell after this time you need to go back and see them again. </p>
+            <p>Your doctor will confirm to us that you still shouldn’t be working. </p>
+          </div>
+          <!-- - - - - - - - -  NO DON'T CONTINUE CHECKING - - - - - - - - -->
+          <div class="panel js-hidden mt30" id="not-concheck">
+            <p>If you don’t want us to confirm with your doctor that you’re still unwell you’ll need to send a copy of your sick note in the post. </p>
+            <p>Post your sick note to:</p>
+            <p>
+              Mail Handling Site A<br />
+              Wolverhampton<br />
+              WV98 2AJ
+            </p>
+          </div>
+        </div><!-- form-group -->
+
+        <!-- Primary buttons, secondary links -->
+        <div class="form-group">
+          <input type="submit" class="button" value="Continue">
+        </div>
+
+      </div><!-- column-two-thirds -->
+
+      <div class="column-one-third">
+        {% include "esa/v2/help.html" %}
+      </div>
+
+    </div><!-- grid row -->
+
+  </form>
+</main>
+{% endblock %}

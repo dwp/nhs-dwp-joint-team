@@ -1,12 +1,16 @@
-{% extends "esa/v2/layout.html" %}
+{% extends data.path + "/inc/layout.html" %}
 
 {% block page_title %} Sick note {% endblock %}
 
 {% block content %}
 <main id="content" role="main">
+
   {% include "includes/phase_banner_beta.html" %}
-  <form action="claim-date" method="post" class="form">
+
+  <form action="continuecheck" method="post" class="form">
+
     <div class="grid-row">
+
       <div class="column-two-thirds">
 
         <a class="link-back" href="health-conditions">Back</a>
@@ -18,7 +22,7 @@
         <div class="form-group">
           <fieldset class="inline form-group">
             <label class="block-label" data-target="seendoc" for="seenddoc-yes">
-              <input id="seenddoc-yes" type="radio" name="seendoc" value="Yes"> Yes
+              <input id="seenddoc-yes" type="radio" name="seendoc" value="Yes" checked="checked"> Yes
             </label>
             <label class="block-label" data-target="not-seendoc" for="seenddoc-no">
               <input id="seenddoc-no" type="radio" name="seendoc" value="No"> No
@@ -33,7 +37,7 @@
               <h1 class="form-title heading-medium">Did they say that you shouldn’t work?</h1>
               <fieldset class="inline">
                 <label class="block-label" data-target="shouldntwork" for="shouldntwork-yes">
-                  <input id="shouldntwork-yes" type="radio" name="shouldntwork" value="Yes"> Yes
+                  <input id="shouldntwork-yes" type="radio" name="shouldntwork" value="Yes" checked="checked"> Yes
                 </label>
                 <label class="block-label" data-target="not-shouldntwork" for="shouldntwork-no">
                   <input id="shouldntwork-no" type="radio" name="shouldntwork" value="No"> No
@@ -45,7 +49,8 @@
 
                   <div class="form-group">
 
-                    <h1 class="form-title heading-medium">Is it ok to confirm this with your doctor?</h1>
+                    <p class="mb5"> Your doctor recommends how long you shouldn’t work for. This is sometimes called being “signed off”. If you’re still unwell after this time you need to go back and see them again.</p>
+                    <h1 class="form-title heading-medium mt30">Is it ok to confirm this with your doctor?</h1>
                     <fieldset class="inline">
                       <label class="block-label" data-target="confirmdoc" for="confirmdoc-yes">
                         <input id="confirmdoc-yes" type="radio" name="confirmdoc" value="Yes"> Yes
@@ -55,29 +60,15 @@
                       </label>
                     </fieldset>
 
-                    <!-- - - - - - - - -  YES WE CAN CONFIRM WITH DOCTOR - - - - - - - - -->
-                    <div class="panel js-hidden mt30" id="confirmdoc">
-
-                      <h1 class="form-title heading-medium">Is it ok to continue to check that you’re signed off?</h1>
-                      <fieldset class="inline">
-                        <label class="block-label" data-target="continuecheck" for="continuecheck-yes">
-                          <input id="continuecheck-yes" type="radio" name="continuecheck" value="Yes"> Yes
-                        </label>
-                        <label class="block-label" data-target="not-continuecheck" for="continuecheck-no">
-                          <input id="continuecheck-no" type="radio" name="continuecheck" value="No"> No
-                        </label>
-                      </fieldset>
-
-                      <!-- - - - - - - - -  NO WE CAN'T CONFIRM WITH DOCTOR - - - - - - - - -->
-                      <div class="panel js-hidden mt30" id="not-continuecheck">
-                        We need to confirm this one way or another so you'll gonna have to send us a sick note
-                      </div>
-
-                    </div>
-
                     <!-- - - - - - - - -  NO WE CAN'T CONFIRM WITH DOCTOR - - - - - - - - -->
                     <div class="panel js-hidden mt30" id="not-confirmdoc">
-
+                      <p> If you don’t want us to confirm with your doctor that you’re still unwell you’ll need to send a copy of your sick note in the post. </p>
+                      <p>Post your sick note to:</p>
+                      <p>
+                        Mail Handling Site A<br />
+                        Wolverhampton<br />
+                        WV98 2AJ
+                      </p>
                     </div>
 
                   </div><!-- form-group -->
@@ -86,7 +77,7 @@
 
               <!-- - - - - - - - -  THEY SHOULD WORK - - - - - - - - -->
               <div class="panel js-hidden mt30" id="not-shouldntwork">
-                Maybe you should go back to the Doctor.
+                To get Employment and Support Allowance your doctor needs to confirm that you shouldn’t be working. If you think you’re too unwell to work, go back and see a doctor.
               </div>
 
             </div><!-- form-group -->
@@ -95,7 +86,7 @@
 
           <!-- - - - - - - - -  THEY HAVEN'T SEEN THE DOCTOR - - - - - - - - -->
           <div class="panel js-hidden" id="not-seendoc">
-            To make an application, you’ll need to see a doctor.
+            To make an application, you’ll need to see a doctor. The doctor needs to confirm that you shouldn’t be working.
           </div>
 
         </div><!-- form-group -->
@@ -105,14 +96,13 @@
           <input type="submit" class="button" value="Continue">
         </div>
 
-        {# <div class="form-group">
-          <p><a href="exit">Save and come back later</a></p>
-        </div> #}
       </div>
       <div class="column-one-third">
-        {% include "esa/v1/help.html" %}
+        {% include "esa/v2/help.html" %}
       </div>
-    </div>
+
+    </div><!-- grid row -->
+
   </form>
 </main>
 {% endblock %}
