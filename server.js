@@ -95,6 +95,8 @@ app.use(session({
   secret: Math.round(Math.random() * 100000).toString()
 }))
 
+app.use(utils.autoStoreData)
+
 // send assetPath to all views
 app.use(function (req, res, next) {
   res.locals.asset_path = '/public/'

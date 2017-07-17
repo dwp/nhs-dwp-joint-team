@@ -22,10 +22,10 @@
         <div class="form-group">
           <fieldset class="inline form-group">
             <label class="block-label" data-target="seendoc" for="seenddoc-yes">
-              <input id="seenddoc-yes" type="radio" name="seendoc" value="Yes" checked="checked"> Yes
+              <input id="seenddoc-yes" type="radio" name="seendoc" value="Yes" > Yes
             </label>
             <label class="block-label" data-target="not-seendoc" for="seenddoc-no">
-              <input id="seenddoc-no" type="radio" name="seendoc" value="No"> No
+              <input id="seenddoc-no" type="radio" name="seendoc" value="No,redirect(claim-date)"> No
             </label>
           </fieldset>
 
@@ -37,10 +37,10 @@
               <h1 class="form-title heading-medium">Did they say that you shouldn’t work?</h1>
               <fieldset class="inline">
                 <label class="block-label" data-target="shouldntwork" for="shouldntwork-yes">
-                  <input id="shouldntwork-yes" type="radio" name="shouldntwork" value="Yes" checked="checked"> Yes
+                  <input id="shouldntwork-yes" type="radio" name="shouldntwork" value="Yes" > Yes
                 </label>
                 <label class="block-label" data-target="not-shouldntwork" for="shouldntwork-no">
-                  <input id="shouldntwork-no" type="radio" name="shouldntwork" value="No"> No
+                  <input id="shouldntwork-no" type="radio" name="shouldntwork" value="No,redirect(claim-date)"> No
                 </label>
               </fieldset>
 
@@ -56,7 +56,7 @@
                         <input id="confirmdoc-yes" type="radio" name="confirmdoc" value="Yes"> Yes
                       </label>
                       <label class="block-label" data-target="not-confirmdoc" for="confirmdoc-no">
-                        <input id="confirmdoc-no" type="radio" name="confirmdoc" value="No"> No
+                        <input id="confirmdoc-no" type="radio" name="confirmdoc" value="No,redirect(claim-date)"> No
                       </label>
                     </fieldset>
 
@@ -98,7 +98,7 @@
 
       </div>
       <div class="column-one-third">
-        {% include "esa/v2/help.html" %}
+        {% include data.path + "/inc/help.html" %}
       </div>
 
     </div><!-- grid row -->
