@@ -1,10 +1,10 @@
-{% extends "esa/layout.html" %}
+{% extends "esa/v1/layout.html" %}
 
 {% block page_title %} Sick note {% endblock %}
 
 {% block content %}
 <main id="content" role="main">
-  {% include "../includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
   <form action="claim-date" method="post" class="form">
     <div class="grid-row">
       <div class="column-two-thirds">
@@ -85,7 +85,7 @@
         </div> #}
       </div>
       <div class="column-one-third">
-        {% include "esa/help.html" %}
+        {% include "esa/v1/help.html" %}
       </div>
     </div>
   </form>

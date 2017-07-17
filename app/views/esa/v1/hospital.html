@@ -1,6 +1,6 @@
-{% extends "esa/layout.html" %} {% block page_title %} Hospital {% endblock %} {% block content %}
+{% extends "esa/v1/layout.html" %} {% block page_title %} Hospital {% endblock %} {% block content %}
 <main id="content" role="main">
-  {% include "../includes/phase_banner_beta.html" %}
+  {% include "includes/phase_banner_beta.html" %}
   <div class="grid-row">
     <div class="column-two-thirds">
       <a class="link-back" href="special-rules">Back</a>
@@ -54,7 +54,7 @@
       </form>
     </div>
     <div class="column-third">
-      {% include "esa/help.html" %}
+      {% include "esa/v1/help.html" %}
     </div>
   </div>
 </main>
