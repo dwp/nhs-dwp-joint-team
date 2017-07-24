@@ -38,7 +38,21 @@
 
     <p> If you struggle to take and upload the photo there is <a href="#" id="fake-input" style="color:white">extra help</a> available.</p>
 
-    <p> <a href="#" class="button fake-button" id="fake-input">Open camera</a> </p>
+    <p>
+      {# <a href="#" class="button fake-button" id="fake-input">Open camera</a>
+      <input id="myFileInput" type="file" accept="image/*;capture=camera"> #}
+
+      <input id="uploadFile" class="form-control js-hidden" placeholder="Choose a file" disabled="disabled">
+      <div class="fileUpload button button--blue">
+          <span>Open Camera</span>
+          <input id="uploadBtn" class="upload" type="file" accept="image/*;capture=camera">
+      </div>
+
+      {# <div class="fileUpload button button--blue">
+          <span>Choose a file</span>
+          <input id="uploadBtn" type="file" class="upload" />
+      </div> #}
+    </p>
 
     <form action="nino" method="get" style="margin-bottom:30px">
         <input type="submit" class="button" value="Send" id="startButton">
