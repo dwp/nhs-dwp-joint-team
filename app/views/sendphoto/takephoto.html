@@ -42,8 +42,8 @@
       {# <a href="#" class="button fake-button" id="fake-input">Open camera</a>
       <input id="myFileInput" type="file" accept="image/*;capture=camera"> #}
 
-      <input id="uploadFile" class="form-control js-hidden" placeholder="Choose a file" disabled="disabled">
-      <div class="fileUpload button button--blue">
+      <input id="uploadFile" class="form-control uploaded" placeholder="Choose a file" disabled="disabled" style="display:none">
+      <div class="fileUpload button button--blue" id="opencam">
           <span>Open camera</span>
           <input id="uploadBtn" class="upload" type="file" accept="image/*;capture=camera">
       </div>
@@ -54,12 +54,21 @@
       </div> #}
     </p>
 
-    <form action="nino" method="get" style="margin-bottom:30px">
+    <form action="error_2" method="get" style="margin-bottom:30px">
         <input type="submit" class="button" value="Send" id="startButton">
     </form>
 
   </div>
 
+
+  <script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function (e,i)
+    {
+      document.getElementById("uploadFile").value = "Uploading: "+this.files[0].name
+      document.getElementById("uploadFile").style.display = "block"
+      document.getElementById("opencam").style.display = "none"
+    }
+  </script>
 
 
 {% endblock %}
