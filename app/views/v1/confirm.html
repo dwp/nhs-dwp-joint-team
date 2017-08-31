@@ -1,11 +1,11 @@
-{% extends "layout.html" %}
+{% extends path+"/layout.html" %}
 
 {% block page %}
 
   <div class="grid-row">
-        
+
     <div class="column-two-thirds">
-              
+
       <div class="govuk-box-highlight">
         <h1 class="bold-large">
           <span class="font-medium"> Received<br> </span>
@@ -16,7 +16,7 @@
       <h2 class="heading-medium">What happens next</h2>
 
       <p>You’ll need to send another doctor’s note by {{ '' | fortnightplus }} if you’re still not well. </p>
-      
+
     </div><!-- col -->
 
   </div><!-- row -->
