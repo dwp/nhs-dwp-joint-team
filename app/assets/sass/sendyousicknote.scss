@@ -1,0 +1,34 @@
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import GOV.UK elements from /govuk-modules/, this will import the frontend toolkit and some base styles.
+// Take a look in /govuk-modules/_govuk-elements.scss to see which files are imported.
+@import 'govuk-elements';
+
+// Take a look at in app/assets/sass/patterns/ to see which files are imported.
+@import 'inc/margins';
+@import 'inc/clearfix';
+@import 'inc/form-multiple-choice';
+@import 'inc/permission';
+
+.phase-banner-beta .phase-tag {
+  position:relative;
+  top:-1px;
+  padding-top:4px;
+  display:inline-block;
+  background-color: $govuk-blue !important;
+}
+
+.icon {
+    height: 1em;
+    position: relative;
+    top: 0.1em;
+    display: inline-block;
+    margin-right: 0.3em;
+}
+
+.govuk-box-highlight {
+  padding-left:30px;
+  padding-right:30px;  
+}

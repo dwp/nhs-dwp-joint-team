@@ -15,6 +15,12 @@ router.get('*', function (req, res, next) {
   next();
 })
 
+router.get('*', function (req, res, next) {
+  if (req.params[0].substr(-1) == '/') res.locals.path = req.params[0].slice(0,-1).substr(1);
+  else res.locals.path = path.dirname(req.params[0]).substr(1);
+  next();
+})
+
 router.get('/reset', function(req, res, next)
 {
   req.session.destroy();

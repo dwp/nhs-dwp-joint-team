@@ -184,13 +184,11 @@ if (useDocumentation) {
   })
 }
 
-console.log('\nGOV.UK Prototype kit v' + releaseVersion)
-// Display warning not to use kit for production services.
-console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
+console.log("\x1b[37m"+'\nGOV.UK Prototype kit v' + releaseVersion+"\x1b[0m")
 
 // start the app
 utils.findAvailablePort(app, function (port) {
-  console.log('Listening on port ' + port + '   url: http://localhost:' + port)
+  console.log('Listening on port ' + port + '   url: ' + "\x1b[36m" + 'http://localhost:' + port + "\x1b[0m")
   if (env === 'production') {
     app.listen(port)
   } else {
@@ -202,7 +200,7 @@ utils.findAvailablePort(app, function (port) {
         files: ['public/**/*.*', 'app/views/**/*.*'],
         ghostmode: false,
         open: false,
-        notify: false,
+        notify: true,
         logLevel: 'error'
       })
     })
