@@ -1,0 +1,37 @@
+{% extends path+"/../layout.html" %}
+
+{% block fullcol %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+{# {% include "../includes/error-summary.html" %} #}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+        <form action="textmessage" method="post" class="form" name="yourDetails" id="yourDetailsForm">
+
+            <fieldset class="form-group">
+                <h1 class="heading-large">Your address</h1>
+
+                <div class="form-group {% if errors.nino %}error{% endif %}" style="margin-top:30px">
+                    <label for="ninoFieldID" class="form-label">House number</label>
+                    <input type="text" name="house-number" class="form-control" maxlength="13">
+                </div>
+
+                <div class="form-group {% if errors.nino %}error{% endif %}">
+                    <label for="ninoFieldID" class="form-label">Postcode</label>
+                    <input type="text" name="postcode" class="form-control" maxlength="13">
+                </div>
+
+            </fieldset>
+
+            <div class="form-group">
+                <input type="submit" id="add-your-details" class="button primary-button" value="Continue">
+            </div>
+        </form>
+    </div>
+</div>
+
+</main>
+
+{% endblock %}

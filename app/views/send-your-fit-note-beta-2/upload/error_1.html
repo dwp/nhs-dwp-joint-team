@@ -1,0 +1,26 @@
+{% extends path+"/../layout.html" %}
+
+{% block fullcol %}
+
+  <main id="content" role="main">
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+        <div class="error-summary" style="margin-bottom:30px" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+          <h1 class="heading-medium error-summary-heading" style="margin-bottom:0" id="error-summary-heading-example-1">
+            There's a problem. The file needs to be in JPEG (.jpg) format. 
+          </h1>
+        </div>
+
+        <p>You can either: </p>
+        <ul class="list list-bullet">
+          <li>save the image of your fit note as a JPEG (.jpg) file and try again </li>
+          <li>go to https://fitnote.itsbeta.net/go using a smartphone or tablet to send a photo of your fit note</li>
+          <li>post your fit note to Freepost DWP ESA 38</li>
+        </ul>
+
+      </div><!-- col -->
+    </div><!-- row -->
+  </main>
+
+{% endblock %}
