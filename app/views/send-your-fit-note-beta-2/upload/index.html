@@ -9,14 +9,20 @@
 
 <div class="photo-guide form-group mt0">
 
-    <h1 class="bold-large">Upload an image file</h1>
+    <h1 class="bold-large">Save and upload your fit note</h1>
 
     <div class="grid-row">
       <div class="column-half">
         <ol class="list list-number">
-          <li>Make sure the whole fit note is in your image.</li>
-          <li>Make sure the image is saved on your computer as a JPEG file (.jpg).</li>
-          <li>Make sure the file is easily findable on your computer.</li> 
+          <li>Take a photo of your fit note or scan it to your computer.</li>
+          <li>Make sure: 
+            <ul class="list list-bullet">
+              <li>all of your fit note is in the image</li>
+              <li>your fit note isn't creased</li>
+              <li>the image isn't blurred</li>
+            </ul>
+          </li>
+          <li>Save the photo or scan somewhere you can easily find it on your computer.</li> 
         </ol>
       </div>
 
@@ -30,13 +36,14 @@
       <div class="form-group">
         <input id="uploadFile" class="form-control uploaded" style="display:none">
         <div class="fileUpload button" id="opencam">
-            <span>Choose an image to upload</span>
+            <span>Choose a file to upload</span>
             <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
         </div>
+       
       </div><!-- form-group -->
 
       <div class="form-group">
-        <input type="submit" class="button" value="Upload image" id="startButton" style="display:none">
+        <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
       </div><!-- form-group -->
 
     </form>
