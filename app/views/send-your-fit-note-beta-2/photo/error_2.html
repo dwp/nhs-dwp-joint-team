@@ -1,5 +1,10 @@
 {% extends path+"/../layout.html" %}
 
+{% block head %}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
 {% block fullcol %}
 <div class="blue-border-bottom"></div>
 
@@ -7,27 +12,94 @@
 {# {% include "../includes/error-summary.html" %} #}
 
 <div class="grid-row">
-    <div class="column-two-thirds">
+    <div class="column-full">
 
       <div class="error-summary" style="margin-bottom:30px" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
-        <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-          We’re having problems with your photo.
+        <h1 class="heading-medium error-summary-heading" style="margin-bottom:0" id="error-summary-heading-example-1">
+          This hasn’t worked because of the quality of the photo.
         </h1>
 
-        <ul class="error-summary-list">
-          <li><a href="takephoto">Try again</a></li>
+          <p>Try again or send your fit note to Freepost DWP ESA 38 </p>
+
+          <ul class="error-summary-list">
+
+          <br><li><a href="#take-a-photo">Try again</a></li>
         </ul>
-
       </div>
-
     </div>
 </div>
 
+<div class="photo-guide form-group mt0">
+
+    <h1 class="bold-large" id="take-a-photo">Take a photo </h1>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <ol class="list list-number">
+          <li>Put your fit note on a flat surface like a table.</li>
+          <li>Make sure you're in a well lit place.</li>
+          <li>Hold your phone above the paper, and make sure it's sideways or 'landscape'.</li>
+
+        </ol>
+      </div>
+      <div class="column-half">
+        <img src="/public/images/guideline-photo-angle-white@2x.png" alt="" width="100%">
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <ol class="list list-number" start="4">
+          <li>Make sure the whole thing is in the photo.</li>
+        </ol>
+      </div>
+      <div class="column-half">
+        <img src="/public/images/guideline-photo-crop-a5-white@2x.png" alt="" width="100%">
+      </div>
+    </div>
+
+    <p>
+      {# <a href="#" class="button fake-button" id="fake-input">Open camera</a>
+      <input id="myFileInput" type="file" accept="image/*;capture=camera"> #}
+
+      <input id="uploadFile" class="form-control uploaded" placeholder="Choose a file" disabled="disabled" style="display:none">
+      <div class="fileUpload button button--blue" id="opencam">
+          <span>Open camera</span>
+          <input id="uploadBtn" class="upload" type="file" accept="image/*;capture=camera">
+      </div>
+
+      {# <div class="fileUpload button button--blue">
+          <span>Choose a file</span>
+          <input id="uploadBtn" type="file" class="upload" />
+      </div> #}
+    </p>
+
+    <form action="nino" method="get" style="margin-bottom:30px">
+        <input type="submit" class="button" value="Send" id="startButton">
+    </form>
+  </div>
+
+  <script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function (e,i)
+    {
+      document.getElementById("uploadFile").value = "Image ready to send"
+      document.getElementById("uploadFile").style.display = "block"
+      document.getElementById("opencam").style.display = "none"
+    }
+  </script>
+
+</div>
 </main>
 
 {% endblock %}
+  </main>
+
 
 {% block footer_support_links %}
   <p style="font-size:19px"><a href="nino">continue</a></p>
 {% endblock %}
+
+
+
+
