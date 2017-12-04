@@ -1,0 +1,76 @@
+{% extends path+"/../layout.html" %}
+
+{% block head %}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block fullcol %}
+
+<div class="photo-guide form-group mt0">
+
+    <h1 class="bold-large"> Take a photo </h1>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <ol class="list list-number">
+          <li>Put your fit note on a flat surface like a table.</li>
+          <li>Make sure you're in a well lit place.</li>
+          <li>Hold your phone above the paper, and make sure it's sideways or 'landscape'.</li>
+
+        </ol>
+      </div>
+      <div class="column-half">
+        <img src="/public/images/guideline-photo-angle-white@2x.png" alt="" width="100%">
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-half">
+        <ol class="list list-number" start="4">
+          <li>Make sure the whole thing is in the photo.</li>
+        </ol>
+      </div>
+      <div class="column-half">
+        <img src="/public/images/guideline-photo-crop-a5-white@2x.png" alt="" width="100%">
+      </div>
+    </div>
+
+    <p>
+      {# <a href="#" class="button fake-button" id="fake-input">Open camera</a>
+      <input id="myFileInput" type="file" accept="image/*;capture=camera"> #}
+
+      <input id="uploadFile" class="form-control uploaded" placeholder="Choose a file" disabled="disabled" style="display:none">
+      <div class="fileUpload button button--blue" id="opencam">
+          <span>Open camera</span>
+          <input id="uploadBtn" class="upload" type="file" accept="image/*;capture=camera">
+      </div>
+
+      {# <div class="fileUpload button button--blue">
+          <span>Choose a file</span>
+          <input id="uploadBtn" type="file" class="upload" />
+      </div> #}
+    </p>
+
+    <form method="post" style="margin-bottom:30px">
+        <input type="submit" class="button" value="Send" id="startButton">
+    </form>
+
+  </div>
+
+
+  <script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function (e,i)
+    {
+      document.getElementById("uploadFile").value = "Image ready to send"
+      document.getElementById("uploadFile").style.display = "block"
+      document.getElementById("opencam").style.display = "none"
+    }
+  </script>
+
+{% endblock %}
+
+
+{% block footer_top %}
+<p>Possible error pages: <a href="error_1">Error 1: try again</a> | <a href="error_2">Error 2: try again or freepost</a> | <a href="error_3">Error 3: try again, diff phone or freepost</a></p>
+{% endblock %}

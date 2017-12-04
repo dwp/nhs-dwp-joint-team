@@ -35,6 +35,31 @@ router.get(/(v\d$)/,function(req,res)
   res.redirect(path+'/');
 });
 
+
+// Routes from Newcastle session
+// Photo
+router.post('/send-your-fit-note-beta-3/photo', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-3/photo/playback')
+})
+router.post('/send-your-fit-note-beta-3/photo/playback', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-3/photo/upload-successful')
+})
+router.post('/send-your-fit-note-beta-3/photo/upload-successful', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-3/photo/nino')
+})
+
+// Upload
+router.post('/send-your-fit-note-beta-3/upload', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-3/upload/playback')
+})
+router.post('/send-your-fit-note-beta-3/upload/playback', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-3/upload/upload-successful')
+})
+router.post('/send-your-fit-note-beta-3/upload/upload-successful', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-3/upload/nino')
+})
+
+
 /*
   Redirect all posts to gets.
 */

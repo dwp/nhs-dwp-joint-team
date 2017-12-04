@@ -1,0 +1,32 @@
+{% extends path+"/../layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block fullcol %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+{# {% include "../includes/error-summary.html" %} #}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Your photo</h1>
+      <img class="uploaded" src="/public/images/uploaded/example-photo.jpg" />
+
+      <p>
+        Check this is the right fit note you want to send. If you're not happy, 
+        you can <a href="/send-your-fit-note-beta-3/photo/">take another photo</a>
+      </p>
+      
+      <form method="post" class="form" name="yourDetails" id="yourDetailsForm">
+        <button class="button" type="submit">Use this photo</button>
+      </form>
+    </div>
+</div>
+
+</main>
+
+{% endblock %}
+
