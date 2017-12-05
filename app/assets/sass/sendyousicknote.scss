@@ -12,6 +12,10 @@ $path: "/public/images/";
 @import 'inc/form-multiple-choice';
 @import 'inc/permission';
 
+img {
+  max-width: 100%;
+}
+
 .phase-banner-beta .phase-tag {
   position:relative;
   top:-1px;
