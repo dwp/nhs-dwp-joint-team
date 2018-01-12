@@ -1,0 +1,36 @@
+{% extends path+"/../layout.html" %}
+
+{% block leftcol %}
+
+        <div>
+          <h1 class="heading-medium">
+              This page is about to close.
+            </h1>
+        </div>
+
+        <div>
+            <p>For security reasons, the page you're on will close in 5 minutes due to inactivity and you'll have to start again.</p>
+
+        <div class="form-group">
+                  <input type="submit" id="add-your-details" class="button primary-button" value="Stay on this page">
+              </div>
+
+            <ul>
+              <li><a href="#save-and-upload">Start again</a></li>
+            </ul>
+
+        </div>
+
+        </div><!-- col -->
+    </div><!-- roq -->
+
+    
+</main>
+
+
+{% endblock %}
+</main>
+
+{% block footer_top %}
+<p>Possible error pages: <a href="index">Save and upload your fit note</a> | <a href="error_1">Error 1: try again</a> | <a href="error_2">Error 2: try again or post</a> | <a href="error_3">Error 3: try again, use different device or post</a> 
+{% endblock %}
