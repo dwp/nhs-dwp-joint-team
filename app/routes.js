@@ -36,8 +36,8 @@ router.get(/(v\d$)/,function(req,res)
 });
 
 
-// Routes from Newcastle session
-// Photo
+// Routes from Newcastle session - beta3 onwards
+// Photo beta3
 router.post('/send-your-fit-note-beta-3/photo', function (req, res) {
   res.redirect('/send-your-fit-note-beta-3/photo/playback')
 })
@@ -48,7 +48,18 @@ router.post('/send-your-fit-note-beta-3/photo/upload-successful', function (req,
   res.redirect('/send-your-fit-note-beta-3/photo/nino')
 })
 
-// Upload
+// Photo beta4
+router.post('/send-your-fit-note-beta-4/photo', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-4/photo/playback')
+})
+router.post('/send-your-fit-note-beta-4/photo/playback', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-4/photo/upload-successful')
+})
+router.post('/send-your-fit-note-beta-4/photo/upload-successful', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-4/photo/nino')
+})
+
+// Upload beta3
 router.post('/send-your-fit-note-beta-3/upload', function (req, res) {
   res.redirect('/send-your-fit-note-beta-3/upload/playback')
 })
@@ -57,6 +68,17 @@ router.post('/send-your-fit-note-beta-3/upload/playback', function (req, res) {
 })
 router.post('/send-your-fit-note-beta-3/upload/upload-successful', function (req, res) {
   res.redirect('/send-your-fit-note-beta-3/upload/nino')
+})
+
+// Upload beta4
+router.post('/send-your-fit-note-beta-4/upload', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-4/upload/playback')
+})
+router.post('/send-your-fit-note-beta-4/upload/playback', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-4/upload/upload-successful')
+})
+router.post('/send-your-fit-note-beta-4/upload/upload-successful', function (req, res) {
+  res.redirect('/send-your-fit-note-beta-4/upload/nino')
 })
 
 
