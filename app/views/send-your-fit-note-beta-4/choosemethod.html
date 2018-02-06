@@ -4,26 +4,25 @@
 
   <h1 class="heading-large">Which of the following are you using?</h1>
 
-  <form method="post" action="404">
+  <form method="get" action="/send-your-fit-note-beta-4/upload/?upload-attempt=0" class="form">
 
       <div class="multiple-choice" data-target="method-2-extra">
-        <input id="method-2" type="radio" name="method-group" value="photo,redirect(photo/)">
+        <input id="method-2" type="radio" name="method-group" value="photo">
         <label for="method-2">Phone or tablet</label>
       </div>
-      <div class="multiple-choice" data-target="method-3-extra">
-        <input id="method-3" type="radio" name="method-group" value="scan,redirect(upload/)">
-        <label for="method-3">Desktop computer or laptop</label>
-      </div>
       <div class="panel panel-border-narrow js-hidden" id="method-2-extra">
-             <div class="form-group">
-               <label class="form-label" for="reason">You can connect a phone or tablet to the internet using Wi-Fi if available.</label>
-            </div>
+        <p>You can connect a phone or tablet to the internet using Wi-Fi if available.</p>
+      </div>
+
+      <div class="multiple-choice" data-target="method-3-extra">
+        <input id="method-3" type="radio" name="method-group" value="scan">
+        <label for="method-3">Desktop computer or laptop</label>
       </div>
       <!--div class="multiple-choice" data-target="post_address">
         <input id="method-4" type="radio" name="method-group" value="post">
         <label for="method-4">by posting it to DWP</label>
       </div-->
-    
+
     <!--div class="panel js-hidden" id="post_address">
       <p>Post your sick note to:</p>
       <p>
@@ -33,7 +32,7 @@
       </p>
     </div-->
 
-  <br></br>
+  <input type="hidden" name="upload-attempt" value="0">
 
    <div class="form-group mt10">
       <input type="submit" class="button" value="Continue"/>

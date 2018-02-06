@@ -26,3 +26,37 @@ $(document).ready(function () {
   var showHideContent = new GOVUK.ShowHideContent()
   showHideContent.init()
 })
+
+
+
+
+
+////// POSTCODE LOOKUP
+
+// hide results and manual entry on load
+$('.postcode-manual').hide();
+$('.postcode-results').hide();
+
+// postcode search click
+$('.js-postcode-lookup').click(function() {
+  // Grab the postcode entered
+  var postcode = $('#postcodeLookup').val();
+
+  $('.postcode-drop option').each(function() {
+    $(this).append(postcode);
+  });
+
+  $('.postcode-results').show();
+});
+
+// manual entry click
+$('.js-postcode-manual').click(function() {
+  //toggle the manual field and the postcode search
+  $('.postcode-manual').toggle();
+  $('.postcode-lookup').toggle();
+  $('.postcode-results').hide();
+  // toggle text of link
+  $(this).text(function(i, v){
+    return v === 'Enter address manually' ? 'Search for address with postcode' : 'Enter address manually'
+  });
+});
