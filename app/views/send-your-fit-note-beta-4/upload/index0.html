@@ -48,14 +48,14 @@
 
       <h1 class="heading-large">
       {% if data['method-group'] == 'photo' %}
-        Take a photo
+        Take a photo of you fit note
       {% else %}
         Save and upload your fit note
       {% endif %}
       </h1>
       <p>You photo must meet the rules for fit note photos.<br><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=true">Read the full guide for taking a photo</a>.</p>
 
-      {% if not data['upload-attempt'] or data['upload-attempt'] == 3 %}
+      {% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
 
       <form action="/send-your-fit-note-beta-4/upload/index0" method="get" class="form">
 
@@ -141,8 +141,6 @@
         </div><!-- form-group -->
 
       </form>
-
-      {% else %}
       {% elif data['upload-attempt'] == 3 %}
 
       <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
