@@ -3,80 +3,34 @@
 {% block fullcol %}
 <a href="/send-your-fit-note-beta-4/upload/nino" class="link-back">Back</a>
 
+
 {# {% include "../includes/error-summary.html" %} #}
 
 <div class="grid-row">
-  <div class="column-two-thirds">
-    <h1 class="heading-large">
-      Your address
-    </h1>
+    <div class="column-two-thirds">
+        <form action="textmessage" method="post" class="form" name="yourDetails" id="yourDetailsForm">
 
-    <form action="textmessage" method="post" class="form">
+            <fieldset class="form-group">
+                <h1 class="heading-large">Your address</h1>
 
-      <div class="form-group postcode-lookup">
-        <label class="form-label-bold" for="postcodeLookup">Postcode</label>
-        <input type="text" class="form-control" id="postcodeLookup" name="postcodeLookup" style="width: 7em">
-        <a href="#0" class="button-secondary js-postcode-lookup">Find</a>
-      </div>
+                <div class="form-group {% if errors.nino %}error{% endif %}" style="margin-top:30px">
+                    <label for="ninoFieldID" class="form-label">House name or number</label>
+                    <input type="text" name="house-number" class="form-control">
+                </div>
 
-      <p><a href="#0" class="js-postcode-manual">Enter address manually</a></p>
+                <div class="form-group {% if errors.nino %}error{% endif %}">
+                    <label for="ninoFieldID" class="form-label">Postcode</label>
+                    <input type="text" name="postcode" class="form-control" maxlength="13">
+                </div>
 
-      <div class="postcode-results">
-        <div class="form-group">
-          <label class="form-label" for="select-box">Select your address</label>
-          <select class="form-control postcode-drop" id="select-box">
-              <option>1 London Road, Sheffield, </option>
-              <option>2 London Road, Sheffield, </option>
-              <option>3 London Road, Sheffield, </option>
-              <option>4 London Road, Sheffield, </option>
-              <option>5 London Road, Sheffield, </option>
-              <option>6 London Road, Sheffield, </option>
-              <option>7 London Road, Sheffield, </option>
-              <option>8 London Road, Sheffield, </option>
-              <option>9 London Road, Sheffield, </option>
-              <option>10 London Road, Sheffield, </option>
-              <option>11 London Road, Sheffield, </option>
-              <option>12 London Road, Sheffield, </option>
-              <option>13 London Road, Sheffield, </option>
-              <option>14 London Road, Sheffield, </option>
-              <option>15 London Road, Sheffield, </option>
-              <option>16 London Road, Sheffield, </option>
-              <option>17 London Road, Sheffield, </option>
-              <option>18 London Road, Sheffield, </option>
-            </select>
-        </div>
-        <!-- /form-group -->
+            </fieldset>
 
-      </div>
-      <!-- postcode-results -->
-
-      <div class="postcode-manual">
-        <div class="form-group">
-
-          <label class="form-label-bold" for="orgAddressstreet">Building and street</label>
-          <input type="text" class="form-control" id="orgAddressStreet1" name="orgAddressStreet1">
-          <p><input type="text" class="form-control" id="orgAddressStreet2"></p>
-
-          <label class="form-label-bold" for="orgAddresstowncity">Town or city</label>
-          <p><input type="text" class="form-control" id="orgAddressTowncity" name="orgAddressTowncity"></p>
-
-          <label class="form-label-bold" for="orgAddressPostcode">Postcode</label>
-          <p><input type="text" class="form-control" id="orgAddressPostcode" name="orgAddressPostcode" style="width: 7em"></p>
-
-        </div>
-        <!-- /form-group -->
-
-      </div>
-      <!-- postcode-manual -->
-
-      <div class="form-group">
-        <input type="submit" class="button" value="Continue">
-      </div>
-
-    </form>
-  </div>
+            <div class="form-group">
+                <input type="submit" id="add-your-details" class="button primary-button" value="Continue">
+            </div>
+        </form>
+    </div>
 </div>
-
 
 
 
