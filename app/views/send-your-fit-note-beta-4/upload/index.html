@@ -69,14 +69,18 @@
             <ul class="list list-bullet">
               <li>you're in a well lit place</li>
               <li>all of your fit note is in the image</li>
-              <li>your fit note isn't creased</li>
-              <li>the image isn't blurred</li>
             </ul>
           </li>
           <li>Save the photo or scan somewhere you can easily find it on your computer.</li>
           {% endif %}
         </ol>
+        {% if data['method-group'] == 'photo' %}
+        <p>Your photo will be automatically checked to make sure it's good enough.</p>
+        {% else %}
+        <p>Your photo or scan will be automatically checked to make sure it's good enough.</p>
+        {% endif %}
         <p><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false">Read the full guide for taking a photo</a>.</p>
+
       </div>
 
       <div class="column-half">
