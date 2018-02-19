@@ -1,30 +1,41 @@
-{% extends path+"/../layout.html" %} {% block head %}
-<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
-<link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" /> {% endblock %} {% block fullcol %}
+{% extends path+"/../layout.html" %}
 
+{% block head %}
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block fullcol %}
 <a href="/send-your-fit-note-beta-4/choosemethod" class="link-back">Back</a>
 
 <div class="grid-row">
   <div class="column-full">
 
-    {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 %}
-
+    {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 or data['upload-attempt'] == 3 %}
     <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
 
       {% if data['method-group'] == 'photo' %}
       <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-          There&rsquo;s a problem with your photo.
-        </h1>
+        There&rsquo;s a problem with your photo.
+      </h1>
       <p>Try taking another photo.</p>
       {% else %}
       <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-          There&rsquo;s a problem with the photo or scan of your fit note.
-        </h1>
+        There&rsquo;s a problem with the photo or scan of your fit note.
+      </h1>
       <p>Try uploading another photo or scan.</p>
       {% endif %}
 
-
+      {% if data['upload-attempt'] == 3 %}
+      <p>You can either:</p>
+      <ul class="list list-bullet">
+        <li>try again with this device</li>
+        <li>try again with a different device &ndash; you can ask a family member or friend to use their device to send your fit note on your behalf</li>
+        <li>post your fit note to <span class="bold">Freepost DWP ESA 38</span> &ndash; you don&rsquo;t need a stamp
+</li>
+      </ul>
+      {% endif %}
 
       <ul class="error-summary-list">
         <li><a href="#error-link">Try again</a></li>
@@ -38,8 +49,6 @@
       {% endif %}
 
     </div>
-
-
     {% endif %}
 
     <div class="photo-guide form-group">
@@ -90,122 +99,125 @@
 
     {% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
 
-    <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      {% if data['syfn-errors'] == "true" %}
+      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
 
-      <div class="form-group">
-        <input id="uploadFile" class="form-control uploaded" style="display:none">
-        <div class="fileUpload button" id="opencam">
-          <label>
-            {% if data['method-group'] == 'photo' %}
+        <input type="hidden" name="upload-attempt" value="1">
+      {% else %}
+      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      {% endif %}
+
+        <div class="form-group">
+          <input id="uploadFile" class="form-control uploaded" style="display:none">
+          <div class="fileUpload button" id="opencam">
+            <label>
+              {% if data['method-group'] == 'photo' %}
+                Open camera
+              {% else %}
+                Choose a file to upload
+              {% endif %}</label>
+            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file" {% if data[ 'method-group']=='photo' %}accept="image/*;capture=camera" {% endif %}>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+        </div>
+
+      </form>
+
+    {% elif data['upload-attempt'] == 1 %}
+
+      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+
+        <div class="form-group-error" id="error-link">
+          <input id="uploadFile" class="form-control uploaded" style="display:none">
+          <span class="error-message">
+          {% if data['method-group'] == 'photo' %}
+            Try taking another photo.
+          {% else %}
+            Try uploading another photo or scan.
+          {% endif %}
+        </span>
+          <div class="fileUpload button" id="opencam">
+            <label>{% if data['method-group'] == 'photo' %}
               Open camera
             {% else %}
               Choose a file to upload
             {% endif %}</label>
-          <input id="uploadBtn" class="upload" name="uploadBtnText" type="file" {% if data[ 'method-group']=='photo' %}accept="image/*;capture=camera" {% endif %}>
+            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+          </div>
         </div>
 
-      </div>
-      <!-- form-group -->
+        <input type="hidden" name="upload-attempt" value="2">
 
-      <input type="hidden" name="upload-attempt" value="1">
-
-      <div class="form-group">
-        <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-      </div>
-      <!-- form-group -->
-
-    </form>
-
-    {% elif data['upload-attempt'] == 1 %}
-
-    <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
-
-      <div class="form-group-error" id="error-link">
-        <input id="uploadFile" class="form-control uploaded" style="display:none">
-        <span class="error-message">
-        {% if data['method-group'] == 'photo' %}
-          Try taking another photo.
-        {% else %}
-          Try uploading another photo or scan.
-        {% endif %}
-      </span>
-        <div class="fileUpload button" id="opencam">
-          <label>{% if data['method-group'] == 'photo' %}
-            Open camera
-          {% else %}
-            Choose a file to upload
-          {% endif %}</label>
-          <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+        <div class="form-group">
+          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
         </div>
 
-      </div>
-      <!-- form-group -->
-
-      <input type="hidden" name="upload-attempt" value="2">
-
-      <div class="form-group">
-        <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-      </div>
-      <!-- form-group -->
-
-    </form>
+      </form>
 
     {% elif data['upload-attempt'] == 2 %}
 
-    <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
 
-      <div class="form-group-error" id="error-link">
-        <input id="uploadFile" class="form-control uploaded" style="display:none">
-        <span class="error-message">
-        {% if data['method-group'] == 'photo' %}
-          Try taking another photo.
-        {% else %}
-          Try uploading another photo or scan.
-        {% endif %}
-      </span>
-        <div class="fileUpload button" id="opencam">
-          <label>{% if data['method-group'] == 'photo' %}
-            Open camera
+        <div class="form-group-error" id="error-link">
+          <input id="uploadFile" class="form-control uploaded" style="display:none">
+          <span class="error-message">
+          {% if data['method-group'] == 'photo' %}
+            Try taking another photo.
           {% else %}
-            Choose a file to upload
-          {% endif %}</label>
-          <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+            Try uploading another photo or scan.
+          {% endif %}
+        </span>
+          <div class="fileUpload button" id="opencam">
+            <label>{% if data['method-group'] == 'photo' %}
+              Open camera
+            {% else %}
+              Choose a file to upload
+            {% endif %}</label>
+            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+          </div>
         </div>
 
-      </div>
-      <!-- form-group -->
+        <input type="hidden" name="upload-attempt" value="3">
 
-      <div class="form-group">
-        <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-      </div>
-      <!-- form-group -->
+        <div class="form-group">
+          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+        </div>
 
-    </form>
+      </form>
 
     {% elif data['upload-attempt'] == 3 %}
 
-    <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
 
-      <div class="form-group" id="error-link">
-        <input id="uploadFile" class="form-control uploaded" style="display:none">
-        <div class="fileUpload button" id="opencam">
-          <label>{% if data['method-group'] == 'photo' %}
-            Open camera
+        <div class="form-group-error" id="error-link">
+          <input id="uploadFile" class="form-control uploaded" style="display:none">
+          <span class="error-message">
+          {% if data['method-group'] == 'photo' %}
+            Try taking another photo.
           {% else %}
-            Choose a file to upload
-          {% endif %}</label>
-          <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+            Try uploading another photo or scan.
+          {% endif %}
+        </span>
+          <div class="fileUpload button" id="opencam">
+            <label>{% if data['method-group'] == 'photo' %}
+              Open camera
+            {% else %}
+              Choose a file to upload
+            {% endif %}</label>
+            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+          </div>
         </div>
 
-      </div>
-      <!-- form-group -->
+        <input type="hidden" name="upload-attempt" value="0">
 
-      <div class="form-group">
-        <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-      </div>
-      <!-- form-group -->
+        <div class="form-group">
+          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+        </div>
 
-    </form>
+      </form>
 
     {% else %} Error {% endif %}
 
@@ -220,10 +232,11 @@
     // document.getElementById("opencam").style.display = "none"
     document.getElementById("startButton").click()
   }
-
 </script>
 
-{% endblock %} {% block footer_top %}
+{% endblock %}
+
+{% block footer_top %}
 <p>
   Possible error pages:
   <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
@@ -233,6 +246,10 @@
   <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
     <input type="hidden" name="upload-attempt" value="2">
     <input type="submit" class="button-link" value="Error 2: try again and read guidance" id="startButton">
+  </form>
+  <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+    <input type="hidden" name="upload-attempt" value="3">
+    <input type="submit" class="button-link" value="Error 3: post instead" id="startButton">
   </form>
 </p>
 {% endblock %}
