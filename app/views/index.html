@@ -68,6 +68,35 @@
       <table>
         <tr>
           <td>
+            <h2 class="heading-medium mb0 mt30">Send your fit note: beta 5</h2>
+            <p>A prototype of a service allowing users to send their fit note to DWP using a phone, tablet or computer. Changes in this version:</p>
+            
+            <ul class="list list-bullet">
+              <li>added 'Get more help to get your photo right' to first error mesaage</li>
+            </ul> 
+
+            <form action="/send-your-fit-note-beta-5/gov-apply" method="post" class="form">
+
+              <input name="syfn-errors" value="false" type="hidden">
+
+              <div class="form-group">
+                <input type="submit" class="button" value="Launch prototype &ndash; errors disabled">
+              </div>
+
+            </form>
+            <form action="/send-your-fit-note-beta-5/gov-aaply" method="post" class="form">
+
+              <input name="syfn-errors" value="true" type="hidden">
+
+              <div class="form-group">
+                <input type="submit" class="button" value="Launch prototype &ndash; errors enabled">
+              </div>
+
+            </form>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <h2 class="heading-medium mb0 mt30">Send your fit note: beta 4</h2>
             <p>A prototype of a service allowing users to send their fit note to DWP using a phone, tablet or computer. Changes in this version:</p>
             
@@ -78,7 +107,7 @@
               <li>added 'Checking your image' page
               <li>added 'House name' on address screen</li>
               <li>changed GOV.UK page so 'Send your fit note' has its own section</li>
-              <li>changed 'Received' to 'Sent' on conformation page
+              <li>changed 'Received' to 'Sent' on conformation page</li>
             </ul> 
 
             <form action="/send-your-fit-note-beta-4/" method="post" class="form">
