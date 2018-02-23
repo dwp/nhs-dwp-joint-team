@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block fullcol %}
-<a href="/send-your-fit-note-beta-4/choosemethod" class="link-back">Back</a>
+<a href="/send-your-fit-note-beta-5/choosemethod" class="link-back">Back</a>
 
 <div class="grid-row">
   <div class="column-full">
@@ -26,7 +26,7 @@
       <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
         There&rsquo;s a problem with the photo or scan of your fit note
       </h1>
-      <p>Try uploading another photo or <a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>view our guide on taking a photo</strong></a></p>
+      <p>Try uploading another photo or <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false"><strong>view our guide on taking a photo</strong></a></p>
       <ul class="error-summary-list">
         <li><a href="#error-link">Try uploading another photo or scan</a></li>
       </ul>
@@ -38,7 +38,7 @@
         <li>try again with this device</li>
         <li>try again with a different device &ndash; you can ask a family member or friend to use their device</li>
         <li>post your fit note to <span class="bold">Freepost DWP ESA 38</span> &ndash; you don&rsquo;t need a stamp</li>
-        <li><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>get more help to get your photo right</strong></a></li>
+        <li><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false"><strong>get more help to get your photo right</strong></a></li>
       </ul>
       {% endif %}
 
@@ -46,7 +46,7 @@
       <h2 class="heading-small">
         Need more help?
       </h2>
-      <p><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>Get more help to get your photo right</strong></a></p>
+      <p><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false"><strong>Get more help to get your photo right</strong></a></p>
       {% endif %} #}
 
     </div>
@@ -85,7 +85,7 @@
           {% else %}
           <p>Your photo or scan will be automatically checked to make sure it's good enough.</p>
           {% endif %}
-          <p><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>Get more help to get your photo right</strong></a></p>
+          <p><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false"><strong>Get more help to get your photo right</strong></a></p>
 
         </div>
 
@@ -101,11 +101,11 @@
     {% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
 
       {% if data['syfn-errors'] == "true" %}
-      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
 
         <input type="hidden" name="upload-attempt" value="1">
       {% else %}
-      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/loading" method="get" class="form">
       {% endif %}
 
         <div class="form-group">
@@ -129,7 +129,7 @@
 
     {% elif data['upload-attempt'] == 1 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
 
         <div class="form-group-error" id="error-link">
           <input id="uploadFile" class="form-control uploaded" style="display:none">
@@ -160,7 +160,7 @@
 
     {% elif data['upload-attempt'] == 2 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
 
         <div class="form-group-error" id="error-link">
           <input id="uploadFile" class="form-control uploaded" style="display:none">
@@ -191,7 +191,7 @@
 
     {% elif data['upload-attempt'] == 3 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/loading" method="get" class="form">
 
         <div class="form-group-error" id="error-link">
           <input id="uploadFile" class="form-control uploaded" style="display:none">
@@ -240,15 +240,15 @@
 {% block footer_top %}
 <p>
   Possible error pages:
-  <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+  <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
     <input type="hidden" name="upload-attempt" value="1">
     <input type="submit" class="button-link" value="Error 1: try again" id="startButton">
   </form>
-  <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+  <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
     <input type="hidden" name="upload-attempt" value="2">
     <input type="submit" class="button-link" value="Error 2: try again and read guidance" id="startButton">
   </form>
-  <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+  <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
     <input type="hidden" name="upload-attempt" value="3">
     <input type="submit" class="button-link" value="Error 3: post instead" id="startButton">
   </form>

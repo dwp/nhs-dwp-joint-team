@@ -7,7 +7,7 @@
 
 {% block fullcol %}
 
-<a href="/send-your-fit-note-beta-4/choosemethod" class="link-back">Back</a>
+<a href="/send-your-fit-note-beta-5/choosemethod" class="link-back">Back</a>
 
 {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 %}
 <div class="grid-row">
@@ -35,7 +35,7 @@
       <h2 class="heading-small">
         Need more help?
       </h2>
-      <p><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=true"><strong>Get more help to get your photo right</strong></a></p>
+      <p><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=true"><strong>Get more help to get your photo right</strong></a></p>
       {% endif %}
 
     </div>
@@ -53,11 +53,11 @@
         Save and upload your fit note
       {% endif %}
       </h1>
-      <p>You photo must meet the rules for fit note photos.<br><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=true"><strong>Get more help to get your photo right</strong></a></p>
+      <p>You photo must meet the rules for fit note photos.<br><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=true"><strong>Get more help to get your photo right</strong></a></p>
 
       {% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/index0" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/index0" method="get" class="form">
 
         <div class="form-group">
           <input id="uploadFile" class="form-control uploaded" style="display:none">
@@ -82,7 +82,7 @@
 
       {% elif data['upload-attempt'] == 1 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/index0" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/index0" method="get" class="form">
 
         <div class="form-group-error" id="error-link">
           <input id="uploadFile" class="form-control uploaded" style="display:none">
@@ -114,7 +114,7 @@
 
       {% elif data['upload-attempt'] == 2 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/loading" method="get" class="form">
 
         <div class="form-group-error" id="error-link">
           <input id="uploadFile" class="form-control uploaded" style="display:none">
@@ -143,7 +143,7 @@
       </form>
       {% elif data['upload-attempt'] == 3 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
+      <form action="/send-your-fit-note-beta-5/upload/loading" method="get" class="form">
 
         <div class="form-group" id="error-link">
           <input id="uploadFile" class="form-control uploaded" style="display:none">
