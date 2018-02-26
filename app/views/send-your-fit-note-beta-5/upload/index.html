@@ -79,17 +79,17 @@
         <h1 class="heading-large">
           Take a photo of you fit note
         </h1>
-        <p>You photo must meet the rules for fit note photos, <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a>.</p>
+        <!-- <p>You photo must meet the rules for fit note photos, <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a>.</p> -->
         {% else %}
         <h1 class="heading-large">
           Save and upload your fit note
         </h1>
-        <p>You photo or scan must meet the rules for fit note photos, <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a>.</p>
+        <!-- <p>You photo or scan must meet the rules for fit note photos, <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a>.</p> -->
         {% endif %}
 
         <div class="grid-row">
           <div class="column-half">
-            <h2 class="heading-medium">How to take a good photo</h2>
+            <!-- <h2 class="heading-medium">How to take a good photo</h2> -->
             <ol class="list list-number">
               {% if data['method-group'] == 'photo' %}
               <li>Put your fit note on a flat surface like a table.</li>
@@ -106,17 +106,18 @@
               <li>Save the photo or scan somewhere you can easily find it on your computer.</li>
               {% endif %}
             </ol>
-            {% if data['method-group'] == 'photo' %}
-            <p>Your photo will be automatically checked to make sure it's good enough.</p>
-            {% else %}
-            <p>Your photo or scan will be automatically checked to make sure it's good enough.</p>
-            {% endif %}
-            {# <p><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">Get more help to get your photo right</a></p> #}
 
+              {% if data['method-group'] == 'photo' %}
+              <p>Your photo will be automatically checked to make sure it's good enough.</p>
+              <p><a href="/send-your-fit-note-beta-5/upload/guide/step1">Get more help to get your photo right</a></p>
+              {% else %}
+              <p>Your photo or scan will be automatically checked to make sure it's good enough.</p>
+              <p><a href="/send-your-fit-note-beta-5/upload/guide/step1">Get more help to get your photo right</a></p>
+              {% endif %}
           </div>
 
           <div class="column-half">
-            <img src="/public/images/guideline-photo.png" alt="" width="100%" style="margin-top: 3em">
+            <img src="/public/images/guideline-photo.png" alt="" width="100%" style="margin-top: 0.5em">
           </div>
         </div>
 
@@ -171,14 +172,7 @@
                 Try uploading another photo or scan
               {% endif %}
             </span>
-            <div class="fileUpload button" id="opencam">
-              <label>{% if data['method-group'] == 'photo' %}
-                Open camera
-              {% else %}
-                Choose a file to upload
-              {% endif %}</label>
-              <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
-            </div>
+
           </div>
 
           <input type="hidden" name="upload-attempt" value="2">
@@ -251,6 +245,7 @@
                 Try uploading another photo or scan
               {% endif %}
             </span>
+
             <div class="fileUpload button" id="opencam">
               <label>{% if data['method-group'] == 'photo' %}
                 Open camera
