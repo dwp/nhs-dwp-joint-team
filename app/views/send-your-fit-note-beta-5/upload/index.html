@@ -6,224 +6,262 @@
 {% endblock %}
 
 {% block fullcol %}
-<a href="/send-your-fit-note-beta-4/choosemethod" class="link-back">Back</a>
+<a href="/send-your-fit-note-beta-5/choosemethod" class="link-back">Back</a>
 
 <div class="grid-row">
   <div class="column-full">
 
-    {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 or data['upload-attempt'] == 3 %}
-    <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+    {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 %}
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
 
 
       {% if data['method-group'] == 'photo' %}
       <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
         There&rsquo;s a problem with your photo
       </h1>
+      <p>Try taking another or <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a></p>
       <ul class="error-summary-list">
-        <li><a href="#error-link">Try taking another photo</a></li>
+        <li><a href="#error-link">Take another photo</a></li>
       </ul>
       {% else %}
       <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
         There&rsquo;s a problem with the photo or scan of your fit note
       </h1>
-      <p>Try uploading another photo or <a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>view our guide on taking a photo</strong></a></p>
+      <p>Try uploading another or <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a></p>
       <ul class="error-summary-list">
-        <li><a href="#error-link">Try uploading another photo or scan</a></li>
+        <li><a href="#error-link">Upload another photo or scan</a></li>
       </ul>
       {% endif %}
 
-      {% if data['upload-attempt'] == 3 %}
-      <h2 class="heading-small">You can either:</h2>
+    </div>
+    {% elif data['upload-attempt'] == 3 %}
+    <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+
+
+      {% if data['method-group'] == 'photo' %}
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        There&rsquo;s a problem with your photo
+      </h1>
+      <h3 class="heading-small">You can either:</h3>
       <ul class="list list-bullet">
         <li>try again with this device</li>
         <li>try again with a different device &ndash; you can ask a family member or friend to use their device</li>
         <li>post your fit note to <span class="bold">Freepost DWP ESA 38</span> &ndash; you don&rsquo;t need a stamp</li>
-        <li><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>get more help to get your photo right</strong></a></li>
+        <li><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get more help to get your photo right</a></li>
+      </ul>
+      <ul class="error-summary-list">
+        <li><a href="#error-link">Take another photo</a></li>
+      </ul>
+      {% else %}
+      <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+        There&rsquo;s a problem with the photo or scan of your fit note
+      </h1>
+      <h3 class="heading-small">You can either:</h3>
+      <ul class="list list-bullet">
+        <li>try again with this device</li>
+        <li>try again with a different device &ndash; you can ask a family member or friend to use their device</li>
+        <li>post your fit note to <span class="bold">Freepost DWP ESA 38</span> &ndash; you don&rsquo;t need a stamp</li>
+        <li><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get more help to get your photo right</a></li>
+      </ul>
+      <ul class="error-summary-list">
+        <li><a href="#error-link">Upload another photo or scan</a></li>
       </ul>
       {% endif %}
-
-      {# {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 %}
-      <h2 class="heading-small">
-        Need more help?
-      </h2>
-      <p><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>Get more help to get your photo right</strong></a></p>
-      {% endif %} #}
 
     </div>
     {% endif %}
 
-    <div class="photo-guide form-group">
+    <div class="grid-row">
+      <div class="column-two-thirds">
 
-      <h1 class="bold-large">
-      {% if data['method-group'] == 'photo' %}
-        Take a photo of you fit note
-      {% else %}
-        Save and upload your fit note
-      {% endif %}
-      </h1>
 
-      <div class="grid-row">
-        <div class="column-half">
-          <ol class="list list-number">
-            {% if data['method-group'] == 'photo' %}
-            <li>Put your fit note on a flat surface like a table.</li>
-            <li>Make sure you&rsquo;re in a well lit place.</li>
-            <li>Hold your phone above the paper, and make sure it&rsquo;s sideways or &lsquo;landscape&rsquo;.</li>
-            {% else %}
-            <li>Take a photo of your fit note or scan it to your computer.</li>
-            <li>Make sure:
-              <ul class="list list-bullet">
-                <li>you're in a well lit place</li>
-                <li>all of your fit note is in the image</li>
-              </ul>
-            </li>
-            <li>Save the photo or scan somewhere you can easily find it on your computer.</li>
-            {% endif %}
-          </ol>
-          {% if data['method-group'] == 'photo' %}
-          <p>Your photo will be automatically checked to make sure it's good enough.</p>
-          {% else %}
-          <p>Your photo or scan will be automatically checked to make sure it's good enough.</p>
-          {% endif %}
-          <p><a href="/send-your-fit-note-beta-4/upload/guide/step1?upload-attempt=3&v2=false"><strong>Get more help to get your photo right</strong></a></p>
+        {% if data['method-group'] == 'photo' %}
+        <h1 class="heading-large">
+          Take a photo of you fit note
+        </h1>
+        <p>You photo must meet the rules for fit note photos, <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a>.</p>
+        {% else %}
+        <h1 class="heading-large">
+          Save and upload your fit note
+        </h1>
+        <p>You photo or scan must meet the rules for fit note photos, <a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">get help with taking a photo</a>.</p>
+        {% endif %}
 
-        </div>
-
-        <div class="column-half">
-          <img src="/public/images/guideline-photo.png" alt="" width="100%">
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="column-full">
-
-    {% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
-
-      {% if data['syfn-errors'] == "true" %}
-      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
-
-        <input type="hidden" name="upload-attempt" value="1">
-      {% else %}
-      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
-      {% endif %}
-
-        <div class="form-group">
-          <input id="uploadFile" class="form-control uploaded" style="display:none">
-          <div class="fileUpload button" id="opencam">
-            <label>
+        <div class="grid-row">
+          <div class="column-half">
+            <h2 class="heading-medium">How to take a good photo</h2>
+            <ol class="list list-number">
               {% if data['method-group'] == 'photo' %}
+              <li>Put your fit note on a flat surface like a table.</li>
+              <li>Make sure you&rsquo;re in a well lit place.</li>
+              <li>Hold your phone above the paper, and make sure it&rsquo;s sideways or &lsquo;landscape&rsquo;.</li>
+              {% else %}
+              <li>Take a photo of your fit note or scan it to your computer.</li>
+              <li>Make sure:
+                <ul class="list list-bullet">
+                  <li>you're in a well lit place</li>
+                  <li>all of your fit note is in the image</li>
+                </ul>
+              </li>
+              <li>Save the photo or scan somewhere you can easily find it on your computer.</li>
+              {% endif %}
+            </ol>
+            {% if data['method-group'] == 'photo' %}
+            <p>Your photo will be automatically checked to make sure it's good enough.</p>
+            {% else %}
+            <p>Your photo or scan will be automatically checked to make sure it's good enough.</p>
+            {% endif %}
+            {# <p><a href="/send-your-fit-note-beta-5/upload/guide/step1?upload-attempt=3&v2=false">Get more help to get your photo right</a></p> #}
+
+          </div>
+
+          <div class="column-half">
+            <img src="/public/images/guideline-photo.png" alt="" width="100%" style="margin-top: 3em">
+          </div>
+        </div>
+
+        {% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
+
+        {% if data['syfn-errors'] == "true" %}
+        <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
+
+          <input type="hidden" name="upload-attempt" value="1">
+        {% else %}
+        <form action="/send-your-fit-note-beta-5/upload/loading" method="get" class="form">
+        {% endif %}
+
+          <div class="form-group">
+            <input id="uploadFile" class="form-control uploaded" style="display:none">
+            <div class="fileUpload button" id="opencam">
+              <label>
+                {% if data['method-group'] == 'photo' %}
+                  Open camera
+                {% else %}
+                  Choose a file to upload
+                {% endif %}</label>
+              <input id="uploadBtn" class="upload" name="uploadBtnText" type="file" {% if data[ 'method-group']=='photo' %}accept="image/*;capture=camera" {% endif %}>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+          </div>
+
+        </form>
+
+      {% elif data['upload-attempt'] == 1 %}
+
+        <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
+
+          <div class="form-group-error" id="error-link">
+            <input id="uploadFile" class="form-control uploaded" style="display:none">
+            <span class="error-message">
+            {% if data['method-group'] == 'photo' %}
+              Try taking another photo
+            {% else %}
+              Try uploading another photo or scan
+            {% endif %}
+          </span>
+            <div class="fileUpload button" id="opencam">
+              <label>{% if data['method-group'] == 'photo' %}
                 Open camera
               {% else %}
                 Choose a file to upload
               {% endif %}</label>
-            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file" {% if data[ 'method-group']=='photo' %}accept="image/*;capture=camera" {% endif %}>
+              <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-        </div>
+          <input type="hidden" name="upload-attempt" value="2">
 
-      </form>
+          <div class="form-group">
+            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+          </div>
 
-    {% elif data['upload-attempt'] == 1 %}
+        </form>
 
-      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+      {% elif data['upload-attempt'] == 2 %}
 
-        <div class="form-group-error" id="error-link">
-          <input id="uploadFile" class="form-control uploaded" style="display:none">
-          <span class="error-message">
-          {% if data['method-group'] == 'photo' %}
-            Try taking another photo
-          {% else %}
-            Try uploading another photo or scan
-          {% endif %}
-        </span>
-          <div class="fileUpload button" id="opencam">
-            <label>{% if data['method-group'] == 'photo' %}
-              Open camera
+        <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
+
+          <div class="form-group-error" id="error-link">
+            <input id="uploadFile" class="form-control uploaded" style="display:none">
+            <span class="error-message">
+            {% if data['method-group'] == 'photo' %}
+              Try taking another photo
             {% else %}
-              Choose a file to upload
-            {% endif %}</label>
-            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+              Try uploading another photo or scan
+            {% endif %}
+          </span>
+            <div class="fileUpload button" id="opencam">
+              <label>{% if data['method-group'] == 'photo' %}
+                Open camera
+              {% else %}
+                Choose a file to upload
+              {% endif %}</label>
+              <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+            </div>
           </div>
-        </div>
 
-        <input type="hidden" name="upload-attempt" value="2">
+          <input type="hidden" name="upload-attempt" value="3">
 
-        <div class="form-group">
-          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-        </div>
+          <div class="form-group">
+            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+          </div>
 
-      </form>
+        </form>
 
-    {% elif data['upload-attempt'] == 2 %}
+      {% elif data['upload-attempt'] == 3 %}
 
-      <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+        <form action="/send-your-fit-note-beta-5/upload/loading" method="get" class="form">
 
-        <div class="form-group-error" id="error-link">
-          <input id="uploadFile" class="form-control uploaded" style="display:none">
-          <span class="error-message">
-          {% if data['method-group'] == 'photo' %}
-            Try taking another photo
-          {% else %}
-            Try uploading another photo or scan
-          {% endif %}
-        </span>
-          <div class="fileUpload button" id="opencam">
-            <label>{% if data['method-group'] == 'photo' %}
-              Open camera
+          <div class="form-group-error" id="error-link">
+            <input id="uploadFile" class="form-control uploaded" style="display:none">
+            <span class="error-message">
+            {% if data['method-group'] == 'photo' %}
+              Try taking another photo
             {% else %}
-              Choose a file to upload
-            {% endif %}</label>
-            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+              Try uploading another photo or scan
+            {% endif %}
+          </span>
+            <div class="fileUpload button" id="opencam">
+              <label>{% if data['method-group'] == 'photo' %}
+                Open camera
+              {% else %}
+                Choose a file to upload
+              {% endif %}</label>
+              <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+            </div>
           </div>
-        </div>
 
-        <input type="hidden" name="upload-attempt" value="3">
+          <input type="hidden" name="upload-attempt" value="0">
 
-        <div class="form-group">
-          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-        </div>
-
-      </form>
-
-    {% elif data['upload-attempt'] == 3 %}
-
-      <form action="/send-your-fit-note-beta-4/upload/loading" method="get" class="form">
-
-        <div class="form-group-error" id="error-link">
-          <input id="uploadFile" class="form-control uploaded" style="display:none">
-          <span class="error-message">
-          {% if data['method-group'] == 'photo' %}
-            Try taking another photo
-          {% else %}
-            Try uploading another photo or scan
-          {% endif %}
-        </span>
-          <div class="fileUpload button" id="opencam">
-            <label>{% if data['method-group'] == 'photo' %}
-              Open camera
-            {% else %}
-              Choose a file to upload
-            {% endif %}</label>
-            <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+          <div class="form-group">
+            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
           </div>
-        </div>
 
-        <input type="hidden" name="upload-attempt" value="0">
+        </form>
 
-        <div class="form-group">
-          <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
-        </div>
+      {% else %} Error {% endif %}
 
-      </form>
+      </div>
 
-    {% else %} Error {% endif %}
+      <div class="column-third">
 
-  </div>
-</div>
+        <aside class="govuk-related-items font-xsmall" role="complementary">
+          <h2 class="heading-medium" id="subsection-title">Call for help</h2>
+          {# <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="font-xsmall">
+              <li><a href="#">Related link</a></li>
+              <li><a href="#">Related link</a></li>
+              <li><a href="#" class="bold-xsmall">More <span class="visuallyhidden">in Subsection</span></a></li>
+            </ul>
+          </nav> #}
+          <p>You can call 0800-DWP-HELP for assistance</p>
+        </aside>
+
+      </div>
+    </div>
 
 
 <script type="text/javascript">
@@ -240,15 +278,15 @@
 {% block footer_top %}
 <p>
   Possible error pages:
-  <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+  <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
     <input type="hidden" name="upload-attempt" value="1">
-    <input type="submit" class="button-link" value="Error 1: try again" id="startButton">
+    <input type="submit" class="button-link" value="Error 1: try again and read guidance" id="startButton">
   </form>
-  <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+  <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
     <input type="hidden" name="upload-attempt" value="2">
     <input type="submit" class="button-link" value="Error 2: try again and read guidance" id="startButton">
   </form>
-  <form action="/send-your-fit-note-beta-4/upload/" method="get" class="form">
+  <form action="/send-your-fit-note-beta-5/upload/" method="get" class="form">
     <input type="hidden" name="upload-attempt" value="3">
     <input type="submit" class="button-link" value="Error 3: post instead" id="startButton">
   </form>
