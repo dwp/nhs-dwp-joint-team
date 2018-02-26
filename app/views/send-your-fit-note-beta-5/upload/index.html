@@ -143,8 +143,17 @@
             </div>
           </div>
 
+          <div id="uploading" style="display: none">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            <p>Uploading...</p>
+          </div>
+
           <div class="form-group">
-            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+            <input type="submit" value="Upload" id="startButton" style="display:none">
           </div>
 
         </form>
@@ -155,13 +164,13 @@
 
           <div class="form-group-error" id="error-link">
             <input id="uploadFile" class="form-control uploaded" style="display:none">
-            <span class="error-message">
-            {% if data['method-group'] == 'photo' %}
-              Try taking another photo
-            {% else %}
-              Try uploading another photo or scan
-            {% endif %}
-          </span>
+            <span class="error-message" id="uploaderror">
+              {% if data['method-group'] == 'photo' %}
+                Try taking another photo
+              {% else %}
+                Try uploading another photo or scan
+              {% endif %}
+            </span>
             <div class="fileUpload button" id="opencam">
               <label>{% if data['method-group'] == 'photo' %}
                 Open camera
@@ -174,8 +183,17 @@
 
           <input type="hidden" name="upload-attempt" value="2">
 
+          <div id="uploading" style="display: none">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            <p>Uploading...</p>
+          </div>
+
           <div class="form-group">
-            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+            <input type="submit" value="Upload" id="startButton" style="display:none">
           </div>
 
         </form>
@@ -186,13 +204,13 @@
 
           <div class="form-group-error" id="error-link">
             <input id="uploadFile" class="form-control uploaded" style="display:none">
-            <span class="error-message">
-            {% if data['method-group'] == 'photo' %}
-              Try taking another photo
-            {% else %}
-              Try uploading another photo or scan
-            {% endif %}
-          </span>
+            <span class="error-message" id="uploaderror">
+              {% if data['method-group'] == 'photo' %}
+                Try taking another photo
+              {% else %}
+                Try uploading another photo or scan
+              {% endif %}
+            </span>
             <div class="fileUpload button" id="opencam">
               <label>{% if data['method-group'] == 'photo' %}
                 Open camera
@@ -205,8 +223,17 @@
 
           <input type="hidden" name="upload-attempt" value="3">
 
+          <div id="uploading" style="display: none">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            <p>Uploading...</p>
+          </div>
+
           <div class="form-group">
-            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+            <input type="submit" value="Upload" id="startButton" style="display:none">
           </div>
 
         </form>
@@ -217,13 +244,13 @@
 
           <div class="form-group-error" id="error-link">
             <input id="uploadFile" class="form-control uploaded" style="display:none">
-            <span class="error-message">
-            {% if data['method-group'] == 'photo' %}
-              Try taking another photo
-            {% else %}
-              Try uploading another photo or scan
-            {% endif %}
-          </span>
+            <span class="error-message" id="uploaderror">
+              {% if data['method-group'] == 'photo' %}
+                Try taking another photo
+              {% else %}
+                Try uploading another photo or scan
+              {% endif %}
+            </span>
             <div class="fileUpload button" id="opencam">
               <label>{% if data['method-group'] == 'photo' %}
                 Open camera
@@ -236,8 +263,17 @@
 
           <input type="hidden" name="upload-attempt" value="0">
 
+          <div id="uploading" style="display: none">
+            <div class="spinner">
+              <div class="bounce1"></div>
+              <div class="bounce2"></div>
+              <div class="bounce3"></div>
+            </div>
+            <p>Uploading...</p>
+          </div>
+
           <div class="form-group">
-            <input type="submit" class="button" value="Upload" id="startButton" style="display:none">
+            <input type="submit" value="Upload" id="startButton" style="display:none">
           </div>
 
         </form>
@@ -249,15 +285,10 @@
       <div class="column-third">
 
         <aside class="govuk-related-items font-xsmall" role="complementary">
-          <h2 class="heading-medium" id="subsection-title">Call for help</h2>
-          {# <nav role="navigation" aria-labelledby="subsection-title">
-            <ul class="font-xsmall">
-              <li><a href="#">Related link</a></li>
-              <li><a href="#">Related link</a></li>
-              <li><a href="#" class="bold-xsmall">More <span class="visuallyhidden">in Subsection</span></a></li>
-            </ul>
-          </nav> #}
-          <p>You can call 0800-DWP-HELP for assistance</p>
+          <h2 class="heading-medium" id="subsection-title">Get help</h2>
+          <p>Telephone 0800 123456 <br>
+          Textphone 0800 654321 <br>
+          Available weekdays 8am to 6pm. Closed public holidays.</p>
         </aside>
 
       </div>
@@ -266,10 +297,10 @@
 
 <script type="text/javascript">
   document.getElementById("uploadBtn").onchange = function(e, i) {
-    // document.getElementById("uploadFile").value = document.getElementById("uploadBtn").files[0].name;
-    // document.getElementById("uploadFile").style.display = "block"
-    // document.getElementById("opencam").style.display = "none"
-    document.getElementById("startButton").click()
+    setTimeout(function(){ document.getElementById("startButton").click() }, 1500);
+    document.getElementById("opencam").style.display = "none"
+    document.getElementById("uploading").style.display = "block"
+    document.getElementById("uploaderror").style.display = "none"
   }
 </script>
 

@@ -476,6 +476,45 @@ table.index {
 
 
 
+
+//uploading animation taken from dev site
+.spinner {
+    margin: 0 10px 0 0;
+    float: left;
+    width: 70px;
+    text-align: center
+}
+
+.spinner>div {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: $text-colour;
+    border-radius: 100%;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both
+}
+
+.spinner .bounce1 {
+    animation-delay: -.32s
+}
+
+.spinner .bounce2 {
+    animation-delay: -.16s
+}
+
+@keyframes sk-bouncedelay {
+    0%,80%,to {
+        transform: scale(0)
+    }
+
+    40% {
+        transform: scale(1)
+    }
+}
+
+
+
+
 // Error styles
 .form-group-error {
   margin-right: 15px;
