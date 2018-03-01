@@ -8,17 +8,18 @@
 {% block fullcol %}
 
 <a href="/send-your-fit-note-beta-6/upload/" class="link-back">Upload your photo</a>
-<span class="marker">Guide part 5 of 7</span>
+<span class="marker">Guide part 5 of 5</span>
 
 <div class="photo-guide form-group">
 
     <div class="grid-row">
       <div class="column-full">
         <h1 class="heading-large mt0">
-          Make sure the fit note is sideways or ‘landscape’
+          Make sure the photo isn&rsquo;t blurred
         </h1>
+        <p>If you&rsquo;re not sure how to get a clear, sharp image, check you&rsquo;re device&rsquo;s manual. </p>
 
-        <img src="/public/images/step5.png" alt="">
+        <img src="/public/images/step7.png" alt="">
       </div>
     </div>
 
@@ -28,7 +29,11 @@
           <a href="step4">Back</a>
         </li>
         <li class="button-guide button-guide-next">
-          <a href="step6">Next</a>
+          {% if data['v2'] == 'true' %}
+          <a href="/send-your-fit-note-beta-6/upload/?method-group=photo&upload-attempt=0">Upload your photo</a>
+          {% else %}
+          <a href="/send-your-fit-note-beta-6/upload/?method-group=photo&upload-attempt=0">Upload your photo</a>
+          {% endif %}
         </li>
       </ul>
     </nav>
