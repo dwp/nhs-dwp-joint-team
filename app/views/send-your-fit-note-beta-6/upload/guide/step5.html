@@ -1,0 +1,54 @@
+{% extends path+"/../../layout.html" %}
+
+{% block head %}
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block fullcol %}
+
+<a href="/send-your-fit-note-beta-6/upload/" class="link-back">Upload your photo</a>
+<span class="marker">Guide part 5 of 7</span>
+
+<div class="photo-guide form-group">
+
+    <div class="grid-row">
+      <div class="column-full">
+        <h1 class="heading-large mt0">
+          Make sure the fit note is sideways or ‘landscape’
+        </h1>
+
+        <img src="/public/images/step5.png" alt="">
+      </div>
+    </div>
+
+    <nav class="guide-nav">
+      <ul>
+        <li class="button-guide button-guide-previous">
+          <a href="step4">Back</a>
+        </li>
+        <li class="button-guide button-guide-next">
+          <a href="step6">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+  </div>
+
+
+  <script type="text/javascript">
+    document.getElementById("uploadBtn").onchange = function (e,i)
+    {
+      document.getElementById("uploadFile").value = document.getElementById("uploadBtn").files[0].name;
+      document.getElementById("uploadFile").style.display = "block"
+      document.getElementById("opencam").style.display = "none"
+      document.getElementById("startButton").style.display = "block"
+    }
+  </script>
+
+{% endblock %}
+
+
+{% block footer_top %}
+<p>Possible error pages: <a href="error_1">Error 1: try again</a> | <a href="error_2">Error 2: try again or post</a> | <a href="error_3">Error 3: try again, use different device or post</a>
+{% endblock %}
