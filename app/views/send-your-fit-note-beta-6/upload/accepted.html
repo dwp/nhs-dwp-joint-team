@@ -1,0 +1,28 @@
+{% extends path+"/../layout.html" %}
+
+{% block fullcol %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+        <div class="govuk-box-highlight">
+            <p class="bold-xlarge">
+              <img class="icon" src="/public/images/icon-tick@2x.png" alt="An image of a tick"/>
+              Success
+            </p>
+        </div>
+
+        <h2 class="bold-medium heading-medium">Your fit note has been uploaded</h2>
+        <p>You need to give a few more details before it gets sent.</p>
+
+        <form action="nino" method="post">
+            <input type="submit" class="button primary-button" value="Continue" id="startButton">
+        </form>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
