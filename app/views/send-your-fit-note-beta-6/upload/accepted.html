@@ -1,28 +1,23 @@
 {% extends path+"/../layout.html" %}
 
-{% block fullcol %}
-<div class="blue-border-bottom"></div>
+{% block backlink %}
+  <a href="../upload/" class="link-back">Back</a>
+{% endblock %}
 
-<main id="content" role="main">
-<div class="grid-row">
-  <div class="column-two-thirds">
+{% block leftcol %}
 
-        <div class="govuk-box-highlight">
-            <p class="bold-xlarge">
-              <img class="icon" src="/public/images/icon-tick@2x.png" alt="An image of a tick"/>
-              Image accepted
-            </p>
-        </div>
+<div class="govuk-box-highlight">
+  <h1 class="bold-xlarge">
+    <img class="icon" src="/public/images/icon-tick@2x.png" alt=""/>
+    Image accepted
+  </h1>
+</div>
 
-        <h2 class="bold-medium heading-medium">Your fit note has been uploaded and is ready to send</h2>
-        <p>You just need to provide a few more details.</p>
+<h2 class="heading-medium">
+  Your fit note has been uploaded and is ready to send
+</h2>
+<p>You just need to provide a few more details.</p>
 
-        <form action="nino" method="post">
-            <input type="submit" class="button primary-button" value="Continue" id="startButton">
-        </form>
-    </div>
-  </div>
-
-</main>
+<a class="button" href="nino" role="button">Continue</a>
 
 {% endblock %}

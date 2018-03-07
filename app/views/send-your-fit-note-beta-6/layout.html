@@ -8,6 +8,8 @@
 
 {% block head %}
   <link href="/public/stylesheets/sendyousicknote.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block proposition_header %}
@@ -28,11 +30,12 @@
 <main id="content" role="main">
   {% include "includes/phase_banner_beta.html" %}
   {% block fullcol %}
+  {% block backlink %}{% endblock %}
   <div class="grid-row">
     <div class="column-two-thirds">
       {% block leftcol %}{% endblock %}
     </div><!-- column -->
-    <div class="column-third"></div><!-- column -->
+    <div class="column-third">{% include "includes/aside.html" %}</div><!-- column -->
   </div><!-- row -->
   {% endblock %}
 </main>

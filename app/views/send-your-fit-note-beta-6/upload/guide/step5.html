@@ -1,51 +1,35 @@
 {% extends path+"/../../layout.html" %}
 
-{% block head %}
-  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
-  <link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" />
-{% endblock %}
-
 {% block fullcol %}
 
-<a href="/send-your-fit-note-beta-6/upload/" class="link-back">Upload your photo</a>
+<a href="../index" class="link-back">Upload your photo</a>
 <span class="marker">Guide part 5 of 5</span>
 
 <div class="photo-guide form-group">
 
-    <div class="grid-row">
-      <div class="column-full">
-        <h1 class="heading-large mt0">
-          Make sure the photo isn&rsquo;t blurred
-        </h1>
-        <p>If you&rsquo;re not sure how to get a clear, sharp image, check you&rsquo;re device&rsquo;s manual. </p>
+  <div class="grid-row">
+    <div class="column-full">
+      <h1 class="heading-large mt0">
+        Make sure the photo isn&rsquo;t blurred
+      </h1>
+      <p>If you&rsquo;re not sure how to get a clear, sharp image, check you&rsquo;re device&rsquo;s manual. </p>
 
-        <img src="/public/images/step7.png" alt="">
-      </div>
+      <img src="/public/images/step7.png" alt="">
     </div>
-
-    <nav class="guide-nav">
-      <ul>
-        <li class="button-guide button-guide-previous">
-          <a href="step4">Back</a>
-        </li>
-        <li class="button-guide button-guide-next">
-          <a href="/send-your-fit-note-beta-6/upload/">Upload your photo</a>
-        </li>
-      </ul>
-    </nav>
-
   </div>
 
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a href="step4">Back</a>
+      </li>
+      <li class="button-guide button-guide-next">
+        <a href="/send-your-fit-note-beta-6/upload/">Upload your photo</a>
+      </li>
+    </ul>
+  </nav>
 
-  <script type="text/javascript">
-    document.getElementById("uploadBtn").onchange = function (e,i)
-    {
-      document.getElementById("uploadFile").value = document.getElementById("uploadBtn").files[0].name;
-      document.getElementById("uploadFile").style.display = "block"
-      document.getElementById("opencam").style.display = "none"
-      document.getElementById("startButton").style.display = "block"
-    }
-  </script>
+</div>
 
 {% endblock %}
 

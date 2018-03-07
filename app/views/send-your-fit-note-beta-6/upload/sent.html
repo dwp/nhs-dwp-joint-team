@@ -1,27 +1,18 @@
 {% extends path+"/../layout.html" %}
 
-{% block fullcol %}
-<div class="blue-border-bottom"></div>
+{% block leftcol %}
 
-<main id="content" role="main">
-<div class="grid-row">
-  <div class="column-two-thirds">
+<div class="govuk-box-highlight">
+  <h1 class="bold-xlarge">
+    <img class="icon" src="/public/images/icon-tick@2x.png" alt=""/>
+    Sent
+  </h1>
+</div>
 
-        <div class="govuk-box-highlight">
-            <p class="bold-xlarge">
-              <img class="icon" src="/public/images/icon-tick@2x.png" alt="An image of a tick"/>
-              Sent
-            </p>
-        </div>
-
-        <h2 class="bold-medium heading-medium">What happens next</h2>
-        <p>Keep your fit note safe, don't throw it away.</p>
-        <p>You don't need to do anything else, or call to check on it’s progress. If there’s a problem you’ll be contacted. </p>
-        <p><a href="https://scfndev.itsshared.net/feedback">What do you think of this service?</a> (Takes 30 seconds)</p>
-        <p><a href="index">Send another fit note</a></p>
-    </div>
-
-
-</main>
+<h2 class="bold-medium heading-medium">What happens next</h2>
+<p>Keep your fit note safe, don&rsquo;t throw it away.</p>
+<p>You don&rsquo;t need to do anything else, or call to check on it&rsquo;s progress. If there&rsquo;s a problem you&rsquo;ll be contacted. </p>
+<p><a href="https://scfndev.itsshared.net/feedback">What do you think of this service?</a> (Takes 30 seconds)</p>
+<p><a href="../index">Send another fit note</a></p>
 
 {% endblock %}
