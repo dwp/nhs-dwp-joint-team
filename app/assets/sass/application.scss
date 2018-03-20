@@ -575,3 +575,10 @@ table.index {
       color: #b10e1e;
       font-weight: bold;
       text-decoration: underline; }
+
+
+
+
+.form {
+  @extend %contain-floats;
+}
