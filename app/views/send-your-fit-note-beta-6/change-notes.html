@@ -1,0 +1,23 @@
+{% extends path+"/layout.html" %}
+
+{% block backlink %}
+  <a href="https://send-your-sick-note.herokuapp.com/" class="link-back">Back</a>
+{% endblock %}
+
+{% block leftcol %}
+
+<h1 class="heading-large">
+  Beta 6 change notes
+</h1>
+
+<p>Changes made:</p>
+<ul class="list list-bullet">
+    <li>added 'Image accepted' page/message between photo upload and NINo pages</li>
+    <li>added real phones numbers to right hand 'Get help' section
+</ul>
+
+<form action="gov-apply" method="post">
+  <input type="submit" class="button" value="Go to beta 6 prototype">
+</form>
+
+{% endblock %}
