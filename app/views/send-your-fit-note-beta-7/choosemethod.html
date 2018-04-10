@@ -1,0 +1,50 @@
+{% extends path+"/layout.html" %}
+
+{% block backlink %}
+  <a href="index" class="link-back">Back</a>
+{% endblock %}
+
+{% block leftcol %}
+
+  <h1 class="heading-large">Which of the following are you using?</h1>
+
+  <form method="get" action="/send-your-fit-note-beta-6/upload/?upload-attempt=0" class="form">
+
+      <div class="multiple-choice" data-target="method-2-extra">
+        <input id="method-2" type="radio" name="method-group" value="photo">
+        <label for="method-2">Phone or tablet</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="method-2-extra">
+        <p>You can connect a phone or tablet to the internet using wifi if available.</p>
+      </div>
+
+      <div class="multiple-choice" data-target="method-3-extra">
+        <input id="method-3" type="radio" name="method-group" value="scan">
+        <label for="method-3">Desktop computer or laptop</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="method-3-extra">
+        <p>You can get help, and free access to computers, scanners and the internet in public libraries.</p>
+      </div>
+      <!--div class="multiple-choice" data-target="post_address">
+        <input id="method-4" type="radio" name="method-group" value="post">
+        <label for="method-4">by posting it to DWP</label>
+      </div-->
+
+    <!--div class="panel js-hidden" id="post_address">
+      <p>Post your sick note to:</p>
+      <p>
+        Mail Handling Site A<br />
+        Wolverhampton<br />
+        WV98 2AJ
+      </p>
+    </div-->
+
+  <input type="hidden" name="upload-attempt" value="0">
+
+   <div class="form-group mt10">
+      <input type="submit" class="button" value="Continue"/>
+    </div>
+
+  </form>
+
+{% endblock %}

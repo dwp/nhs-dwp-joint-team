@@ -1,0 +1,36 @@
+{% extends path+"/../layout.html" %}
+
+{% block backlink %}
+  <a href="address" class="link-back">Back</a>
+{% endblock %}
+
+{% block leftcol %}
+
+{# {% include "../includes/error-summary.html" %} #}
+
+<form action="sent" method="post" class="form" name="yourDetails" id="yourDetailsForm">
+
+  <h1 class="heading-large">
+    Do you want a text message to confirm your fit note has been received?
+  </h1>
+
+  <div class="form-group inline">
+    <label class="block-label" data-target="mobile_no" for="radio-inline-1">
+      <input id="radio-inline-1" type="radio" name="text-reminder" value="Yes"> Yes
+    </label>
+    <label class="block-label" for="radio-inline-2">
+      <input id="radio-inline-2" type="radio" name="text-reminder" value="No"> No
+    </label>
+
+    <div class="panel panel-border-narrow js-hidden" id="mobile_no">
+      <label for="mobileNumberID" class="form-label">Your mobile number</label>
+      <input type="text" inputmode="numeric" pattern="[0-9]*" name="mobileNumberField" class="form-control" value="{{mobValue}}" maxlength="15">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <input type="submit" id="add-your-details" class="button" value="Submit">
+  </div>
+</form>
+
+{% endblock %}

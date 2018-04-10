@@ -1,0 +1,38 @@
+{% extends path+"/../layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block fullcol %}
+<div class="blue-border-bottom"></div>
+
+<main id="content" role="main">
+{# {% include "../includes/error-summary.html" %} #}
+
+<div class="grid-row">
+    <div class="column-two-thirds">
+      <h1 class="heading-large">Upload successful</h1>
+      
+      <p>
+        We've checked your photo and everything looks ok.
+      </p>
+
+      <form method="post" class="form" name="yourDetails" id="yourDetailsForm">
+        <button class="button" type="submit">Continue</button>
+      </form>
+    </div>
+</div>
+
+</main>
+
+{% endblock %}
+
+{% block page_script %}
+<script>
+  $('#backLink').on('click', function (e) {
+    e.preventDefault()
+    window.history.back()
+  })
+</script>
+{% endblock %}

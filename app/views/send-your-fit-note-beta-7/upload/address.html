@@ -1,0 +1,32 @@
+{% extends path+"/../layout.html" %}
+
+{% block backlink %}
+  <a href="nino" class="link-back">Back</a>
+{% endblock %}
+
+{% block leftcol %}
+
+{# {% include "../includes/error-summary.html" %} #}
+
+<form action="textmessage" method="post" class="form" name="yourDetails" id="yourDetailsForm">
+
+  <h1 class="heading-large">
+    Your address
+  </h1>
+
+  <div class="form-group {% if errors.nino %}error{% endif %}">
+    <label for="ninoFieldID" class="form-label">House name or number</label>
+    <input type="text" name="house-number" class="form-control">
+  </div>
+
+  <div class="form-group {% if errors.nino %}error{% endif %}">
+    <label for="ninoFieldID" class="form-label">Postcode</label>
+    <input type="text" name="postcode" class="form-control" maxlength="13">
+  </div>
+
+  <div class="form-group">
+    <input type="submit" id="add-your-details" class="button" value="Continue">
+  </div>
+</form>
+
+{% endblock %}

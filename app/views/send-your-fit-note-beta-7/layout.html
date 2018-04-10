@@ -1,0 +1,42 @@
+{% extends "govuk_template.html" %}
+
+{% set serviceName = "Send your fit note" %}
+
+{% block page_title %}
+  Send something to DWP
+{% endblock %}
+
+{% block head %}
+  <link href="/public/stylesheets/sendyousicknote.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+  <link href="/public/stylesheets/photo.css" media="screen" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block proposition_header %}
+  {% include "includes/propositional_navigation.html" %}
+{% endblock %}
+
+{% block header_class %}
+  with-proposition
+{% endblock %}
+
+{% block body_end %}
+  {% include "includes/scripts.html" %}
+  {% block page_script %}{% endblock %}
+  {{ data | log }}
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+  {% include "includes/phase_banner_beta.html" %}
+  {% block fullcol %}
+  {% block backlink %}{% endblock %}
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      {% block leftcol %}{% endblock %}
+    </div><!-- column -->
+    <div class="column-third">{% include "includes/aside.html" %}</div><!-- column -->
+  </div><!-- row -->
+  {% endblock %}
+</main>
+{% endblock %}
