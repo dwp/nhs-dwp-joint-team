@@ -1,0 +1,58 @@
+{% extends path+"/layout.html" %}
+
+{% block backlink %}
+  <a href="index" class="link-back">Back</a>
+{% endblock %}
+
+{% block leftcol %}
+
+  <h1 class="heading-large">Are you expecting an Employment and Support Allowance payment before 23 April?</h1>
+
+  <form method="get" action="/send-your-fit-note-beta-7/choosemethod" class="form">
+
+      <div class="multiple-choice" data-target="method-2-extra">
+        <input id="method-2" type="radio" name="method-group" value="yes">
+        <label for="method-2">Yes</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="method-2-extra">
+        <p>There might be a delay. Call the number in the 'Get help' section if you need to speak to someone about when you'll get your next payment.</p>
+      </div>
+
+      <div class="multiple-choice" data-target="method-3-extra">
+        <input id="method-3" type="radio" name="method-group" value="No">
+        <label for="method-3">No</label>
+      </div>
+
+      <div class="multiple-choice" data-target="method-4-extra">
+        <input id="method-4" type="radio" name="method-group" value="Don't know">
+        <label for="method-4">Don't know</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="method-4-extra">
+        <p>Call the number in the 'Get help' section if you need to speak to someone about when you'll get your next payment.</p>
+      </div>
+      <!-- <div class="panel panel-border-narrow js-hidden" id="method-3-extra">
+        <p>You can get help, and free access to computers, scanners and the internet in public libraries.</p>
+      </div> -->
+      <!--div class="multiple-choice" data-target="post_address">
+        <input id="method-4" type="radio" name="method-group" value="post">
+        <label for="method-4">by posting it to DWP</label>
+      </div-->
+
+    <!--div class="panel js-hidden" id="post_address">
+      <p>Post your sick note to:</p>
+      <p>
+        Mail Handling Site A<br />
+        Wolverhampton<br />
+        WV98 2AJ
+      </p>
+    </div-->
+
+  <input type="hidden" name="choosemethod" value="0">
+
+   <div class="form-group mt10">
+      <input type="submit" class="button" value="Continue"/>
+    </div>
+
+  </form>
+
+{% endblock %}
