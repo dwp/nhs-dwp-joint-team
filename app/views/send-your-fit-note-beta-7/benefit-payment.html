@@ -6,7 +6,7 @@
 
 {% block leftcol %}
 
-  <h1 class="heading-large">Are you expecting an Employment and Support Allowance payment before 23 April?</h1>
+  <h1 class="heading-large">Is your Employment and Support Allowance payment due before dd month?</h1>
 
   <form method="get" action="/send-your-fit-note-beta-7/choosemethod" class="form">
 
@@ -15,7 +15,7 @@
         <label for="method-2">Yes</label>
       </div>
       <div class="panel panel-border-narrow js-hidden" id="method-2-extra">
-        <p>There might be a delay. Call the number in the 'Get help' section if you need to speak to someone about when you'll get your next payment.</p>
+        <p>There might be a delay. Call the 'Get help' number if you need to speak to someone about when you'll get your next payment.</p>
       </div>
 
       <div class="multiple-choice" data-target="method-3-extra">
@@ -28,7 +28,7 @@
         <label for="method-4">Don't know</label>
       </div>
       <div class="panel panel-border-narrow js-hidden" id="method-4-extra">
-        <p>Call the number in the 'Get help' section if you need to speak to someone about when you'll get your next payment.</p>
+        <p>Call the 'Get help' number if you need to speak to someone about when you'll get your next payment.</p>
       </div>
       <!-- <div class="panel panel-border-narrow js-hidden" id="method-3-extra">
         <p>You can get help, and free access to computers, scanners and the internet in public libraries.</p>
@@ -55,4 +55,11 @@
 
   </form>
 
+{% endblock %}
+
+{% block footer_top %}
+<h2 class="heading-small">Note</h2>
+<p>This page will only appear when Secure Data Exchange (SDEX) or Document Repository System (DRS) are unavailable for more than 24 hours. When either of these is unavailable users can still submit a fit note using this service but benefit processing staff won't be able to process it until SDEX/DRS are available again.</p>
+<p>This might cause a delay to payment depending on how long SDEX or DRS are down. If a user needs an urgent payment in these circumstances they should call the Get help number. They might advised to take their fit note to a jobcentre to arrange an urgent payment.
+</p>
 {% endblock %}
