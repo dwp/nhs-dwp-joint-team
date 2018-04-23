@@ -6,7 +6,7 @@
 
 {% block leftcol %}
 
-  <h1 class="heading-large">Is your Employment and Support Allowance payment due before dd month?</h1>
+  <h1 class="heading-large">Is your Employment and Support Allowance (ESA) payment due by dd month?</h1>
 
   <form method="get" action="/send-your-fit-note-beta-7/choosemethod" class="form">
 
@@ -15,14 +15,14 @@
         <label for="method-2">Yes</label>
       </div>
       <div class="panel panel-border-narrow js-hidden" id="method-2-extra">
-        <p>There might be a delay. Call the 'Get help' number if you need to speak to someone about when you'll get your next payment.</p>
+        <p>It's taking a bit longer than usual to process a fit note so there might be a delay to your ESA payment.</p>
+        <p>Call the 'Get help' number if you're concerned about when you'll get your next payment.</p>
       </div>
 
       <div class="multiple-choice" data-target="method-3-extra">
         <input id="method-3" type="radio" name="method-group" value="No">
         <label for="method-3">No</label>
       </div>
-
       <div class="multiple-choice" data-target="method-4-extra">
         <input id="method-4" type="radio" name="method-group" value="Don't know">
         <label for="method-4">Don't know</label>

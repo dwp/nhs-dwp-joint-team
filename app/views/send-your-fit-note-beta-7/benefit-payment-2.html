@@ -1,0 +1,47 @@
+{% extends path+"/layout.html" %}
+
+{% block backlink %}
+  <a href="index" class="link-back">Back</a>
+{% endblock %}
+
+{% block fullcol %}
+
+  <h1 class="heading-large">Your Employment and Support Allowance (ESA)</h1>
+
+  <div class="notice">
+    <i class="icon icon-important">
+      <span class="visually-hidden">Warning</span>
+    </i>
+    <strong class="bold-small">
+      It's taking a bit longer than usual to process a fit note. If your ESA payment is due by DD Month there might be a delay.
+    </strong>
+  </div>
+
+
+  <p>Call the contact centre if you need to speak to someone about when you'll get your next payment.</p>
+
+  <div class="panel panel-border-narrow">
+    <ul class="list">
+      <li>Telephone 0800 1690310</li>
+      <li>Textphone 0800 1690314</li>
+      <li>Available weekdays 8am to 6pm. Closed public holidays.</li>
+    </ul>
+   </div>
+
+  <form method="get" action="/send-your-fit-note-beta-7/choosemethod" class="form">
+
+  <input type="hidden" name="choosemethod" value="0">
+
+   <div class="form-group mt10">
+      <input type="submit" class="button" value="I understand – continue"/>
+
+  </form>
+
+{% endblock %}
+
+{% block footer_top %}
+<h2 class="heading-small">Note</h2>
+<p>This page will only appear when Secure Data Exchange (SDEX) or Document Repository System (DRS) are unavailable for more than 24 hours. When either of these is unavailable users can still submit a fit note using this service but benefit processing staff won't be able to process it until SDEX/DRS are available again.</p>
+<p>This might cause a delay to payment depending on how long SDEX or DRS are down. If a user needs an urgent payment in these circumstances they should call the Get help number. They might advised to take their fit note to a jobcentre to arrange an urgent payment.
+</p>
+{% endblock %}
