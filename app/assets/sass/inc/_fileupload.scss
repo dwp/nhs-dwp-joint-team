@@ -1,5 +1,5 @@
 /*  FILE UPLOAD / CAMERA OPEN BUTTON */
-.fileUpload {
+#fileUpload {
     position: relative;
     overflow: hidden;
     margin: 0px;
@@ -8,7 +8,7 @@
 #uploadFile {
   font-size:21px;
 }
-.fileUpload input.upload {
+#fileUpload input.upload {
     position: absolute;
     top: 0;
     right: 0;

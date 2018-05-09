@@ -70,104 +70,57 @@
 {% endif %}
 
 
-{% if data['method-group'] == 'photo' %}
+
   <h1 class="heading-large">
+  {% if data['method-group'] == 'photo' %}
     Take a photo of your fit note
-  </h1>
-{% else %}
-  <h1 class="heading-large">
+  {% else %}
     Save and upload your fit note
+  {% endif %}
   </h1>
-{% endif %}
 
   <div class="grid-row">
 
     <div class="column-half">
       <ol class="list list-number">
       {% if data['method-group'] == 'photo' %}
+
         <li>Put your fit note on a flat surface like a table.</li>
         <li>Make sure you&rsquo;re in a well lit place.</li>
         <li>Hold your phone above the paper, and make sure it&rsquo;s sideways or &lsquo;landscape&rsquo;.</li>
+
       {% else %}
+
         <li>Take a photo of your fit note or scan it to your computer.</li>
         <li>Save the photo or scan somewhere you can easily find it on your computer.</li>
+
       {% endif %}
       </ol>
-    {% if data['method-group'] == 'photo' %}
-      <p>Your photo will be automatically checked to make sure it's good enough.</p>
-      <p><a href="guide/step1">Get more help to get your photo right</a></p>
-    {% else %}
-      <p><a href="guide/step1">Get more help to get your photo right</a></p>
-      <details>
-        <summary><span class="summary">Rules for scanning</span></summary>
+      {% if data['method-group'] == 'photo' %}
 
-        <div class="panel panel-border-narrow">
-          <p>It's best to save your scan as a PDF (.pdf) file.</p>
-          <p>The following file types are also accepted if the file is bigger than 500KB (kilobytes):
-          </p>
-                <ul class="list list-bullet">
-                  <li>JPEG (.jpg)</li>
-                  <li>BMP (.bmp)</li>
-                  <li>PNG (.png)</li>
-                  <li>GIF (.gif)</li>
-              </ul>
+        <p>Your photo will be automatically checked to make sure it's good enough.</p>
+        <p><a href="guide/step1">Get more help to get your photo right</a></p>
 
-      </details>
-      <p>Your photo or scan will be automatically checked to make sure the image quality is good enough.</p>
+      {% else %}
 
-    {% endif %}
-  </div>
+        <p><a href="guide/step1">Get more help to get your photo right</a></p>
 
+        <p>Your photo or scan will be automatically checked to make sure the image quality is good enough.</p>
+
+      {% endif %}
+    </div>
 
     <div class="column-half">
       <img src="/public/images/guideline-photo.png" alt="" width="100%" style="margin-top: 0.5em">
     </div>
 
-   </div> {# grid row #}
+  </div> {# grid row #}
 
-{% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
+  <form {% if data['upload-attempt'] == 3 or data['syfn-errors'] != "true" %}action="loading"{% endif %} method="get" class="form">
 
-  {% if data['syfn-errors'] == "true" %}
-    <form method="get" class="form">
-      <input type="hidden" name="upload-attempt" value="1">
-  {% else %}
-    <form action="loading" method="get" class="form">
-  {% endif %}
-
-      <div class="form-group">
-        <input id="uploadFile" class="form-control uploaded" style="display:none">
-        <div class="fileUpload button" id="opencam">
-          <label>
-            {% if data['method-group'] == 'photo' %}
-              Open camera
-            {% else %}
-              Choose a file to upload
-            {% endif %}</label>
-          <input id="uploadBtn" class="upload" name="uploadBtnText" type="file" {% if data[ 'method-group']=='photo' %}accept="image/*;capture=camera" {% endif %}>
-        </div>
-      </div>
-
-      <div id="uploading" style="display: none">
-        <div class="spinner">
-          <div class="bounce1"></div>
-          <div class="bounce2"></div>
-          <div class="bounce3"></div>
-        </div>
-        <p>Uploading...</p>
-      </div>
-
-      <div class="form-group">
-        <input type="submit" value="Upload" id="startButton" style="display:none">
-      </div>
-
-    </form>
-
-{% elif data['upload-attempt'] == 1 %}
-
-  <form method="get" class="form">
+    {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 or data['upload-attempt'] == 3 %}
 
     <div class="form-group-error" id="error-link">
-      <input id="uploadFile" class="form-control uploaded" style="display:none">
       <span class="error-message" id="uploaderror">
         {% if data['method-group'] == 'photo' %}
           Try taking another photo
@@ -175,120 +128,87 @@
           Upload another photo or scan
         {% endif %}
       </span>
-      <div class="fileUpload button" id="opencam">
-        <label>{% if data['method-group'] == 'photo' %}
-          Open camera
-        {% else %}
-          Choose a file to upload
-        {% endif %}</label>
-        <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
+
+    {% else %}
+
+    <div class="form-group">
+
+    {% endif %}
+
+      {% if data[ 'method-group']=='photo' %}
+
+      <div class="button" id="fileUpload" onchange="submit()">
+        <label>Open camera</label>
+        <input id="js-photo" class="upload" type="file" accept="image/*" capture="camera">
       </div>
+
+      {% else %}
+
+      <div class="form-group-related">
+        <label class="heading-small form-label-bold" for="file-input">
+          Choose a file to upload
+        </label>
+        <input type="file" id="file-input" accept=".pdf,.jpg,.jpeg,.bmp,.png,.gif">
+      </div>
+
+      <div class="panel panel-border-wide">
+        <ul class="list">
+          {# <li>It&rsquo;s best to save your scan as a PDF (.pdf) file</li> #}
+          <li>File types accepted: PDF, JPEG, BMP, PNG, GIF</li>
+          <li>Minimum file size: 500KB (kilobytes)</li>
+        </ul>
+      </div>
+
+      {# <details>
+        <summary><span class="summary">Rules for scanning</span></summary>
+
+        <div class="panel panel-border-narrow">
+          <p>.</p>
+          <p>The following file types are also accepted if the file is bigger than 500KB (kilobytes):
+          </p>
+          <ul class="list list-bullet">
+            <li>JPEG (.jpg)</li>
+            <li>BMP (.bmp)</li>
+            <li>PNG (.png)</li>
+            <li>GIF (.gif)</li>
+          </ul>
+        </div>
+
+      </details> #}
+
+      <a class="button" id="fileUpload" onClick="submit()">Upload file</a>
+
+      {% endif %}
+
     </div>
 
+    <div id="uploading" style="display: none">
+      <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+      </div>
+      <p>Uploading...</p>
+    </div>
+
+    {% if not data['upload-attempt'] or data['upload-attempt'] == 0 %}
+    <input type="hidden" name="upload-attempt" value="1">
+    {% elif data['upload-attempt'] == 1 %}
     <input type="hidden" name="upload-attempt" value="2">
-
-    <div id="uploading" style="display: none">
-      <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
-      <p>Uploading...</p>
-    </div>
-
-    <div class="form-group">
-      <input type="submit" value="Upload" id="startButton" style="display:none">
-    </div>
-
-  </form>
-
-{% elif data['upload-attempt'] == 2 %}
-
-  <form method="get" class="form">
-
-    <div class="form-group-error" id="error-link">
-      <input id="uploadFile" class="form-control uploaded" style="display:none">
-      <span class="error-message" id="uploaderror">
-        {% if data['method-group'] == 'photo' %}
-          Try taking another photo
-        {% else %}
-          Upload another photo or scan
-        {% endif %}
-      </span>
-      <div class="fileUpload button" id="opencam">
-        <label>{% if data['method-group'] == 'photo' %}
-          Open camera
-        {% else %}
-          Choose a file to upload
-        {% endif %}</label>
-        <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
-      </div>
-    </div>
-
+    {% elif data['upload-attempt'] == 2 %}
     <input type="hidden" name="upload-attempt" value="3">
-
-    <div id="uploading" style="display: none">
-      <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
-      <p>Uploading...</p>
-    </div>
-
-    <div class="form-group">
-      <input type="submit" value="Upload" id="startButton" style="display:none">
-    </div>
-
-  </form>
-
-{% elif data['upload-attempt'] == 3 %}
-
-  <form action="loading" method="get" class="form">
-
-    <div class="form-group-error" id="error-link">
-      <input id="uploadFile" class="form-control uploaded" style="display:none">
-      <span class="error-message" id="uploaderror">
-        {% if data['method-group'] == 'photo' %}
-          Try taking another photo
-        {% else %}
-          Upload another photo or scan
-        {% endif %}
-      </span>
-
-      <div class="fileUpload button" id="opencam">
-        <label>{% if data['method-group'] == 'photo' %}
-          Open camera
-        {% else %}
-          Choose a file to upload
-        {% endif %}</label>
-        <input id="uploadBtn" class="upload" name="uploadBtnText" type="file">
-      </div>
-    </div>
-
+    {% elif data['upload-attempt'] == 3 %}
     <input type="hidden" name="upload-attempt" value="0">
+    {% endif %}
 
-    <div id="uploading" style="display: none">
-      <div class="spinner">
-        <div class="bounce1"></div>
-        <div class="bounce2"></div>
-        <div class="bounce3"></div>
-      </div>
-      <p>Uploading...</p>
-    </div>
-
-    <div class="form-group">
-      <input type="submit" value="Upload" id="startButton" style="display:none">
-    </div>
+    <input type="submit" id="js-submit" style="display:none">
 
   </form>
-
-{% else %} Error {% endif %}
 
 <script type="text/javascript">
-  document.getElementById("uploadBtn").onchange = function(e, i) {
-    setTimeout(function(){ document.getElementById("startButton").click() }, 1500);
-    document.getElementById("opencam").style.display = "none"
+  function submit() {
+    setTimeout(function(){ document.getElementById("js-submit").click() }, 1500);
+    document.getElementById("fileUpload").style.display = "none"
     document.getElementById("uploading").style.display = "block"
     document.getElementById("uploaderror").style.display = "none"
   }
