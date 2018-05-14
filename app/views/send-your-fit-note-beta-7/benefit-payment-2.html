@@ -4,36 +4,54 @@
   <a href="index" class="link-back">Back</a>
 {% endblock %}
 
-{% block fullcol %}
+{% block leftcol %}
 
-  <h1 class="heading-large">Your Employment and Support Allowance (ESA)</h1>
-
-  <div class="notice">
-    <i class="icon icon-important">
-      <span class="visually-hidden">Warning</span>
-    </i>
-    <strong class="bold-small">
-      It's taking a bit longer than usual to process a fit note. If you're expecting an ESA payment by DD Month there might be a delay.
-    </strong>
-  </div>
-
-
-  <p>Call the contact centre if you need to speak to someone about when you'll get your next payment.</p>
-
-  <div class="panel panel-border-narrow">
-    <ul class="list">
-      <li>Telephone 0800 1690310</li>
-      <li>Textphone 0800 1690314</li>
-      <li>Available weekdays 8am to 6pm. Closed public holidays.</li>
-    </ul>
-   </div>
+  <h1 class="heading-large">Is your Employment and Support Allowance (ESA) payment due by dd month?</h1>
 
   <form method="get" action="/send-your-fit-note-beta-7/choosemethod" class="form">
+
+      <div class="multiple-choice" data-target="method-2-extra">
+        <input id="method-2" type="radio" name="esapayment" value="Yes">
+        <label for="method-2">Yes</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="method-2-extra">
+        <p>It's taking a bit longer than usual to process a fit note so there might be a delay to your ESA payment.</p>
+        <p>Call the 'Get help' number if you're concerned about when you'll get your next payment.</p>
+      </div>
+
+      <div class="multiple-choice" data-target="method-3-extra">
+        <input id="method-3" type="radio" name="esapayment" value="No">
+        <label for="method-3">No</label>
+      </div>
+      <div class="multiple-choice" data-target="method-4-extra">
+        <input id="method-4" type="radio" name="esapayment" value="Don't know">
+        <label for="method-4">Don't know</label>
+      </div>
+      <div class="panel panel-border-narrow js-hidden" id="method-4-extra">
+        <p>Call the 'Get help' number if you need to speak to someone about when you'll get your next payment.</p>
+      </div>
+      <!-- <div class="panel panel-border-narrow js-hidden" id="method-3-extra">
+        <p>You can get help, and free access to computers, scanners and the internet in public libraries.</p>
+      </div> -->
+      <!--div class="multiple-choice" data-target="post_address">
+        <input id="method-4" type="radio" name="method-group" value="post">
+        <label for="method-4">by posting it to DWP</label>
+      </div-->
+
+    <!--div class="panel js-hidden" id="post_address">
+      <p>Post your sick note to:</p>
+      <p>
+        Mail Handling Site A<br />
+        Wolverhampton<br />
+        WV98 2AJ
+      </p>
+    </div-->
 
   <input type="hidden" name="choosemethod" value="0">
 
    <div class="form-group mt10">
-      <input type="submit" class="button" value="I understand – continue"/>
+      <input type="submit" class="button" value="Continue"/>
+    </div>
 
   </form>
 
