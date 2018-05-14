@@ -670,3 +670,10 @@ table.index {
   }
 
 }
+
+
+
+// set height to icon used in warning as it's being overwritten elsewhere
+.notice .icon {
+  height: 35px
+}
