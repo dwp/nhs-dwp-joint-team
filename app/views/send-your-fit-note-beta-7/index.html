@@ -1,40 +1,81 @@
 {% extends path+"/layout.html" %}
 
-{% block leftcol %}
+{% block page_title %}
+Send your fit note for your ESA claim
+{% endblock %}
 
-<h1 class="heading-large">
-  Send your fit note for your ESA claim
-</h1>
+{% block proposition_header %}<!-- blank to remove the proposition header -->{% endblock %}
+{% block header_class %}<!-- blank to remove the proposition header -->{% endblock %}
+
+{% block content %}
+<link href="/public/stylesheets/gov_landing.css" media="screen" rel="stylesheet" type="text/css" />
+
+<main id="content" role="main" class="guide">
+  <!-- {% include "../includes/phase_banner_beta.html" %} -->
+  <div class="breadcrumbs">
+    <ol role="breadcrumbs">
+        <li><a href="http://www.gov.uk">Home</a></li>
+        <li><a href="https://www.gov.uk/browse/benefits">Benefits</a></li>
+        <li><a href="https://www.gov.uk/browse/benefits/disability">Carers and disability benefits</a></li>
+    </ol>
+  </div>
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <div class="pub-c-title pub-c-title--bottom-margin">
+        <h1 class="heading-xlarge ">
+            Send your fit note for your ESA claim
+        </h1>
+
+        <p>You’ll be told during your assessment for <a href="https://www.gov.uk/employment-support-allowance/how-to-claim">Employment Support Allowance (ESA)</a> when you need to send fit notes (sometimes called ‘sick notes’ or ‘doctor’s notes’).</p>
+
+        <p>You&rsquo;ll need:</p>
+        <ul class="list list-bullet">
+            <li>your fit note signed by your doctor</li>
+            <li>your National Insurance number</li>
+            <li>a phone or tablet with a camera, or a computer with a saved photo or copy of your fit note</li>
+
+        </ul>
+
+        <a class="button button-start" href="/send-your-fit-note-beta-7/benefit-payment" role="button">Start now</a>
+        <!-- <form action="benefit-payment" method="post">
+          <input type="submit" class="button" value="Start now">
+        </form> -->
+
+        <h2 class="heading-medium">Other ways to apply</h2>
+
+        <p>You can post your fit note instead. You do not need a postcode or a stamp.</p>
+
+        <p><strong>Department for Work and Pensions (DWP)</strong><br>
+        Freepost DWP ESA 38</p>
+
+        <p>If you need help, phone Jobcentre Plus.</p>
+
+        <p><strong>Jobcentre Plus</strong><br>
+        Telephone: 0800 169 0310<br>
+        Textphone: 0800 169 0314<br>
+        Welsh language: 0800 328 1744<br>
+        <a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
+      </div>
+    </div>
+    <div class="column-third">
+      <div class="app-c-related-navigation">
+        <h2 id="related-nav-related_items" class="app-c-related-navigation__main-heading" data-track-count="sidebarRelatedItemSection">
+          Related content
+        </h2>
+        <nav role="navigation" class="app-c-related-navigation__nav-section font-xsmall" aria-labelledby="related-nav-related_items" data-module="toggle">
+          <ul class="app-c-related-navigation_link-list" data-module="track-click">
+            <li class="app-c-related-navigation__link"><a class="app-c-related-navigation__section-link--other" data-track-category="relatedLinkClicked" data-track-action="1.1 Related content" data-track-label="/benefits-calculators" data-track-options="{&quot;dimension28&quot;:&quot;9&quot;,&quot;dimension29&quot;:&quot;Benefits calculators&quot;}"
+                href="https://www.gov.uk/employment-support-allowance">Employment and Support Allowance</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
 
 
 
-<p>You’ll be told during your assessment for <a href="https://www.gov.uk/employment-support-allowance/how-to-claim">Employment Support Allowance (ESA)</a> when you need to send fit notes (sometimes called ‘sick notes’ or ‘doctor’s notes’).</p>
-
-<p>You&rsquo;ll need:</p>
-<ul class="list list-bullet">
-    <li>your fit note signed by your doctor</li>
-    <li>your National Insurance number</li>
-    <li>a phone or tablet with a camera, or a computer with a saved photo or copy of your fit note</li>
-
-</ul>
-
-<form action="benefit-payment" method="post">
-  <input type="submit" class="button" value="Start now">
-</form>
-
-<h2 class="heading-medium">Other ways to apply</h2>
-
-<p>You can post your fit note instead. You do not need a postcode or a stamp.</p>
-
-<p><strong>Department for Work and Pensions (DWP)</strong><br>
-Freepost DWP ESA 38</p>
-
-<p>If you need help, phone Jobcentre Plus.</p>
-
-<p><strong>Jobcentre Plus</strong><br>
-Telephone: 0800 169 0310<br>
-Textphone: 0800 169 0314<br>
-Welsh language: 0800 328 1744<br>
-<a href="https://www.gov.uk/call-charges">Find out about call charges</a></p>
-
+</main>
 {% endblock %}
