@@ -5,11 +5,19 @@
 {% endblock %}
 
 {% block leftcol %}
+<div id="js-errorsummary" class="error-summary" role="alert" tabindex="-1" style="display: none">
+  <h1 class="heading-medium error-summary-heading">
+    There is a problem
+  </h1>
+  <ul class="error-summary-list">
+    <li><a href="#js-error">Select a file to upload</a></li>
+  </ul>
+</div>
 {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 %}
 
-  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+  <div class="error-summary" role="alert" tabindex="-1">
     {% if data['method-group'] == 'photo' %}
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    <h1 class="heading-medium error-summary-heading">
       There&rsquo;s a problem with your photo
     </h1>
     <p><a href="guide/step1?upload-attempt=0&syfn-errors=false">Get more help to get your photo right</a></p>
@@ -17,7 +25,7 @@
       <li><a href="#error-link">Try taking another photo</a></li>
     </ul>
     {% else %}
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    <h1 class="heading-medium error-summary-heading">
       There&rsquo;s a problem with the photo or scan of your fit note
     </h1>
     <p>Try uploading another or <a href="guide/step1?upload-attempt=0&syfn-errors=false">get help with taking a photo</a></p>
@@ -30,10 +38,10 @@
 
 {% elif data['upload-attempt'] == 3 %}
 
-  <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+  <div class="error-summary" role="alert" tabindex="-1">
 
   {% if data['method-group'] == 'photo' %}
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    <h1 class="heading-medium error-summary-heading">
       There&rsquo;s a problem with your photo
     </h1>
     <h3 class="heading-small">You can either:</h3>
@@ -49,7 +57,7 @@
 
   {% else %}
 
-    <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+    <h1 class="heading-medium error-summary-heading">
       There&rsquo;s a problem with the photo or scan of your fit note
     </h1>
     <h3 class="heading-small">You can either:</h3>
@@ -144,7 +152,20 @@
 
       {% else %}
 
-      <div class="form-group-related">
+      <div class="form-group-error" id="js-error" style="display: none">
+        <span class="error-message" id="uploaderror">
+          Select a file to upload
+        </span>
+
+        <div class="form-group-related">
+          <label class="heading-small form-label-bold" for="file-input">
+            Choose a file to upload
+          </label>
+          <input type="file" id="file-input-error" accept=".pdf,.jpg,.jpeg,.bmp,.png,.gif">
+        </div>
+      </div>
+
+      <div class="form-group-related" id="js-no-error">
         <label class="heading-small form-label-bold" for="file-input">
           Choose a file to upload
         </label>
@@ -176,7 +197,8 @@
 
       </details> #}
 
-      <a class="button" id="fileUpload" onClick="submit()">Upload file</a>
+      <a class="button" id="fileError" onClick="fileError()">Upload file</a>
+      <a class="button" id="fileUpload" onClick="submit()" style="display: none">Upload file</a>
 
       {% endif %}
 
@@ -211,6 +233,21 @@
     document.getElementById("fileUpload").style.display = "none"
     document.getElementById("uploading").style.display = "block"
     document.getElementById("uploaderror").style.display = "none"
+  }
+  function fileError() {
+    document.getElementById("js-errorsummary").style.display = "block"
+    document.getElementById("js-error").style.display = "block"
+    document.getElementById("js-no-error").style.display = "none"
+    scroll(0,0)
+  }
+
+  document.getElementById("file-input").onchange = function() {
+    document.getElementById("fileError").style.display = "none"
+    document.getElementById("fileUpload").style.display = "inline-block"
+  }
+  document.getElementById("file-input-error").onchange = function() {
+    document.getElementById("fileError").style.display = "none"
+    document.getElementById("fileUpload").style.display = "inline-block"
   }
 </script>
 
