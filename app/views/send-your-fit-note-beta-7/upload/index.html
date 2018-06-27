@@ -13,10 +13,10 @@
     <li><a href="#js-error">Select a file to upload</a></li>
   </ul>
 </div>
-{% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 %}
-
+{% if data['upload-attempt'] == 1 %}
+  {# Photo is too small #}
   <div class="error-summary" role="alert" tabindex="-1">
-    {% if data['method-group'] == 'photo' %}
+
     <h1 class="heading-medium error-summary-heading">
       There&rsquo;s a problem with your photo
     </h1>
@@ -24,23 +24,13 @@
     <ul class="error-summary-list">
       <li><a href="#error-link">Try taking another photo</a></li>
     </ul>
-    {% else %}
-    <h1 class="heading-medium error-summary-heading">
-      There&rsquo;s a problem with the photo or scan of your fit note
-    </h1>
-    <p>Try uploading another or <a href="guide/step1?upload-attempt=0&syfn-errors=false">get help with taking a photo</a></p>
-    <ul class="error-summary-list">
-      <li><a href="#error-link">Upload another photo or scan</a></li>
-    </ul>
-    {% endif %}
 
   </div>
 
-{% elif data['upload-attempt'] == 3 %}
-
+{% elif data['upload-attempt'] == 2 %}
+  {# Photo is too large #}
   <div class="error-summary" role="alert" tabindex="-1">
 
-  {% if data['method-group'] == 'photo' %}
     <h1 class="heading-medium error-summary-heading">
       There&rsquo;s a problem with your photo
     </h1>
@@ -53,24 +43,6 @@
     <ul class="error-summary-list">
       <li><a href="#error-link">Try taking another photo</a></li>
     </ul>
-
-  {% else %}
-
-    <h1 class="heading-medium error-summary-heading">
-      There&rsquo;s a problem with the photo or scan of your fit note
-    </h1>
-    <h3 class="heading-small">You can either:</h3>
-    <ul class="list list-bullet">
-      <li>try again with this device</li>
-      <li>try again with another device &ndash; you can ask a family member or friend to use theirs</li>
-      <li>post your fit note to <span class="bold">Freepost DWP ESA 38</span> &ndash; you don&rsquo;t need a stamp</li>
-      <li><a href="guide/step1?upload-attempt=0&syfn-errors=false">get more help to get your photo right</a></li>
-    </ul>
-    <ul class="error-summary-list">
-      <li><a href="#error-link">Upload another photo or scan</a></li>
-    </ul>
-
-  {% endif %}
 
   </div>
 
@@ -123,7 +95,7 @@
 
   </div> {# grid row #}
 
-  <form {% if data['upload-attempt'] == 3 or data['syfn-errors'] != "true" %}action="loading"{% endif %} method="get" class="form">
+  <form {% if data['upload-attempt'] == 2 or data['syfn-errors'] != "true" %}action="loading"{% endif %} method="get" class="form">
 
     {% if data['upload-attempt'] == 1 or data['upload-attempt'] == 2 or data['upload-attempt'] == 3 %}
 
@@ -218,8 +190,8 @@
     {% elif data['upload-attempt'] == 1 %}
     <input type="hidden" name="upload-attempt" value="2">
     {% elif data['upload-attempt'] == 2 %}
-    <input type="hidden" name="upload-attempt" value="3">
-    {% elif data['upload-attempt'] == 3 %}
+    {# <input type="hidden" name="upload-attempt" value="3">
+    {% elif data['upload-attempt'] == 3 %} #}
     <input type="hidden" name="upload-attempt" value="0">
     {% endif %}
 
