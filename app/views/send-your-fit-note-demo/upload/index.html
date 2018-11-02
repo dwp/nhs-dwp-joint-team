@@ -143,15 +143,6 @@
         <input type="file" id="file-input" accept=".pdf,.jpg,.jpeg,.bmp,.png,.gif">
       </div>
 
-      <div class="panel panel-border-wide">
-        <ul class="list">
-          {# <li>It&rsquo;s best to save your scan as a PDF (.pdf) file</li> #}
-          <li>File types accepted: PDF, JPEG, BMP, PNG, GIF</li>
-          <li>Minimum file size: 500KB (kilobytes)</li>
-          <li>Maximum file size: 10MB (megabytes)</li>
-        </ul>
-      </div>
-
       {# <details>
         <summary><span class="summary">Rules for scanning</span></summary>
 
@@ -226,19 +217,5 @@
 {% endblock %}
 
 {% block footer_top %}
-<p>
-  Possible error pages:
-  <form method="get" class="form">
-    <input type="hidden" name="upload-attempt" value="1">
-    <input type="submit" class="button-link" value="Error 1: try again and read guidance" id="startButton">
-  </form>
-  <form method="get" class="form">
-    <input type="hidden" name="upload-attempt" value="2">
-    <input type="submit" class="button-link" value="Error 2: try again and read guidance" id="startButton">
-  </form>
-  <form method="get" class="form">
-    <input type="hidden" name="upload-attempt" value="3">
-    <input type="submit" class="button-link" value="Error 3: post instead" id="startButton">
-  </form>
-</p>
+
 {% endblock %}
