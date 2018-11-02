@@ -1,0 +1,38 @@
+{% extends path+"/../../layout.html" %}
+
+{% block fullcol %}
+
+<a href="../index" class="link-back">Upload your photo</a>
+<span class="marker">Guide part 3 of 5</span>
+
+<div class="photo-guide form-group">
+
+  <div class="grid-row">
+    <div class="column-full">
+      <h1 class="heading-large mt0">
+        Make sure the fit note is sideways or ‘landscape’
+      </h1>
+
+      <img src="/public/images/step5.png" alt="">
+    </div>
+  </div>
+
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a href="step2">Back</a>
+      </li>
+      <li class="button-guide button-guide-next">
+        <a href="step4">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer_top %}
+<p>Possible error pages: <a href="error_1">Error 1: try again</a> | <a href="error_2">Error 2: try again or post</a> | <a href="error_3">Error 3: try again, use different device or post</a>
+{% endblock %}

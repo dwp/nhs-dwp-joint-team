@@ -1,0 +1,39 @@
+{% extends path+"/../../layout.html" %}
+
+{% block fullcol %}
+
+<a href="../index" class="link-back">Upload your photo</a>
+<span class="marker">Guide part 4 of 5</span>
+
+<div class="photo-guide form-group">
+
+  <div class="grid-row">
+    <div class="column-full">
+      <h1 class="heading-large mt0">
+        Make sure the whole thing is in the photo
+      </h1>
+      <p>The fit note should fill as much of the photo as possible but all 4 corners should be inside it.</p>
+
+      <img src="/public/images/step6.png" alt="">
+    </div>
+  </div>
+
+  <nav class="guide-nav">
+    <ul>
+      <li class="button-guide button-guide-previous">
+        <a href="step3">Back</a>
+      </li>
+      <li class="button-guide button-guide-next">
+        <a href="step5">Next</a>
+      </li>
+    </ul>
+  </nav>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer_top %}
+<p>Possible error pages: <a href="error_1">Error 1: try again</a> | <a href="error_2">Error 2: try again or post</a> | <a href="error_3">Error 3: try again, use different device or post</a>
+{% endblock %}

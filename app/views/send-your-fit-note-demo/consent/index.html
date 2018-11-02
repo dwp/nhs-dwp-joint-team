@@ -1,0 +1,36 @@
+{% extends path+"/../layout.html" %}
+
+{% block fullcol %}
+
+  <div class="govuk-box-permission">
+    <div class="grid-row">
+
+      <div class="column-one-third">
+        <img src="/public/images/nhs.png" width="160">
+      </div><!-- col -->
+
+      <div class="column-two-thirds">
+
+        <p class="font-medium">If you agree, the Department for Work and Pensions can access your doctor’s note directly from the NHS.</p>
+        <form action="" method="post">
+          <div class="form-group inline" style="margin-bottom:1em">
+            <div class="form-group form-group-compound">
+              <label class="block-label selection-button-radio" for="ongoing_consent_yes">
+                <input id="ongoing_consent_yes" type="radio" name="ongoing_consent" value="Yes">
+                Yes, I agree
+              </label>
+              <label class="block-label selection-button-radio" for="ongoing_consent_no">
+                <input id="ongoing_consent_no" type="radio" name="ongoing_consent" value="No">
+                No, I don't agree
+              </label>
+            </div>
+          </div>
+        </form>
+        <p><a href="textmessage" class="button" id="submit">Continue</a></p>
+
+      </div><!-- col -->
+
+    </div><!-- row -->
+  </div><!-- govuk-box-permission -->
+
+{% endblock %}
